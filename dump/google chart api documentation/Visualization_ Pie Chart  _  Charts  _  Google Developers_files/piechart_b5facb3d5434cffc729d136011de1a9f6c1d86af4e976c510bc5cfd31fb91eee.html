@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0161)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/piechart_b5facb3d5434cffc729d136011de1a9f6c1d86af4e976c510bc5cfd31fb91eee.frame -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script><script src="./devsite_app.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+
+<script type="text/javascript" src="./loader.js(1).download"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages:['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Pac Man', 'Percentage'],
+    ['', 75],
+    ['', 25]
+  ]);
+
+  var options = {
+    legend: 'none',
+    pieSliceText: 'none',
+    pieStartAngle: 135,
+    tooltip: { trigger: 'none' },
+    slices: {
+      0: { color: 'yellow' },
+      1: { color: 'transparent' }
+    }
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('pacman'));
+  chart.draw(data, options);
+}
+</script>
+
+<div id="pacman" style="width: 900px; height: 500px;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 900px; height: 500px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="900" height="500" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"></defs><rect x="0" y="0" width="900" height="500" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M451,251L559.8944443027283,142.10555569727165A154,154,0,0,1,559.8944443027283,359.8944443027283L451,251A0,0,0,0,0,451,251" stroke="#ffffff" stroke-width="1" fill-opacity="1" fill="none"></path></g><g><path d="M451,251L559.8944443027283,359.8944443027283A154,154,0,1,1,559.8944443027283,142.1055556972717L451,251A0,0,0,1,0,451,251" stroke="#ffffff" stroke-width="1" fill="#ffff00"></path></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Pac Man</th><th>Percentage</th></tr></thead><tbody><tr><td></td><td>75</td></tr><tr><td></td><td>25</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 510px; left: 910px; white-space: nowrap; font-family: Arial; font-size: 14px;"></div><div></div></div></div>
+
+
+  
+</body></html>

@@ -1,0 +1,383 @@
+ .shadow {
+      box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    body{
+        font-family: 'Spartan';
+        font-weight: normal;
+        font-size: small;
+    }
+
+    .f-result-mobile-info h6{
+      font-size: 13px; 
+      font-weight: bold;
+    }
+
+    @media (max-width: 330px){ 
+        .f-result-mobile-info h6{
+           font-size: 11px;
+        }
+    }
+
+
+    	/** f-result-circular-progress styles
+ **------------------------------------------*/
+.f-result-circular-progress {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #E0E0E0), color-stop(50%, transparent), to(transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(50%, #03A9F4), color-stop(50%, #E0E0E0), to(#E0E0E0));
+  background: linear-gradient(90deg, #E0E0E0 50%, transparent 50%, transparent), linear-gradient(180deg, #03A9F4 30%, #E0E0E0 50%, #E0E0E0);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  height: 100px;
+  position: relative;
+  width: 100px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+.f-result-circular-progress::before {
+  background-color: #FAFAFA;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.54);
+  content: "25%";
+  font-size: 25px;
+  font-weight: bold;
+  height: 100%;
+  left: 0;
+  line-height: 100px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  -webkit-transform: scale(0.87);
+          transform: scale(0.87);
+  width: 100%;
+}
+
+/*search input rules */
+.f-result-custom-input{
+  border-width: 0px !important;
+  height: 20px !important;
+  font-size: 12px !important;
+}
+
+
+
+.f-result-custom-input-group{
+  border-radius: 40px;
+  border: 0.5px solid gray; 
+  padding: 1.5px;
+  box-sizing: border-box;
+}
+
+.f-result-custom-input-group-append{
+  padding: 4px;
+}
+/* search inputs rules ends here */
+
+
+/*quick navigation bar */
+.f-result-quick-nav div:hover i::before{
+    color: red;
+}
+
+.f-result-quick-nav div i{
+  opacity: 0.2;
+  color: green;
+}
+
+.f-result-quick-nav div{
+  margin: 0.05rem;
+  position: relative;
+}
+
+.f-result-quick-nav i{
+  font-size: 24px;
+}
+
+
+/*scroll bar style */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 3px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+.f-result-mobile-student-record span{
+  font-size: 20px;
+}
+
+.f-result-mobile-student-record li{
+  line-height: 18px;
+}
+
+.f-result-mobile-student-record .list-group-item{
+  position: relative;
+}
+
+.f-result-mobile-student-record .progress{
+  position: absolute;
+  right: 1px;
+  bottom: 18px;
+  height: 4px;
+}
+/* f-result-mobile-student-record style rules end here */
+
+
+/*form style sheet starts here */
+legend.scheduler-border {
+  width:inherit; /* Or auto */
+  padding:0 10px; /* To give a bit of padding on the left and right */
+  border-bottom:none;
+}
+
+
+/*mobile record styles */
+
+        .f-result-mobile-student-record li a{
+          color: black;
+          
+        }
+
+        .f-result-mobile-student-record li:not(.active-list){
+          opacity: 0.5;
+        }
+        .f-result-mobile-student-record a.active{
+           color: rgb(0,154,255);
+           opacity: 1;
+           font-weight: bolder;
+        }
+
+        .f-result-mobile-student-record li.active-list{
+          border-bottom: none!important;
+          color: green;
+        }
+
+        .f-result-mobile-student-record .borderx{
+           border-right: 1px solid rgba(0, 0, 0, 0.16);
+           border-left: none;
+           position: relative;
+           border-top: 1px solid rgba(0, 0, 0, 0.16);
+           border-bottom:  1px solid rgba(0, 0, 0, 0.16);
+        }
+
+        .f-result-mobile-student-record .borderx span.editbutton{
+          position: absolute;
+          top: -7px;
+          background-color: #fff;
+          width: 90%;
+          text-align: right;
+          font-size: 12px;
+          padding-right: 4px; 
+        }
+
+        .f-result-mobile-student-record .borderx span.submitbutton{
+          position: absolute;
+          bottom: -12px;
+          width: 90%;
+          text-align: right;
+          font-size: 12px;
+          padding-right: 4px; 
+          background-color: #fff;
+        }
+
+
+          .f-result-mobile-student-record .borderx span.submitbutton button{
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.16);
+            font-size: 12px;
+          }
+
+          .f-result-mobile-student-record .styled-heading{
+            position: relative; 
+            width: 70%; 
+            margin: auto; 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+          }
+          .f-result-mobile-student-record .styled-heading h6{
+            position: absolute; 
+            top: -8px; 
+            left: 23%; 
+            width: 40%; 
+            background-color: #fff; 
+            text-align: center;
+          }
+
+
+/*start style rules for mobile table record */
+       .f-result-desktop-table-record  table{
+          width: 99%;
+          border-spacing: 0px !important;
+         }
+
+         .f-result-desktop-table-record td input{
+          border: 0px;
+          width: 100%;
+          height: 30px;
+          text-align: center;
+         }
+
+         .f-result-desktop-table-record td{
+           border: 0.2px solid rgba(0, 0, 0, 0.2);
+           padding: 0px !important;
+
+           /*font-size: 12px;*/
+         }
+         .f-result-desktop-table-record td:nth-child(2){
+             padding: 0.5rem !important;
+         }  
+
+         .f-result-desktop-table-record td:first-child{
+          padding: 0.5 !important;
+          text-align: center;
+         }
+
+        .f-result-desktop-table-record th{
+            text-align: center;
+         }
+        .f-result-desktop-table-record th:nth-child(1){
+            text-align: left;
+         }
+
+        .f-result-desktop-table-record th:nth-child(2){
+            text-align: left;
+         }
+         .f-result-desktop-table-record tr:nth-child(2){
+            padding: 0.5rem!important;
+         }
+  /*end style rue for desktop table record */
+
+
+  /*start style rule for mobile table tool */
+
+          .f-result-mobile-table-tool i{
+          font-size: 20px;
+        }
+
+        @media (max-width: 330px){ 
+          .f-result-mobile-table-tool i{
+            font-size: 16px;
+          }
+        }
+        .f-result-mobile-table-tool-container{
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .f-result-mobile-table-tool{
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .f-result-mobile-table-tool-container input{
+          border: none;
+          width: 98%; 
+          margin: auto;
+          font-size: 12px;
+        }
+        .f-result-mobile-table-tool-container input:focus{
+           outline: none;
+        }
+
+        .f-result-mobile-table-tool-container td:nth-child(2){
+             padding: 6px !important;
+         }  
+
+        .f-result-mobile-table-tool-container td:first-child{
+          padding: 3px !important;
+          text-align: center;
+          width: 20px;
+         }
+
+         .f-result-mobile-table-tool-container tr:nth-child(2){
+            padding: 4px!important;
+         }
+/*end style rule for mobile table tool */
+
+
+
+/*start style rule for mobile table container */
+        .f-result-mobile-table-container table input{
+          width: 100%;
+          height: inherit;
+          border: none;
+          height: 1.8rem;
+          text-align: center;
+        }
+        .f-result-mobile-table-container table td{
+          border: 1px solid rgba(0, 0, 0, 0.16);
+        }
+
+        .f-result-mobile-table-container table {
+           border-spacing: 0px !important;
+           width: 100%;
+        }
+        .f-result-mobile-table-container td:nth-child(2){
+             padding: 0.2rem; !important;
+         }  
+
+         .f-result-mobile-table-container td:first-child{
+            text-align: center!important;
+         }
+
+/* Extra small devices (portrait phones, less than 576px)
+/ No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+.f-result-custom-input-group{
+  width: 100%;
+  margin: auto;
+}
+
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+ 
+ .f-result-quick-nav i{
+  font-size: 24px;
+}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .f-result-circular-progress {
+      width: 200px;
+      height: 200px;
+    }
+    .f-result-circular-progress::before {
+      line-height: 200px;
+    }
+
+    .f-result-quick-nav i{
+      font-size: 30px;
+    }
+
+    .f-result-quick-nav div{
+      margin: 0.1rem;
+    }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .f-result-quick-nav i{
+      font-size: 40px;
+    }
+}
+
+/* Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width */

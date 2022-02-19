@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0164)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/columnchart_74dc49093b1e4155d0d3f149f3a254bbbad99006bcdb0c5993de2ceaa2fb8a3e.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_bar_module.js.download"></script><link rel="stylesheet" href="./css(1)"><script src="./devsite_app.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+
+
+  
+    <script type="text/javascript" src="./loader.js(1).download"></script>
+    <script type="text/javascript">
+      // [START script_body]
+      google.charts.load('current', {'packages':['corechart', 'bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+
+        var button = document.getElementById('change-chart');
+        var chartDiv = document.getElementById('chart_div');
+
+        var data = google.visualization.arrayToDataTable([
+          ['Galaxy', 'Distance', 'Brightness'],
+          ['Canis Major Dwarf', 8000, 23.3],
+          ['Sagittarius Dwarf', 24000, 4.5],
+          ['Ursa Major II Dwarf', 30000, 14.3],
+          ['Lg. Magellanic Cloud', 50000, 0.9],
+          ['Bootes I', 60000, 13.1]
+        ]);
+
+        // [START material_opts]
+        var materialOptions = {
+          width: 900,
+          chart: {
+            title: 'Nearby galaxies',
+            subtitle: 'distance on the left, brightness on the right'
+          },
+          series: {
+            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            y: {
+              distance: {label: 'parsecs'}, // Left y-axis.
+              brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
+            }
+          }
+        };
+        // [END material_opts]
+
+        // [START classic_opts]
+        var classicOptions = {
+          width: 900,
+          series: {
+            0: {targetAxisIndex: 0},
+            1: {targetAxisIndex: 1}
+          },
+          title: 'Nearby galaxies - distance on the left, brightness on the right',
+          vAxes: {
+            // Adds titles to each axis.
+            0: {title: 'parsecs'},
+            1: {title: 'apparent magnitude'}
+          }
+        };
+        // [END classic_opts]
+
+        function drawMaterialChart() {
+          var materialChart = new google.charts.Bar(chartDiv);
+          materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+          button.innerText = 'Change to Classic';
+          button.onclick = drawClassicChart;
+        }
+
+        function drawClassicChart() {
+          var classicChart = new google.visualization.ColumnChart(chartDiv);
+          classicChart.draw(data, classicOptions);
+          button.innerText = 'Change to Material';
+          button.onclick = drawMaterialChart;
+        }
+
+        drawMaterialChart();
+    };
+// [END script_body]
+    </script>
+  
+  
+    <!-- [START html_body] -->
+    <button id="change-chart">Change to Classic</button>
+    <br><br>
+    <div id="chart_div" style="width: 800px; height: 500px;"><div style="position: relative; width: 900px; height: 500px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="900" height="500"><defs><clippath id="rablfilter0"><rect x="61.5" y="84.5" width="650" height="362"></rect></clippath></defs><g><rect x="0" y="0" width="900" height="500" fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="0" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Nearby galaxies</text><text x="0" y="37.359375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 14px;" fill="#BDBDBD" dx="0px">distance on the left, brightness on the right</text><rect x="803.921875" y="84.5" width="12" height="12" rx="2" ry="2" fill="#4285f4"></rect><text x="823.921875" y="100.0625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Distance</text><rect x="803.921875" y="120.515625" width="12" height="12" rx="2" ry="2" fill="#db4437"></rect><text x="823.921875" y="136.078125" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Brightness</text><rect x="61.5" y="84.5" width="650" height="362" fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="0" stroke-width="1"></rect></g><g><line x1="61.5" x2="711.5" y1="446.5" y2="446.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="386.1666666666667" y2="386.1666666666667" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="325.8333333333333" y2="325.8333333333333" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="265.5" y2="265.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="205.16666666666666" y2="205.16666666666666" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="144.83333333333331" y2="144.83333333333331" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="84.5" y2="84.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="446.5" y2="446.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="374.1" y2="374.1" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="301.7" y2="301.7" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="229.3" y2="229.3" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="156.9" y2="156.9" stroke="#E0E0E0" stroke-width="1"></line><line x1="61.5" x2="711.5" y1="84.5" y2="84.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 114.75268817204301 398.73333333333335 A 2 2 0 0 1 116.75268817204301 400.73333333333335 L 116.75268817204301 446 A 0 0 0 0 1 116.75268817204301 446 L 74 446 A 0 0 0 0 1 74 446 L 74 400.73333333333335 A 2 2 0 0 1 76 398.73333333333335 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 158.50537634408602 109.61599999999999 A 2 2 0 0 1 160.50537634408602 111.61599999999999 L 160.50537634408602 446 A 0 0 0 0 1 160.50537634408602 446 L 117.75268817204301 446 A 0 0 0 0 1 117.75268817204301 446 L 117.75268817204301 111.61599999999999 A 2 2 0 0 1 119.75268817204301 109.61599999999999 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 249.37634408602148 302.2 A 2 2 0 0 1 251.37634408602148 304.2 L 251.37634408602148 446 A 0 0 0 0 1 251.37634408602148 446 L 208.62365591397847 446 A 0 0 0 0 1 208.62365591397847 446 L 208.62365591397847 304.2 A 2 2 0 0 1 210.62365591397847 302.2 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 293.1290322580645 381.84 A 2 2 0 0 1 295.1290322580645 383.84 L 295.1290322580645 446 A 0 0 0 0 1 295.1290322580645 446 L 252.37634408602148 446 A 0 0 0 0 1 252.37634408602148 446 L 252.37634408602148 383.84 A 2 2 0 0 1 254.37634408602148 381.84 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 384 266 A 2 2 0 0 1 386 268 L 386 446 A 0 0 0 0 1 386 446 L 343.24731182795693 446 A 0 0 0 0 1 343.24731182795693 446 L 343.24731182795693 268 A 2 2 0 0 1 345.24731182795693 266 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 427.75268817204307 239.936 A 2 2 0 0 1 429.75268817204307 241.936 L 429.75268817204307 446 A 0 0 0 0 1 429.75268817204307 446 L 387 446 A 0 0 0 0 1 387 446 L 387 241.936 A 2 2 0 0 1 389 239.936 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 518.6236559139785 145.33333333333331 A 2 2 0 0 1 520.6236559139785 147.33333333333331 L 520.6236559139785 446 A 0 0 0 0 1 520.6236559139785 446 L 477.8709677419355 446 A 0 0 0 0 1 477.8709677419355 446 L 477.8709677419355 147.33333333333331 A 2 2 0 0 1 479.8709677419355 145.33333333333331 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 562.3763440860215 433.968 A 2 2 0 0 1 564.3763440860215 435.968 L 564.3763440860215 446 A 0 0 0 0 1 564.3763440860215 446 L 521.6236559139785 446 A 0 0 0 0 1 521.6236559139785 446 L 521.6236559139785 435.968 A 2 2 0 0 1 523.6236559139785 433.968 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 653.247311827957 85 A 2 2 0 0 1 655.247311827957 87 L 655.247311827957 446 A 0 0 0 0 1 655.247311827957 446 L 612.4946236559139 446 A 0 0 0 0 1 612.4946236559139 446 L 612.4946236559139 87 A 2 2 0 0 1 614.4946236559139 85 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 697 257.312 A 2 2 0 0 1 699 259.312 L 699 446 A 0 0 0 0 1 699 446 L 656.247311827957 446 A 0 0 0 0 1 656.247311827957 446 L 656.247311827957 259.312 A 2 2 0 0 1 658.247311827957 257.312 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path></g><g></g><g><text x="117.25268817204301" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-49.205299377441406px">Canis Major Dwarf</text><text x="251.87634408602148" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-46.02368927001953px">Sagittarius Dwarf</text><text x="386.5" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-51.20146942138672px">Ursa Major II Dwarf</text><text x="521.1236559139785" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-55.69731903076172px">Lg. Magellanic Cloud</text><text x="655.747311827957" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-21.908374786376953px">Bootes I</text><text x="383.4232190860215" y="496.09375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-17.866228103637695px">Galaxy</text><text x="55.5" y="450.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">0</text><text x="55.5" y="390.05989583333337" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.980546951293945px">10K</text><text x="55.5" y="329.72135416666663" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.980546951293945px">20K</text><text x="55.5" y="269.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.980546951293945px">30K</text><text x="55.5" y="209.05989583333331" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.980546951293945px">40K</text><text x="55.5" y="148.72135416666663" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.980546951293945px">50K</text><text x="55.5" y="88.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.980546951293945px">60K</text><text x="15.140625" y="262.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-21.14735984802246px" transform="rotate(-90 15.140625 265.5)">parsecs</text><text x="717.5" y="450.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">0</text><text x="717.5" y="377.98906250000005" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">5</text><text x="717.5" y="305.5875" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">10</text><text x="717.5" y="233.18593750000002" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">15</text><text x="717.5" y="160.7921875" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">20</text><text x="717.5" y="88.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">25</text><text x="748.96875" y="262.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-53.60452651977539px" transform="rotate(90 748.96875 265.5)">apparent magnitude</text></g><g></g><g></g><g></g></svg></div></div></div>
+    <!-- [END html_body] -->
+  
+
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>

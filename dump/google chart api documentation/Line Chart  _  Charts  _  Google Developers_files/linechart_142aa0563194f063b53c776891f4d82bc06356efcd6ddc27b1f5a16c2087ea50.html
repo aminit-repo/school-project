@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0162)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/linechart_142aa0563194f063b53c776891f4d82bc06356efcd6ddc27b1f5a16c2087ea50.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><script src="./devsite_app.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_line_module.js.download"></script><link rel="stylesheet" href="./css(1)"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+  
+
+  <script type="text/javascript" src="./loader.js(1).download"></script>
+    <script type="text/javascript">
+      // [START script_body]
+      google.charts.load('current', {'packages':['line', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var button = document.getElementById('change-chart');
+      var chartDiv = document.getElementById('chart_div');
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Month');
+      data.addColumn('number', "Average Temperature");
+      data.addColumn('number', "Average Hours of Daylight");
+
+      data.addRows([
+        [new Date(2014, 0),  -.5,  5.7],
+        [new Date(2014, 1),   .4,  8.7],
+        [new Date(2014, 2),   .5,   12],
+        [new Date(2014, 3),  2.9, 15.3],
+        [new Date(2014, 4),  6.3, 18.6],
+        [new Date(2014, 5),    9, 20.9],
+        [new Date(2014, 6), 10.6, 19.8],
+        [new Date(2014, 7), 10.3, 16.6],
+        [new Date(2014, 8),  7.4, 13.3],
+        [new Date(2014, 9),  4.4,  9.9],
+        [new Date(2014, 10), 1.1,  6.6],
+        [new Date(2014, 11), -.2,  4.5]
+      ]);
+
+      // [START material_opts]
+      var materialOptions = {
+        chart: {
+          title: 'Average Temperatures and Daylight in Iceland Throughout the Year'
+        },
+        width: 900,
+        height: 500,
+        series: {
+          // Gives each series an axis name that matches the Y-axis below.
+          0: {axis: 'Temps'},
+          1: {axis: 'Daylight'}
+        },
+        axes: {
+          // Adds labels to each axis; they don't have to match the axis names.
+          y: {
+            Temps: {label: 'Temps (Celsius)'},
+            Daylight: {label: 'Daylight'}
+          }
+        }
+      };
+      // [END material_opts]
+
+      // [START classic_opts]
+      var classicOptions = {
+        title: 'Average Temperatures and Daylight in Iceland Throughout the Year',
+        width: 900,
+        height: 500,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1}
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Temps (Celsius)'},
+          1: {title: 'Daylight'}
+        },
+        hAxis: {
+          ticks: [new Date(2014, 0), new Date(2014, 1), new Date(2014, 2), new Date(2014, 3),
+                  new Date(2014, 4),  new Date(2014, 5), new Date(2014, 6), new Date(2014, 7),
+                  new Date(2014, 8), new Date(2014, 9), new Date(2014, 10), new Date(2014, 11)
+                 ]
+        },
+        vAxis: {
+          viewWindow: {
+            max: 30
+          }
+        }
+      };
+      // [END classic_opts]
+
+      function drawMaterialChart() {
+        var materialChart = new google.charts.Line(chartDiv);
+        materialChart.draw(data, materialOptions);
+        button.innerText = 'Change to Classic';
+        button.onclick = drawClassicChart;
+      }
+
+      function drawClassicChart() {
+        var classicChart = new google.visualization.LineChart(chartDiv);
+        classicChart.draw(data, classicOptions);
+        button.innerText = 'Change to Material';
+        button.onclick = drawMaterialChart;
+      }
+
+      drawMaterialChart();
+
+    }
+    //[END script_body]
+  </script>
+
+
+  <!-- [START html_body] -->
+  <button id="change-chart">Change to Classic</button>
+  <br><br>
+  <div id="chart_div"><div style="position: relative; width: 900px; height: 500px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="900" height="500"><defs><clippath id="rablfilter0"><rect x="53.5" y="64.5" width="547" height="368"></rect></clippath></defs><g><rect x="0" y="0" width="900" height="500" fill="white" stroke="black" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Average Temperatures and Daylight in Iceland Throughout the Year</text><rect x="694.09375" y="64.5" width="12" height="12" rx="2" ry="2" fill="#4285f4"></rect><text x="714.09375" y="80.0625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Average Temperature</text><rect x="694.09375" y="100.515625" width="12" height="12" rx="2" ry="2" fill="#db4437"></rect><text x="714.09375" y="116.078125" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Average Hours of Daylight</text><rect x="53.5" y="64.5" width="547" height="368" fill="none"></rect></g><g><line x1="53.5" x2="600.5" y1="432.5" y2="432.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="379.9285714285714" y2="379.9285714285714" stroke="#9E9E9E" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="327.3571428571429" y2="327.3571428571429" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="274.7857142857143" y2="274.7857142857143" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="222.2142857142857" y2="222.2142857142857" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="169.64285714285714" y2="169.64285714285714" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="117.07142857142857" y2="117.07142857142857" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="64.5" y2="64.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="432.5" y2="432.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="391.6111111111111" y2="391.6111111111111" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="350.72222222222223" y2="350.72222222222223" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="309.8333333333333" y2="309.8333333333333" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="268.94444444444446" y2="268.94444444444446" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="228.05555555555554" y2="228.05555555555554" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="187.16666666666666" y2="187.16666666666666" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="146.27777777777777" y2="146.27777777777777" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="105.38888888888889" y2="105.38888888888889" stroke="#E0E0E0" stroke-width="1"></line><line x1="53.5" x2="600.5" y1="64.5" y2="64.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 65.5 393.0714285714286 L 114.04191616766467 369.4142857142857 L 157.88622754491018 366.7857142857143 L 206.42814371257487 303.70000000000005 L 253.40419161676647 214.32857142857142 L 301.94610778443115 143.35714285714283 L 348.92215568862275 101.30000000000001 L 397.46407185628743 109.18571428571425 L 446.0059880239521 185.4142857142857 L 492.98203592814366 264.27142857142854 L 541.5239520958083 351.01428571428573 L 588.5 385.18571428571425" fill="none" stroke="#4285f4" stroke-width="2" clip-path="url(#rablfilter0)"></path><circle cx="65.5" cy="393.0714285714286" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="114.04191616766467" cy="369.4142857142857" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="157.88622754491018" cy="366.7857142857143" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="206.42814371257487" cy="303.70000000000005" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="253.40419161676647" cy="214.32857142857142" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="301.94610778443115" cy="143.35714285714283" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="348.92215568862275" cy="101.30000000000001" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="397.46407185628743" cy="109.18571428571425" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="446.0059880239521" cy="185.4142857142857" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="492.98203592814366" cy="264.27142857142854" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="541.5239520958083" cy="351.01428571428573" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="588.5" cy="385.18571428571425" r="4" fill="#4285f4" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><path d="M 65.5 397.74444444444447 L 114.04191616766467 336.41111111111115 L 157.88622754491018 268.94444444444446 L 206.42814371257487 201.47777777777776 L 253.40419161676647 134.01111111111106 L 301.94610778443115 86.98888888888892 L 348.92215568862275 109.47777777777776 L 397.46407185628743 174.89999999999998 L 446.0059880239521 242.36666666666665 L 492.98203592814366 311.87777777777774 L 541.5239520958083 379.3444444444445 L 588.5 422.27777777777777" fill="none" stroke="#db4437" stroke-width="2" clip-path="url(#rablfilter0)"></path><circle cx="65.5" cy="397.74444444444447" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="114.04191616766467" cy="336.41111111111115" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="157.88622754491018" cy="268.94444444444446" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="206.42814371257487" cy="201.47777777777776" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="253.40419161676647" cy="134.01111111111106" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="301.94610778443115" cy="86.98888888888892" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="348.92215568862275" cy="109.47777777777776" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="397.46407185628743" cy="174.89999999999998" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="446.0059880239521" cy="242.36666666666665" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="492.98203592814366" cy="311.87777777777774" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="541.5239520958083" cy="379.3444444444445" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle><circle cx="588.5" cy="422.27777777777777" r="4" fill="#db4437" fill-opacity="0" clip-path="url(#rablfilter0)"></circle></g><g></g><g><text x="65.5" y="449.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242"><tspan rabl-use-parent="true" x="65.5" y="449.625" dy="0px" dx="-9.875598907470703px">Jan</tspan><tspan rabl-use-parent="true" x="65.5" y="449.625" dy="14.46875px" dx="-13.46408462524414px">2014</tspan></text><text x="206.42814371257487" y="449.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-9.301918983459473px">Apr</text><text x="348.92215568862275" y="449.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-8.066737174987793px">Jul</text><text x="492.98203592814366" y="449.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-9.21703815460205px">Oct</text><text x="320.00390625" y="496.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-17.21937370300293px">Month</text><text x="47.5" y="436.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-10.039520263671875px">-2</text><text x="47.5" y="383.8180803571428" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">0</text><text x="47.5" y="331.2455357142858" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">2</text><text x="47.5" y="278.67299107142856" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">4</text><text x="47.5" y="226.1004464285714" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">6</text><text x="47.5" y="173.52790178571428" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">8</text><text x="47.5" y="120.96316964285714" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">10</text><text x="47.5" y="68.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">12</text><text x="14.984375" y="245.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-43.26062774658203px" transform="rotate(-90 14.984375 248.5)">Temps (Celsius)</text><text x="606.5" y="436.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">4</text><text x="606.5" y="395.4956597222222" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">6</text><text x="606.5" y="354.60850694444446" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">8</text><text x="606.5" y="313.72135416666663" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">10</text><text x="606.5" y="272.8342013888889" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">12</text><text x="606.5" y="231.9470486111111" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">14</text><text x="606.5" y="191.05989583333331" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">16</text><text x="606.5" y="150.16493055555554" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">18</text><text x="606.5" y="109.27777777777777" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">20</text><text x="606.5" y="68.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">22</text><text x="639.015625" y="245.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-21.516157150268555px" transform="rotate(90 639.015625 248.5)">Daylight</text></g><g></g><g></g><g></g></svg></div></div></div>
+  <!-- [END html_body] -->
+
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>

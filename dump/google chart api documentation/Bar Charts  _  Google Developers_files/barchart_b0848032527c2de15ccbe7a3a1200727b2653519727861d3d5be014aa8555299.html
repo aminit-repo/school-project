@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0161)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/barchart_b0848032527c2de15ccbe7a3a1200727b2653519727861d3d5be014aa8555299.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><script src="./devsite_app.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><link rel="stylesheet" href="./css(1)"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_bar_module.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+
+  
+  
+    <script type="text/javascript" src="./loader.js(1).download"></script>
+    <script type="text/javascript">
+      // [START script_body]
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Galaxy', 'Distance', 'Brightness'],
+          ['Canis Major Dwarf', 8000, 23.3],
+          ['Sagittarius Dwarf', 24000, 4.5],
+          ['Ursa Major II Dwarf', 30000, 14.3],
+          ['Lg. Magellanic Cloud', 50000, 0.9],
+          ['Bootes I', 60000, 13.1]
+        ]);
+
+        var options = {
+          width: 800,
+          chart: {
+            title: 'Nearby galaxies',
+            subtitle: 'distance on the left, brightness on the right'
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          series: {
+            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            x: {
+              distance: {label: 'parsecs'}, // Bottom x-axis.
+              brightness: {side: 'top', label: 'apparent magnitude'} // Top x-axis.
+            }
+          }
+        };
+
+      var chart = new google.charts.Bar(document.getElementById('dual_x_div'));
+      chart.draw(data, options);
+    };
+// [END script_body]
+    </script>
+  
+  
+    <!-- [START html_body] -->
+    <div id="dual_x_div" style="width: 900px; height: 500px;"><div style="position: relative; width: 800px; height: 500px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="800" height="500"><defs><clippath id="rablfilter0"><rect x="150.5" y="130.5" width="501" height="316"></rect></clippath></defs><g><rect x="0" y="0" width="800" height="500" fill="white" stroke="black" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Nearby galaxies</text><text x="0" y="37.359375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 14px;" fill="#BDBDBD" dx="0px">distance on the left, brightness on the right</text><rect x="703.921875" y="130.5" width="12" height="12" rx="2" ry="2" fill="#4285f4"></rect><text x="723.921875" y="146.0625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Distance</text><rect x="703.921875" y="166.515625" width="12" height="12" rx="2" ry="2" fill="#db4437"></rect><text x="723.921875" y="182.078125" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Brightness</text><rect x="150.5" y="130.5" width="501" height="316" fill="none"></rect></g><g><line x1="150.5" x2="150.5" y1="130.5" y2="446.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="317.5" x2="317.5" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="484.5" x2="484.5" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="651.5" x2="651.5" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="150.5" x2="150.5" y1="130.5" y2="446.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="250.7" x2="250.7" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="350.9" x2="350.9" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="451.09999999999997" x2="451.09999999999997" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="551.3" x2="551.3" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="651.5" x2="651.5" y1="130.5" y2="446.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 214.8 131 A 2 2 0 0 1 216.8 133 L 216.8 149.247311827957 A 2 2 0 0 1 214.8 151.247311827957 L 151 151.247311827957 A 0 0 0 0 1 151 151.247311827957 L 151 131 A 0 0 0 0 1 151 131 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 614.932 152.247311827957 A 2 2 0 0 1 616.932 154.247311827957 L 616.932 170.49462365591398 A 2 2 0 0 1 614.932 172.49462365591398 L 151 172.49462365591398 A 0 0 0 0 1 151 172.49462365591398 L 151 152.247311827957 A 0 0 0 0 1 151 152.247311827957 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 348.4 196.3763440860215 A 2 2 0 0 1 350.4 198.3763440860215 L 350.4 214.6236559139785 A 2 2 0 0 1 348.4 216.6236559139785 L 151 216.6236559139785 A 0 0 0 0 1 151 216.6236559139785 L 151 196.3763440860215 A 0 0 0 0 1 151 196.3763440860215 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 238.18 217.6236559139785 A 2 2 0 0 1 240.18 219.6236559139785 L 240.18 235.8709677419355 A 2 2 0 0 1 238.18 237.8709677419355 L 151 237.8709677419355 A 0 0 0 0 1 151 237.8709677419355 L 151 217.6236559139785 A 0 0 0 0 1 151 217.6236559139785 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 398.5 261.752688172043 A 2 2 0 0 1 400.5 263.752688172043 L 400.5 280 A 2 2 0 0 1 398.5 282 L 151 282 A 0 0 0 0 1 151 282 L 151 261.752688172043 A 0 0 0 0 1 151 261.752688172043 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 434.57200000000006 283 A 2 2 0 0 1 436.57200000000006 285 L 436.57200000000006 301.247311827957 A 2 2 0 0 1 434.57200000000006 303.247311827957 L 151 303.247311827957 A 0 0 0 0 1 151 303.247311827957 L 151 283 A 0 0 0 0 1 151 283 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 565.5 327.1290322580645 A 2 2 0 0 1 567.5 329.1290322580645 L 567.5 345.3763440860215 A 2 2 0 0 1 565.5 347.3763440860215 L 151 347.3763440860215 A 0 0 0 0 1 151 347.3763440860215 L 151 327.1290322580645 A 0 0 0 0 1 151 327.1290322580645 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 166.036 348.3763440860215 A 2 2 0 0 1 168.036 350.3763440860215 L 168.036 366.6236559139785 A 2 2 0 0 1 166.036 368.6236559139785 L 151 368.6236559139785 A 0 0 0 0 1 151 368.6236559139785 L 151 348.3763440860215 A 0 0 0 0 1 151 348.3763440860215 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 649 392.505376344086 A 2 2 0 0 1 651 394.505376344086 L 651 410.752688172043 A 2 2 0 0 1 649 412.752688172043 L 151 412.752688172043 A 0 0 0 0 1 151 412.752688172043 L 151 392.505376344086 A 0 0 0 0 1 151 392.505376344086 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 410.524 413.752688172043 A 2 2 0 0 1 412.524 415.752688172043 L 412.524 432 A 2 2 0 0 1 410.524 434 L 151 434 A 0 0 0 0 1 151 434 L 151 413.752688172043 A 0 0 0 0 1 151 413.752688172043 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path></g><g></g><g><text x="150.5" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-3.366021156311035px">0</text><text x="317.5" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-10.490273475646973px">20K</text><text x="484.5" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-10.490273475646973px">40K</text><text x="651.5" y="463.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-10.490273475646973px">60K</text><text x="404.90625" y="496.09375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-21.14735984802246px">parsecs</text><text x="150.5" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-3.366021156311035px">0</text><text x="250.7" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-3.366021156311035px">5</text><text x="350.9" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">10</text><text x="451.09999999999997" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">15</text><text x="551.3" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">20</text><text x="651.5" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">25</text><text x="402.68359375" y="88.6875" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-53.60452651977539px">apparent magnitude</text><text x="144.5" y="155.63524865591398" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-98.41059875488281px">Canis Major Dwarf</text><text x="144.5" y="221.012936827957" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-92.04737854003906px">Sagittarius Dwarf</text><text x="144.5" y="286.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-102.40293884277344px">Ursa Major II Dwarf</text><text x="144.5" y="351.768313172043" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-111.39463806152344px">Lg. Magellanic Cloud</text><text x="144.5" y="417.138188844086" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-43.816749572753906px">Bootes I</text><text x="15.09375" y="279.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-17.866228103637695px" transform="rotate(-90 15.09375 282.5)">Galaxy</text></g><g></g><g></g><g></g></svg></div></div></div>
+    <!-- [END html_body] -->
+  
+
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>

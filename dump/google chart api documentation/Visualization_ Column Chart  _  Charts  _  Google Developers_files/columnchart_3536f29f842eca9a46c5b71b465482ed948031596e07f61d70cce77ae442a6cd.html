@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- saved from url=(0164)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/columnchart_3536f29f842eca9a46c5b71b465482ed948031596e07f61d70cce77ae442a6cd.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_bar_module.js.download"></script><link rel="stylesheet" href="./css(1)"><script src="./devsite_app.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+
+
+  
+    <script type="text/javascript" src="./loader.js(1).download"></script>
+    <script type="text/javascript">
+      // [START script_body]
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'vertical',
+          vAxis: {format: 'decimal'},
+          height: 400,
+          colors: ['#1b9e77', '#d95f02', '#7570b3']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+        var btns = document.getElementById('btn-group');
+
+        btns.onclick = function (e) {
+
+          if (e.target.tagName === 'BUTTON') {
+            options.vAxis.format = e.target.id === 'none' ? '' : e.target.id;
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+          }
+        }
+      }
+      // [END script_body]
+    </script>
+  
+  
+    <!-- [START html_body] -->
+    <div id="chart_div"><div style="position: relative; width: 856px; height: 400px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="856" height="400"><defs><clippath id="rablfilter0"><rect x="36.5" y="84.5" width="691" height="262"></rect></clippath></defs><g><rect x="0" y="0" width="856" height="400" fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="0" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Company Performance</text><text x="0" y="37.359375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 14px;" fill="#BDBDBD" dx="0px">Sales, Expenses, and Profit: 2014-2017</text><rect x="767.71875" y="84.5" width="12" height="12" rx="2" ry="2" fill="#1b9e77"></rect><text x="787.71875" y="100.0625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Sales</text><rect x="767.71875" y="120.515625" width="12" height="12" rx="2" ry="2" fill="#d95f02"></rect><text x="787.71875" y="136.078125" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Expenses</text><rect x="767.71875" y="156.53125" width="12" height="12" rx="2" ry="2" fill="#7570b3"></rect><text x="787.71875" y="172.09375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Profit</text><rect x="36.5" y="84.5" width="691" height="262" fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="0" stroke-width="1"></rect></g><g><line x1="36.5" x2="727.5" y1="346.5" y2="346.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="36.5" x2="727.5" y1="302.83333333333337" y2="302.83333333333337" stroke="#E0E0E0" stroke-width="1"></line><line x1="36.5" x2="727.5" y1="259.16666666666663" y2="259.16666666666663" stroke="#E0E0E0" stroke-width="1"></line><line x1="36.5" x2="727.5" y1="215.5" y2="215.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="36.5" x2="727.5" y1="171.83333333333331" y2="171.83333333333331" stroke="#E0E0E0" stroke-width="1"></line><line x1="36.5" x2="727.5" y1="128.16666666666666" y2="128.16666666666666" stroke="#E0E0E0" stroke-width="1"></line><line x1="36.5" x2="727.5" y1="84.5" y2="84.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 85.59360730593606 128.66666666666666 A 2 2 0 0 1 87.59360730593606 130.66666666666666 L 87.59360730593606 346 A 0 0 0 0 1 87.59360730593606 346 L 49 346 A 0 0 0 0 1 49 346 L 49 130.66666666666666 A 2 2 0 0 1 51 128.66666666666666 Z" fill="#1b9e77" clip-path="url(#rablfilter0)"></path><path d="M 125.18721461187214 259.66666666666663 A 2 2 0 0 1 127.18721461187214 261.66666666666663 L 127.18721461187214 346 A 0 0 0 0 1 127.18721461187214 346 L 88.59360730593606 346 A 0 0 0 0 1 88.59360730593606 346 L 88.59360730593606 261.66666666666663 A 2 2 0 0 1 90.59360730593606 259.66666666666663 Z" fill="#d95f02" clip-path="url(#rablfilter0)"></path><path d="M 164.78082191780823 303.33333333333337 A 2 2 0 0 1 166.78082191780823 305.33333333333337 L 166.78082191780823 346 A 0 0 0 0 1 166.78082191780823 346 L 128.18721461187215 346 A 0 0 0 0 1 128.18721461187215 346 L 128.18721461187215 305.33333333333337 A 2 2 0 0 1 130.18721461187215 303.33333333333337 Z" fill="#7570b3" clip-path="url(#rablfilter0)"></path><path d="M 268.33333333333326 91.55000000000001 A 2 2 0 0 1 270.33333333333326 93.55000000000001 L 270.33333333333326 346 A 0 0 0 0 1 270.33333333333326 346 L 231.73972602739724 346 A 0 0 0 0 1 231.73972602739724 346 L 231.73972602739724 93.55000000000001 A 2 2 0 0 1 233.73972602739724 91.55000000000001 Z" fill="#1b9e77" clip-path="url(#rablfilter0)"></path><path d="M 307.92694063926933 246.56666666666666 A 2 2 0 0 1 309.92694063926933 248.56666666666666 L 309.92694063926933 346 A 0 0 0 0 1 309.92694063926933 346 L 271.33333333333326 346 A 0 0 0 0 1 271.33333333333326 346 L 271.33333333333326 248.56666666666666 A 2 2 0 0 1 273.33333333333326 246.56666666666666 Z" fill="#d95f02" clip-path="url(#rablfilter0)"></path><path d="M 347.5205479452054 292.41666666666663 A 2 2 0 0 1 349.5205479452054 294.41666666666663 L 349.5205479452054 346 A 0 0 0 0 1 349.5205479452054 346 L 310.92694063926933 346 A 0 0 0 0 1 310.92694063926933 346 L 310.92694063926933 294.41666666666663 A 2 2 0 0 1 312.92694063926933 292.41666666666663 Z" fill="#7570b3" clip-path="url(#rablfilter0)"></path><path d="M 451.0730593607306 202.9 A 2 2 0 0 1 453.0730593607306 204.9 L 453.0730593607306 346 A 0 0 0 0 1 453.0730593607306 346 L 414.4794520547944 346 A 0 0 0 0 1 414.4794520547944 346 L 414.4794520547944 204.9 A 2 2 0 0 1 416.4794520547944 202.9 Z" fill="#1b9e77" clip-path="url(#rablfilter0)"></path><path d="M 490.66666666666663 102.46666666666667 A 2 2 0 0 1 492.66666666666663 104.46666666666667 L 492.66666666666663 346 A 0 0 0 0 1 492.66666666666663 346 L 454.0730593607306 346 A 0 0 0 0 1 454.0730593607306 346 L 454.0730593607306 104.46666666666667 A 2 2 0 0 1 456.0730593607306 102.46666666666667 Z" fill="#d95f02" clip-path="url(#rablfilter0)"></path><path d="M 530.2602739726028 281.5 A 2 2 0 0 1 532.2602739726028 283.5 L 532.2602739726028 346 A 0 0 0 0 1 532.2602739726028 346 L 493.66666666666663 346 A 0 0 0 0 1 493.66666666666663 346 L 493.66666666666663 283.5 A 2 2 0 0 1 495.66666666666663 281.5 Z" fill="#7570b3" clip-path="url(#rablfilter0)"></path><path d="M 633.8127853881277 122.11666666666667 A 2 2 0 0 1 635.8127853881277 124.11666666666667 L 635.8127853881277 346 A 0 0 0 0 1 635.8127853881277 346 L 597.2191780821918 346 A 0 0 0 0 1 597.2191780821918 346 L 597.2191780821918 124.11666666666667 A 2 2 0 0 1 599.2191780821918 122.11666666666667 Z" fill="#1b9e77" clip-path="url(#rablfilter0)"></path><path d="M 673.4063926940639 229.10000000000002 A 2 2 0 0 1 675.4063926940639 231.10000000000002 L 675.4063926940639 346 A 0 0 0 0 1 675.4063926940639 346 L 636.8127853881277 346 A 0 0 0 0 1 636.8127853881277 346 L 636.8127853881277 231.10000000000002 A 2 2 0 0 1 638.8127853881277 229.10000000000002 Z" fill="#d95f02" clip-path="url(#rablfilter0)"></path><path d="M 713 270.58333333333337 A 2 2 0 0 1 715 272.58333333333337 L 715 346 A 0 0 0 0 1 715 346 L 676.4063926940639 346 A 0 0 0 0 1 676.4063926940639 346 L 676.4063926940639 272.58333333333337 A 2 2 0 0 1 678.4063926940639 270.58333333333337 Z" fill="#7570b3" clip-path="url(#rablfilter0)"></path></g><g></g><g><text x="107.89041095890411" y="363.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">2014</text><text x="290.63013698630135" y="363.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">2015</text><text x="473.36986301369865" y="363.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">2016</text><text x="656.1095890410959" y="363.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">2017</text><text x="382" y="396.09375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-11.874711990356445px">Year</text><text x="30.5" y="350.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">0</text><text x="30.5" y="306.72135416666674" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.19612693786621px">200</text><text x="30.5" y="263.05989583333326" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.19612693786621px">400</text><text x="30.5" y="219.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.19612693786621px">600</text><text x="30.5" y="175.72135416666663" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-20.19612693786621px">800</text><text x="30.5" y="132.05989583333331" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-29.281448364257812px">1,000</text><text x="30.5" y="88.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-29.281448364257812px">1,200</text></g><g></g><g></g><g></g></svg></div></div></div>
+    <br>
+    <div id="btn-group">
+      <button class="button button-blue" id="none">No Format</button>
+      <button class="button button-blue" id="scientific">Scientific Notation</button>
+      <button class="button button-blue" id="decimal">Decimal</button>
+      <button class="button button-blue" id="short">Short</button>
+    </div>
+    <!-- [END html_body] -->
+  
+
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>

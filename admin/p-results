@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <meta name="author" content="Ruzi developers">
+   <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="official ruzi international schools administrative system">   
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link href="assets/css/adminStyle.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontawesome-free-5.12.0/css/all.css">
+    <style type="text/css">
+    	
+    .shadow {
+      box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    body{
+        font-family: 'Spartan';
+        font-weight: normal;
+        font-size: small;
+    }
+
+    .mobile-info h6{
+      font-size: 13px; 
+      font-weight: bold;
+    }
+
+    	/** circular-progress styles
+ **------------------------------------------*/
+.circular-progress {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #E0E0E0), color-stop(50%, transparent), to(transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(50%, #03A9F4), color-stop(50%, #E0E0E0), to(#E0E0E0));
+  background: linear-gradient(90deg, #E0E0E0 50%, transparent 50%, transparent), linear-gradient(180deg, #03A9F4 30%, #E0E0E0 50%, #E0E0E0);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  height: 100px;
+  position: relative;
+  width: 100px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+.circular-progress::before {
+  background-color: #FAFAFA;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.54);
+  content: "25%";
+  font-size: 25px;
+  font-weight: bold;
+  height: 100%;
+  left: 0;
+  line-height: 100px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  -webkit-transform: scale(0.87);
+          transform: scale(0.87);
+  width: 100%;
+}
+
+/*search input rules */
+.custom-input{
+  border-width: 0px !important;
+  height: 20px !important;
+  font-size: 12px !important;
+}
+
+
+
+.custom-input-group{
+  border-radius: 40px;
+  border: 0.5px solid gray; 
+  padding: 1.5px;
+  box-sizing: border-box;
+}
+
+.custom-input-group-append{
+  padding: 4px;
+}
+/* search inputs rules ends here */
+
+
+/*quick navigation bar */
+.quick-nav div:hover i::before{
+    color: red;
+}
+
+.quick-nav div i{
+  opacity: 0.2;
+  color: green;
+}
+
+.quick-nav div{
+  margin: 0.3em;
+  position: relative;
+}
+
+.quick-nav i{
+  font-size: 20px;
+}
+
+
+/*scroll bar style */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 3px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+.mobile-student-record span{
+  font-size: 20px;
+}
+
+.mobile-student-record li{
+  line-height: 18px;
+}
+
+.mobile-student-record .list-group-item{
+  position: relative;
+}
+
+.mobile-student-record .progress{
+  position: absolute;
+  right: 1px;
+  bottom: 18px;
+  height: 4px;
+}
+/* mobile-student-record style rules end here */
+
+
+/*form style sheet starts here */
+legend.scheduler-border {
+  width:inherit; /* Or auto */
+  padding:0 10px; /* To give a bit of padding on the left and right */
+  border-bottom:none;
+}
+
+
+/*mobile record styles */
+
+        .mobile-student-record li a{
+          color: black;
+          
+        }
+
+        .mobile-student-record li:not(.active-list){
+          opacity: 0.5;
+        }
+        .mobile-student-record a.active{
+           color: rgb(0,154,255);
+           opacity: 1;
+           font-weight: bolder;
+        }
+
+        .mobile-student-record li.active-list{
+          border-bottom: none!important;
+          color: green;
+        }
+
+        .mobile-student-record .borderx{
+           border-right: 1px solid rgba(0, 0, 0, 0.16);
+           border-left: none;
+           position: relative;
+           border-top: 1px solid rgba(0, 0, 0, 0.16);
+           border-bottom:  1px solid rgba(0, 0, 0, 0.16);
+        }
+
+        .mobile-student-record .borderx span.editbutton{
+          position: absolute;
+          top: -7px;
+          background-color: #fff;
+          width: 90%;
+          text-align: right;
+          font-size: 12px;
+          padding-right: 4px; 
+        }
+
+        .mobile-student-record .borderx span.submitbutton{
+          position: absolute;
+          bottom: -12px;
+          width: 90%;
+          text-align: right;
+          font-size: 12px;
+          padding-right: 4px; 
+          background-color: #fff;
+        }
+
+
+          .mobile-student-record .borderx span.submitbutton button{
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.16);
+            font-size: 12px;
+          }
+
+          .mobile-student-record .styled-heading{
+            position: relative; 
+            width: 70%; 
+            margin: auto; 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+          }
+          .mobile-student-record .styled-heading h6{
+            position: absolute; 
+            top: -8px; 
+            left: 23%; 
+            width: 40%; 
+            background-color: #fff; 
+            text-align: center;  
+          }
+
+.mobile-result-mgt-div .result-mgt-header{
+  position: relative; 
+  border-top: 1px solid rgba(0,0,0,0.16);
+}
+
+.mobile-result-mgt-div .result-mgt-header>div:first-child{
+   position: absolute;
+   top: -20px; 
+   left: 20%;  
+   width: 60%; 
+   background-color: #fff; 
+   font-size: 20px;
+}
+
+.desktop-subject{
+   font-size: 14px;
+   font-weight: bold;
+}
+
+/* media query for iphone 5 */
+@media (max-width: 400px) {
+.mobile-result-mgt-div .result-mgt-header>div:first-child{ 
+   left: 15%;  
+   width: 70%; 
+   font-size: 17px;
+}
+
+}
+
+@media (max-width: 330px){ 
+  .mobile-info h6{
+    font-size: 11px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px)
+/ No media query for `xs` since this is the default in Bootstrap */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+.custom-input-group{
+  width: 100%;
+  margin: auto;
+}
+
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+ 
+ .quick-nav i{
+  font-size: 20px;
+}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .circular-progress {
+      width: 200px;
+      height: 200px;
+    }
+    .circular-progress::before {
+      line-height: 200px;
+    }
+
+    .quick-nav i{
+      font-size: 30px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .quick-nav i{
+      font-size: 40px;
+    }
+}
+
+/* Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width */
+
+</style>
+
+</head>
+<body id="myPage" data-spy="scroll" data-offset="60" class="">
+	
+
+<!--navigation-->
+<nav class="navbar navbar-expand-sm navbar-light loadtime">
+  <div class="container-fluid">
+  <div class="nav-item">
+      <a class="navbar-brand default-text-color" style="font-size: 30px;" href="#">RUZI</a>
+  </div> 
+    <ul class="nav">
+      <li class="nav-item">
+          <a class="d-inline-block ml-3" style="width: 30px;"><object data="../assets/svg/home.svg" type="image/svg+xml" style="width: 100%;"></object></a>
+      </li>
+      <li class="nav-item"><a class="d-inline-block ml-3" style="width: 30px;"><object data="../assets/svg/folder.svg" type="image/svg+xml" style="width: 100%;"></object></a>
+      </li>
+      <li class="nav-item">
+         <a class="d-inline-block ml-3" href="#collapsibleNavbar" data-toggle="collapse"  style="width: 30px;">
+            <object data="../assets/svg/open-menu.svg" type="image/svg+xml" style="width: 100%;"></object>
+        </a>
+      </li>
+      <li>
+        <a class="d-inline-block ml-3" href="#mobileSearchCollapse"  data-toggle="collapse"  style="width: 30px;"><object data="../assets/svg/search.svg" type="image/svg+xml" style="width: 100%;"></object>
+        </a>
+      </li>
+      </ul>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid mobile-result-mgt-div d-md-none">
+   <div class="result-mgt-header">
+    <div class="p-2 text-center">Result Management</div>
+    <div style="border: 1px solid rgba(0,0,0,0.16);" class="m-1 w-100">
+       <div class="mt-4 p-2 text-center"><select><option>First</option><option>Secound</option> <option>Third</option></select> term of <select><option>2020/2021</option> <option>2019/2020</option> <option>2018/2019</option></select></div>
+       <div></div>
+     </div> 
+   </div>
+
+   <div class="container-fluid pt-4">
+    <h6 style="font-weight: bold;">Academic Records</h6>
+     <table class="w-100">
+                <tbody>
+                  <tr>
+                    <td>Pre- Nursery</td>
+                    <td><a href="">view</a></td>
+                    <td><div class="pre-n-chart">FusionCharts will render here</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nursery One</td>
+                    <td>view</td>
+                    <td><div class="n-1-chart">FusionCharts will render here</div></td>
+                  </tr>
+                  <tr>
+                   <td>Nursery Two</td>
+                    <td>view</td>
+                    <td><div class="n-2-chart">FusionCharts will render here</div></td>
+                  </tr>
+                   <tr>
+                    <td>Pre- Nursery</td>
+                    <td><a href="">view</a></td>
+                    <td><div class="n-3-chart">FusionCharts will render here</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Pre- Nursery</td>
+                    <td><a href="">view</a></td>
+                    <td><div class="p-1-chart">FusionCharts will render here</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+   </div>
+</div>
+
+
+<div class="container-fluid">
+  <!-- quick navigation section -->
+  <div class="row d-none d-md-flex">
+    <div class="col-md-3">
+      <div class="quick-nav d-none">
+        <div class="d-inline-block"><i class="fas fa-home"></i></div>
+        <div class="d-inline-block"><i class="fas fa-file-medical-alt"></i></div>
+        <div class="d-inline-block"><i class="fa fa-envelope"></i></div>
+        <div class="d-inline-block"><i class="fas fa-images"></i></div>
+        <div class="d-inline-block"><i class="fab fa-buysellads"></i></div>
+        <div class="d-inline-block"><i class="fas fa-file-medical-alt"></i></div>
+      </div>
+    </div>
+    <div class="col-md-9 w-100" style=" position: relative;">
+      <div style="width: 90%; position: absolute; bottom: 0px; right: 0px; border-bottom: 1px solid rgba(0,0,0,0.16);"></div>
+      <div   style="padding: 1rem; position: absolute; left: 4rem; bottom: -1rem; z-index: 100; background-color: #fff; font-size: 26px; font-weight: bold;">Result Management</div>
+    </div>
+  </div>
+
+
+  <div class="row" style="position: relative;">
+    <div class="col-md-3">
+      <div class="container shadow  pt-2 pb-2 sidebar d-none d-md-block" style="position: absolute;">
+        <p>
+          <div class="result-custom-search-container" style="width: 96%;">
+                      <div class="input-group custom-input-group input-group-sm">
+                        <div class="input-group-prepend custom-input-group-prepend">
+                          <div style="width: 14px;"></div>
+                        </div>
+                      <input type="text" class="form-control custom-input" placeholder=" Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append custom-input-group-append mr-1">
+                      <object data="../assets/svg/search.svg" type="image/svg+xml" style="height: 14px;"></object>
+                    </div>
+                    </div>
+            </div>
+            <div style="height: 70px;" class="text-center"> no record found</div>
+        </p>
+     
+        <p>
+          <h6>Settings</h6>
+          <div class="row">
+            <div class="col">
+              <div>Year</div>
+              <select><option>all</option>
+               <option>2018/2019</option>
+               <option>2020/2021</option>
+              </select>
+            </div>
+            <div class="col">
+              <div>Term</div>
+              <select>
+                <option>Ist</option>
+                <option>2nd</option>
+                <option>3rd</option>
+              </select>
+            </div>
+            <div class="col">
+              <div>Class</div>
+              <select>
+                <option>all</option>
+                <option>Pre-n</option>
+                <option>n-1</option>
+                <option>n-2</option>
+              </select>
+            </div>
+            
+          </div>
+        </p>
+        <style type="text/css">
+          .alert{
+            font-size: 11px;
+          }
+          .message-box, .read-message-box{
+             max-height: 200px;
+            overflow-y: scroll;
+            width: 103%;
+          }
+          .scroll-message-div{
+            overflow-x: hidden;
+             width: 100%;
+          }
+        </style>
+        <p style="margin-top: 30px;">
+          <h6>Notifications</h6>
+          <div class="pt-2 pb-3">
+            <div class="scroll-message-div">
+               <div class="message-box pr-2">
+              <div class="alert alert-info" role="alert">
+                  A simple warning alert—check it out!
+              </div>
+              <div class="alert alert-info" role="alert">
+                  A simple warning alert—check it out!
+              </div>
+              <div class="alert alert-info" role="alert">
+                  A simple warning alert—check it out!
+              </div>
+              <div class="alert alert-info" role="alert">
+                  A simple warning alert—check it out!
+              </div>
+            </div>
+            </div>
+            <div class="scroll-message-div">
+            <div class="read-message-box d-none">
+              
+            </div>
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row container d-none">
+        <div class="col pt-3">
+          <h5>Records</h5>
+                <p><div class="result-custom-search-container" style="width: 96%;">
+                      <div class="input-group custom-input-group input-group-sm">
+                        <div class="input-group-prepend custom-input-group-prepend">
+                          <div style="width: 14px;"></div>
+                        </div>
+                      <input type="text" class="form-control custom-input" placeholder=" Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append custom-input-group-append mr-1">
+                      <object data="../assets/svg/search.svg" type="image/svg+xml" style="height: 14px;"></object>
+                    </div>
+                    </div>
+                  </div>
+                </p>
+        </div>
+        <div class="col">
+          
+        </div>
+
+      </div>
+
+      <!-- mobile structure -->
+    <div class="sticky-top d-none" style="background-color: white;">
+      <style type="text/css">
+        .mobile-table-tool i{
+          font-size: 20px;
+        }
+
+        @media (max-width: 330px){ 
+          .mobile-table-tool i{
+            font-size: 16px;
+          }
+        }
+        .mobile-table-tool-container{
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-table-tool{
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-table-tool-container input{
+          border: none;
+          width: 98%; 
+          margin: auto;
+          font-size: 12px;
+        }
+
+        .mobile-table-tool-container input:focus{
+           outline: none;
+        }
+
+        .mobile-table-tool-container td:nth-child(2){
+             padding: 6px !important;
+         }  
+
+        .mobile-table-tool-container td:first-child{
+          padding: 3px;
+          text-align: center;
+          width: 20px;
+         }
+
+         .mobile-table-tool-container tr:nth-child(2){
+            padding: 4px!important;
+         }
+      </style>
+
+      <!-- mobile table tool widget -->
+      <div class="container-fluid mobile-table-tool-container p-1 ">
+        <div class="mobile-table-tool p-2" style="position: relative;">
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-info"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-tags"></i></div>
+          <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 11px; position: absolute; right: 0.25rem;">save</button>
+        </div>
+        
+
+        <div class="p-1">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" name="" placeholder="search record">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="col">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="value">
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+            <table class="w-100" style=" ">
+              <thead>
+                <th style="width: 5%;">sn</th>
+                <th style="width: 65%;">names:</th>
+                <th style="width: 10%;">test 1:</th>
+                <th style="width: 10%;">test 2</th>
+                <th style="width: 10%;">exams</th>
+              </thead>
+            </table>
+        </div>
+      </div>
+    </div>
+       <!--student record for mobile view-->
+      <div class="collapse show d-none" id="recordCollapse">
+      <style type="text/css">
+        .mobile-table-container table input{
+          width: 100%;
+          height: inherit;
+          border: none;
+          height: 1.8rem;
+          text-align: center;
+        }
+        .mobile-table-container table td{
+          border: 1px solid rgba(0, 0, 0, 0.16);
+        }
+
+        .mobile-table-container table {
+           border-spacing: 0px !important;
+           width: 100%;
+        }
+        .mobile-table-container td:nth-child(2){
+             padding: 0.2rem;
+         }  
+
+         .mobile-table-container td:first-child{
+            text-align: center!important;
+         }
+
+      </style>
+
+      <!-- tabulated record -->
+      <div class="mobile-table-container">
+        <table class="" style=" " >
+              <thead class="" style="visibility: hidden; height: 0px;">
+                <th style="width: 5%;" >S/N</th>
+                <th style="width: 65%;">Names:</th>
+                <th style="width: 10%;">Test 1:</th>
+                <th style="width: 10%;">Test 2</th>
+                <th style="width: 10%;">Exams</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Adiele chika</td>
+                  <td><input type="text" name="" value="34"></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Agbo Prince</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Akpens Collins</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Amadi Chizi</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+      </div>
+
+
+      
+
+      <!--  guideline structure -->
+      <div class="collapse d-md-none" id="guidelineCollapse">
+         this are the guidelines involved
+      </div>
+ 
+
+      <!-- search result container for desktop-->
+      <div class="container">
+        
+      </div>
+
+
+
+      <style type="text/css">
+       .desktop-table-record  table{
+          width: 99%;
+          border-spacing: 0px !important;
+         }
+
+         .desktop-table-record td input{
+          border: 0px;
+          width: 100%;
+          height: 30px;
+          text-align: center;
+         }
+
+         .desktop-table-record td{
+           border: 0.2px solid rgba(0, 0, 0, 0.2);
+           padding: 0px !important;
+
+           /*font-size: 12px;*/
+         }
+         .desktop-table-record td:nth-child(2){
+             padding: 0.5rem !important;
+         }  
+
+         .desktop-table-record td:first-child{
+          padding: 0.5 !important;
+          text-align: center;
+         }
+
+        .desktop-table-record th{
+            text-align: center;
+         }
+        .desktop-table-record th:nth-child(1){
+            text-align: left;
+         }
+
+        .desktop-table-record th:nth-child(2){
+            text-align: left;
+         }
+         .desktop-table-record tr:nth-child(2){
+            padding: 0.5rem!important;
+         }
+      </style>
+
+
+
+      <!-- desktop table record content -->
+      <div class="desktop-table-record d-none d-md-block" style="position: relative;">
+        <div class="container-fluid mobile-table-tool-container p-1" style="position: absolute; top: 0.25rem; width: 99.65%; z-index: 2;">
+          <div class="mobile-table-tool p-2" style="position: relative;">
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-info"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-tags"></i></div>
+            <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">save</button>
+          </div>
+
+        <div class="p-1">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" name="" placeholder="search record">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="col">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="value">
+            </div>
+          </div>
+        </div>
+
+        <style type="text/css">
+          .desktop-detailed-result{
+            display: none;
+          }
+        </style>
+
+        <div class="" style="background-color: #fff;">
+            <table class="w-100" style="">
+              <thead class="desktop-detailed-result">
+                <th style="width: 5%;">sn</th>
+                <th style="width: 40%;">name</th>
+                <th style="width: 10%;">test 1</th>
+                <th style="width: 10%;">test 2</th>
+                <th style="width: 10%;">exam</th>
+                <th style="width: 10%;">total</th>
+                <th style="width: 10%;">grade</th>
+                <th style="width: 5%;">pos</th> 
+              </thead>
+
+              <thead class="desktop-compact-result">
+                  <th style="width: 4%;">sn</th>
+                  <th style="width: 18%;">name</th>
+                  <th style="width: 6%;">language Arts</th>
+                  <th style="width: 6%;">numeracy</th>
+                  <th style="width: 6%;">science</th>
+                  <th style="width: 6%;">health Habit</th>
+                  <th style="width: 6%;">social Habit</th>
+                  <th style="width: 6%;">c.r.s</th>
+                  <th style="width: 6%;">draing & coloring</th>
+                  <th style="width: 6%;">rhymes</th>
+                  <th style="width: 6%;">handwriting</th>
+                  <th style="width: 6%;">computer Science</th>
+                  <th style="width: 6%;">phonetics</th>
+                  <th style="width: 6%;">avg</th>
+                  <th style="width: 6%;">pos</th> 
+              </thead>
+            </table>
+        </div>
+      </div>
+
+       <div style="height: 400px; overflow-y: scroll; position: absolute; top: 98px; width: 101%; z-index: 1;">
+            <table class="desktop-detailed-result" style="width: 98%;">
+              <thead style="visibility: hidden;" class="">
+                <th style="width: 5%;">S/N</th>
+                <th style="width: 40%;">Names:</th>
+                <th style="width: 10%;">Test 1:</th>
+                <th style="width: 10%;">Test 2</th>
+                <th style="width: 10%;">Exams</th>
+                <th style="width: 10%;">total</th>
+                <th style="width: 10%;">grade</th>
+                <th style="width: 5%;">pos</th> 
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="8" class="desktop-subject" style="padding: 0.3rem!important;">Agricultural Science</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Adiele Chika 0fdjdjknfkdjnfjk fddkfl  kjnkj</td>
+                  <td><input type="text" name="" value="34"></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Agbo Prince</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Akpens Collins</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Amadi Chizi</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10</td> 
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <tr>
+                  <td>11</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+             <table class="desktop-detailed-result" style="width: 98.9%;">
+              <thead style="visibility: hidden;">
+                <th style="width: 5%;">S/N</th>
+                <th style="width: 40%;">Names:</th>
+                <th style="width: 10%;">Test 1:</th>
+                <th style="width: 10%;">Test 2</th>
+                <th style="width: 10%;">Exams</th>
+                <th style="width: 10%;">total</th>
+                <th style="width: 10%;">grade</th>
+                <th style="width: 5%;">pos</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="8" class="desktop-subject" style="padding: 0.3rem!important;">Social Studies</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Adiele Chika 0fdjdjknfkdjnfjk fddkfl  kjnkj</td>
+                  <td><input type="text" name="" value="34"></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Agbo Prince</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Akpens Collins</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Amadi Chizi</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10</td> 
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <tr>
+                  <td>11</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+             <table class="desktop-detailed-result" style="" style="width: 98.9%;">
+              <thead style="visibility: hidden;">
+                <th style="width: 5%;">S/N</th>
+                <th style="width: 40%;">Names:</th>
+                <th style="width: 10%;">Test 1:</th>
+                <th style="width: 10%;">Test 2</th>
+                <th style="width: 10%;">Exams</th>
+                <th style="width: 10%;">total</th>
+                <th style="width: 10%;">grade</th>
+                <th style="width: 5%;">pos</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Adiele Chika 0fdjdjknfkdjnfjk fddkfl  kjnkj</td>
+                  <td><input type="text" name="" value="34"></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Agbo Prince</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Akpens Collins</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Amadi Chizi</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10</td> 
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <tr>
+                  <td>11</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="desktop-detailed-result"  style="width: 98.9%;">
+              <thead style="visibility: hidden;">
+                <th style="width: 5%;">S/N</th>
+                <th style="width: 40%;">Names:</th>
+                <th style="width: 10%;">Test 1:</th>
+                <th style="width: 10%;">Test 2</th>
+                <th style="width: 10%;">Exams</th>
+                <th style="width: 10%;">total</th>
+                <th style="width: 10%;">grade</th>
+                <th style="width: 5%;">pos</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Adiele Chika 0fdjdjknfkdjnfjk fddkfl  kjnkj</td>
+                  <td><input type="text" name="" value="34"></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Agbo Prince</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Akpens Collins</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Amadi Chizi</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10</td> 
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <tr>
+                  <td>11</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+              <table class="desktop-compact-result" style="" style="width: 100%;">
+                <thead style="visibility: hidden;">
+                  <th style="width: 4%;">sn</th>
+                  <th style="width: 18%;">name</th>
+                  <th style="width: 6%;">language Arts</th>
+                  <th style="width: 6%;">numeracy</th>
+                  <th style="width: 6%;">science</th>
+                  <th style="width: 6%;">health Habit</th>
+                  <th style="width: 6%;">social Habit</th>
+                  <th style="width: 6%;">c.r.s</th>
+                  <th style="width: 6%;">drawing & coloring</th>
+                  <th style="width: 6%;">rhymes</th>
+                  <th style="width: 6%;">handwriting</th>
+                  <th style="width: 6%;">computer Science</th>
+                  <th style="width: 6%;">phonetics</th>
+                  <th style="width: 6%;">avg</th>
+                  <th style="width: 6%;">pos</th> 
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Adiele Chika 0fdjdjknf</td>
+                  <td><input type="text" name="" value="34"></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Agbo Prince</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Akpens Collins</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Amadi Chizi</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10</td> 
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <tr>
+                  <td>11</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <style type="text/css">
+    .desktop-detailed-result{
+      /*display: none;*/
+    }
+  </style>
+
+
+   
+
+
+
+
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="../js/vendor/popper.min.js"></script>
+    <script type="text/javascript" src="../js/vendor/jquery-1.10.2.min.js"></script> 
+    <!--<script type="text/javascript" src="../js/vendor/jquery-slim.min.js"></script>-->
+    <script type="text/javascript" src="../js/vendor/bootstrap.min.js"></script>
+
+
+    <!-- FusionCharts -->
+    <script type="text/javascript" src="assets/js/vendor/chart/js/fusioncharts.js"></script>
+    <!-- jQuery-FusionCharts -->
+    <script type="text/javascript" src="assets/js/vendor/chart/integrations/jquery/js/jquery-fusioncharts.js"></script>
+    <!-- Fusion Theme -->
+    <script type="text/javascript" src="assets/js/vendor/chart/js/themes/fusioncharts.theme.fusion.js"></script> 
+
+
+    <script type="text/javascript" src="assets/js/core.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+    <script type="text/javascript" src="../js/classes.js"></script>
+    <script type="text/javascript" src="../js/features.js"></script>
+    <script type="text/javascript" src="../js/deamon.js"></script>
+    <script type="text/javascript">
+      var lastOpened=false;
+      var openedCollapsed=false;
+      $('div[id^="list"]').on('show.bs.collapse', function () {
+         if(lastOpened!=false){
+            $('#'+lastOpened).collapse('hide');
+            var id=$('.mobile-student-record li.'+lastOpened).removeClass('active-list');
+            $('.mobile-student-record li.'+lastOpened+' a').removeClass('active');
+            $('.mobile-student-record li.'+lastOpened+' i').removeClass('fa-caret-right');
+            $('.mobile-student-record li.'+lastOpened+' i').addClass('fa-caret-down');
+
+         }
+
+         lastOpened = $(this).attr('id');
+         $('.mobile-student-record li.'+lastOpened).addClass('active-list');
+         $('.mobile-student-record li.'+lastOpened+' a').addClass('active');
+          $('.mobile-student-record li.'+lastOpened+' i').addClass('fa-caret-right');
+         list= lastOpened.substr(4);
+        
+      })
+    </script>
+    <script type="text/javascript">
+            //STEP 2 - Chart Data
+            const chartData = [{
+                label: "Venezuela",
+                value: "290"
+            }, {
+                label: "Saudi",
+                value: "260"
+            }, {
+                label: "Canada",
+                value: "180"
+            }, {
+                label: "Iran",
+                value: "140"
+            }, {
+                label: "Russia",
+                value: "115"
+            }, {
+                label: "UAE",
+                value: "100"
+            }, {
+                label: "US",
+                value: "30"
+            }, {
+                label: "China",
+                value: "30"
+            }];
+
+
+             const chartData1 = [{
+                label: "Venezuela",
+                value: "200"
+            }, {
+                label: "Saudi",
+                value: "320"
+            }, {
+                label: "Canada",
+                value: "190"
+            }, {
+                label: "Iran",
+                value: "140"
+            }, {
+                label: "Russia",
+                value: "300"
+            }, {
+                label: "UAE",
+                value: "310"
+            }, {
+                label: "US",
+                value: "60"
+            }, {
+                label: "China",
+                value: "100"
+            }];
+
+          //STEP 3 - Chart Configurations
+            const chartConfigs = {
+                type: "column2d",
+                width: "100",
+                height: "70",
+                dataFormat: "json",
+                dataSource: {
+                    // Chart Configuration
+                    "chart": {
+                        "theme": "fusion",
+                    },
+                    // Chart Data
+                    "data": chartData
+                }
+            }
+
+          const chartConfig1 = {
+                type: "column2d",
+                width: "100",
+                height: "70",
+                dataFormat: "json",
+                dataSource: {
+                    // Chart Configuration
+                    "chart": {
+                        "theme": "fusion",
+                    },
+                    // Chart Data
+                    "data": chartData1
+                }
+            }
+            // Create a chart container
+            $('document').ready(function () {
+                $(".pre-n-chart").insertFusionCharts(chartConfigs);
+                $(".n-1-chart").insertFusionCharts(chartConfig1);
+                $(".n-2-chart").insertFusionCharts(chartConfig1);
+                $(".n-3-chart").insertFusionCharts(chartConfig1);
+                $(".p-1-chart").insertFusionCharts(chartConfigs)
+            });
+        </script>
+        
+</body>
+</html>

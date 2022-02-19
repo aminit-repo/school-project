@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0161)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/barchart_8ab9a1aa7801a772692cae52cb3d8c0ac8e420ddc3a80d5e381af8641bd36bcc.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><script src="./devsite_app.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><link rel="stylesheet" href="./css(1)"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_bar_module.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+  
+  
+    <script type="text/javascript" src="./loader.js(1).download"></script>
+    <script type="text/javascript">
+      // [START script_body]
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Opening Move', 'Percentage'],
+          ["King's pawn (e4)", 44],
+          ["Queen's pawn (d4)", 31],
+          ["Knight to King 3 (Nf3)", 12],
+          ["Queen's bishop pawn (c4)", 10],
+          ['Other', 3]
+        ]);
+
+        var options = {
+          title: 'Chess opening moves',
+          width: 900,
+          legend: { position: 'none' },
+          chart: { title: 'Chess opening moves',
+                   subtitle: 'popularity by percentage' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Percentage'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+// [END script_body]
+    </script>
+  
+  
+    <!-- [START html_body] -->
+    <div id="top_x_div" style="width: 900px; height: 500px;"><div style="position: relative; width: 900px; height: 500px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="900" height="500"><defs><clippath id="rablfilter0"><rect x="176.5" y="130.5" width="717" height="369"></rect></clippath></defs><g><rect x="0" y="0" width="900" height="500" fill="white" stroke="black" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Chess opening moves</text><text x="0" y="37.359375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 14px;" fill="#BDBDBD" dx="0px">popularity by percentage</text><rect x="176.5" y="130.5" width="717" height="369" fill="none"></rect></g><g><line x1="176.5" x2="176.5" y1="130.5" y2="499.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="319.9" x2="319.9" y1="130.5" y2="499.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="463.3" x2="463.3" y1="130.5" y2="499.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="606.7" x2="606.7" y1="130.5" y2="499.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="750.1" x2="750.1" y1="130.5" y2="499.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="893.5" x2="893.5" y1="130.5" y2="499.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 804.96 131 A 2 2 0 0 1 806.96 133 L 806.96 177.9032258064516 A 2 2 0 0 1 804.96 179.9032258064516 L 177 179.9032258064516 A 0 0 0 0 1 177 179.9032258064516 L 177 131 A 0 0 0 0 1 177 131 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 618.54 207.77419354838707 A 2 2 0 0 1 620.54 209.77419354838707 L 620.54 254.67741935483866 A 2 2 0 0 1 618.54 256.67741935483866 L 177 256.67741935483866 A 0 0 0 0 1 177 256.67741935483866 L 177 207.77419354838707 A 0 0 0 0 1 177 207.77419354838707 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 346.08 284.54838709677415 A 2 2 0 0 1 348.08 286.54838709677415 L 348.08 331.45161290322585 A 2 2 0 0 1 346.08 333.45161290322585 L 177 333.45161290322585 A 0 0 0 0 1 177 333.45161290322585 L 177 284.54838709677415 A 0 0 0 0 1 177 284.54838709677415 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 317.4 361.3225806451613 A 2 2 0 0 1 319.4 363.3225806451613 L 319.4 408.22580645161287 A 2 2 0 0 1 317.4 410.22580645161287 L 177 410.22580645161287 A 0 0 0 0 1 177 410.22580645161287 L 177 361.3225806451613 A 0 0 0 0 1 177 361.3225806451613 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 217.01999999999998 438.09677419354836 A 2 2 0 0 1 219.01999999999998 440.09677419354836 L 219.01999999999998 485 A 2 2 0 0 1 217.01999999999998 487 L 177 487 A 0 0 0 0 1 177 487 L 177 438.09677419354836 A 0 0 0 0 1 177 438.09677419354836 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path></g><g></g><g><text x="176.5" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-3.366021156311035px">0</text><text x="319.9" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">10</text><text x="463.3" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">20</text><text x="606.7" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">30</text><text x="750.1" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">40</text><text x="893.5" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">50</text><text x="536.68359375" y="88.6875" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-30.27071762084961px">Percentage</text><text x="170.5" y="159.3407258064516" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-87.72711944580078px">King's pawn (e4)</text><text x="170.5" y="236.1156754032258" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-97.93053436279297px">Queen's pawn (d4)</text><text x="170.5" y="312.890625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-114.86601257324219px">Knight to King 3 (Nf3)</text><text x="170.5" y="389.66557459677415" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-136.3967742919922px">Queen's bishop pawn (c4)</text><text x="170.5" y="466.4405241935483" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-29.170194625854492px">Other</text><text x="15.8125" y="305.65625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-38.226226806640625px" transform="rotate(-90 15.8125 309)">Opening Move</text></g><g></g><g></g><g></g></svg></div></div></div>
+    <!-- [END html_body] -->
+  
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>

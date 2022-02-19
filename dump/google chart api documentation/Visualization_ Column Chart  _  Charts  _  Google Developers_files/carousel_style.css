@@ -1,0 +1,80 @@
+/*
+ * Some extra styling to the carousel widget so chart images fit carousel
+ * dimensions as well as being links to jsFiddle.
+*/
+#container {
+  width: 100%;
+  padding: 1%;
+}
+
+#chart_div {
+  width: 85%;
+  margin: auto;
+  height: 300px;
+}
+
+#chart_area {
+  margin-bottom: 10px;
+}
+
+#chart_description {
+  margin-top: 0;
+}
+
+#previous,
+#next {
+  background-color: #fff;
+  border-bottom-color: #4285F4;
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+  border-left-color: rgb(66, 133, 244);
+  border-left-style: none;
+  border-left-width: 0px;
+  border-right-color: rgb(66, 133, 244);
+  border-right-style: none;
+  border-right-width: 0px;
+  border-top-color: rgb(66, 133, 244);
+  border-top-style: none;
+  border-top-width: 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: #a0a0a0;
+  cursor: pointer;
+  display: block;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: normal;
+  height: 58px;
+  line-height: 56px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: -29px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 50%;
+  vertical-align: middle;
+  visibility: visible;
+  width: 29px;
+  z-index: 2;
+}
+
+#previous {
+  left: 0;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 29px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 29px;
+}
+
+#next {
+  right: 0;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 29px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 29px;
+}

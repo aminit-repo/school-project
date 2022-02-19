@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!-- saved from url=(0162)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/linechart_6a1bd4df21b78a6f4307de2503777bcb7c72aaa01930ed3b15a6ebbb4ac1b404.frame -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script src="./webcomponents-lite.js.download"></script><script src="./devsite_app.js.download"></script><script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_line_module.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+    
+
+
+  <link rel="stylesheet" href="./carousel_style.css">
+  <script type="text/javascript" src="./loader.js(1).download"></script>
+
+
+  <div id="container">
+    <h4 id="chart_description">Crosshairs</h4>
+    <div id="chart_area">
+      <div id="previous">&lt;</div>
+      <div id="next">&gt;</div>
+      <div id="chart_div"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 712px; height: 300px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="712" height="300" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_46"><clippath id="_ABSTRACT_RENDERER_ID_47"><rect x="107" y="58" width="498" height="185"></rect></clippath></defs><rect x="0" y="0" width="712" height="300" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="618" y="58" width="81" height="34" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><rect x="618" y="58" width="81" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="649" y="69.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#222222">Dogs</text></g><path d="M618,64.5L644,64.5" stroke="#a52714" stroke-width="2" fill-opacity="1" fill="none"></path></g><g><rect x="618" y="79" width="81" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="649" y="90.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#222222">Cats</text></g><path d="M618,85.5L644,85.5" stroke="#097138" stroke-width="2" fill-opacity="1" fill="none"></path></g></g><g><rect x="107" y="58" width="498" height="185" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/linechart_6a1bd4df21b78a6f4307de2503777bcb7c72aaa01930ed3b15a6ebbb4ac1b404.frame#_ABSTRACT_RENDERER_ID_47)"><g><rect x="107" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="251" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="395" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="539" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="179" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="323" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="467" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="611" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="107" y="242" width="498" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="107" y="196" width="498" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="107" y="150" width="498" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="107" y="104" width="498" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="107" y="58" width="498" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="107" y="219" width="498" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="107" y="173" width="498" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="107" y="127" width="498" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="107" y="81" width="498" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="107" y="58" width="1" height="185" stroke="none" stroke-width="0" fill="#333333"></rect><rect x="107" y="242" width="498" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g><g><path d="M107.5,242.5L114.70289855072464,219.5L121.90579710144928,189.6L129.1086956521739,203.4L136.31159420289856,201.1L143.5144927536232,221.8L150.7173913043478,217.2L157.92028985507247,180.4L165.1231884057971,166.60000000000002L172.32608695652175,150.5L179.52898550724638,168.9L186.731884057971,162L193.93478260869566,173.5L201.1376811594203,150.5L208.34057971014494,145.9L215.54347826086956,134.4L222.7463768115942,141.3L229.94927536231884,132.10000000000002L237.15217391304347,122.9L244.35507246376812,118.30000000000001L251.55797101449275,145.9L258.7608695652174,116.00000000000001L265.963768115942,113.70000000000002L273.16666666666663,111.4L280.3695652173913,104.5L287.57246376811594,127.50000000000001L294.7753623188406,122.9L301.97826086956525,125.2L309.1811594202899,129.8L316.3840579710145,120.60000000000001L323.5869565217391,116.00000000000001L330.78985507246375,104.5L337.9927536231884,102.20000000000002L345.195652173913,106.80000000000001L352.3985507246377,99.9L359.6014492753623,93L366.80434782608694,99.9L374.0072463768116,109.10000000000002L381.21014492753625,116.00000000000001L388.4130434782609,102.20000000000002L395.6159420289855,95.30000000000001L402.8188405797101,93L410.0217391304348,97.60000000000002L417.22463768115944,90.70000000000002L424.42753623188406,88.4L431.6304347826087,83.80000000000001L438.8333333333333,83.80000000000001L446.036231884058,81.5L453.2391304347826,76.9L460.44202898550725,86.10000000000002L467.6449275362319,90.70000000000002L474.8478260869565,93L482.0507246376812,88.4L489.2536231884058,81.5L496.45652173913044,79.20000000000002L503.65942028985506,76.9L510.8623188405797,74.60000000000002L518.0652173913044,70L525.268115942029,81.5L532.4710144927536,86.10000000000002L539.6739130434783,95.30000000000001L546.8768115942029,104.5L554.0797101449275,93L561.2826086956522,88.4L568.4855072463768,86.10000000000002L575.6884057971015,83.80000000000001L582.891304347826,81.5L590.0942028985507,76.9L597.2971014492754,70L604.5,58.5" stroke="#a52714" stroke-width="2" fill-opacity="1" fill="none"></path><path d="M107.5,242.5L114.70289855072464,231L121.90579710144928,208L129.1086956521739,221.8L136.31159420289856,219.5L143.5144927536232,231L150.7173913043478,235.6L157.92028985507247,198.8L165.1231884057971,185L172.32608695652175,168.9L179.52898550724638,187.3L186.731884057971,180.4L193.93478260869566,191.9L201.1376811594203,168.9L208.34057971014494,164.3L215.54347826086956,152.8L222.7463768115942,159.7L229.94927536231884,150.5L237.15217391304347,141.3L244.35507246376812,136.7L251.55797101449275,164.3L258.7608695652174,134.4L265.963768115942,132.10000000000002L273.16666666666663,129.8L280.3695652173913,122.9L287.57246376811594,145.9L294.7753623188406,141.3L301.97826086956525,143.60000000000002L309.1811594202899,148.2L316.3840579710145,139L323.5869565217391,134.4L330.78985507246375,122.9L337.9927536231884,120.60000000000001L345.195652173913,125.2L352.3985507246377,118.30000000000001L359.6014492753623,111.4L366.80434782608694,118.30000000000001L374.0072463768116,127.50000000000001L381.21014492753625,134.4L388.4130434782609,120.60000000000001L395.6159420289855,113.70000000000002L402.8188405797101,111.4L410.0217391304348,116.00000000000001L417.22463768115944,109.10000000000002L424.42753623188406,106.80000000000001L431.6304347826087,102.20000000000002L438.8333333333333,102.20000000000002L446.036231884058,99.9L453.2391304347826,95.30000000000001L460.44202898550725,104.5L467.6449275362319,109.10000000000002L474.8478260869565,111.4L482.0507246376812,106.80000000000001L489.2536231884058,99.9L496.45652173913044,97.60000000000002L503.65942028985506,95.30000000000001L510.8623188405797,93L518.0652173913044,88.4L525.268115942029,99.9L532.4710144927536,104.5L539.6739130434783,113.70000000000002L546.8768115942029,122.9L554.0797101449275,111.4L561.2826086956522,106.80000000000001L568.4855072463768,104.5L575.6884057971015,102.20000000000002L582.891304347826,99.9L590.0942028985507,95.30000000000001L597.2971014492754,88.4L604.5,76.9" stroke="#097138" stroke-width="2" fill-opacity="1" fill="none"></path></g></g><g><g><path d="M381.21014492753625,58L381.21014492753625,243M107,116.00000000000001L605,116.00000000000001Z" stroke="#000000" stroke-width="1" fill-opacity="1" fill="none"></path><circle cx="381.21014492753625" cy="116.00000000000001" r="6.5" stroke="#a52714" stroke-width="1" fill="#ffffff"></circle><circle cx="381.21014492753625" cy="116.00000000000001" r="4" stroke="none" stroke-width="0" fill="#a52714"></circle></g></g><g><g><text text-anchor="middle" x="107.5" y="262.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="middle" x="251.558" y="262.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">20</text></g><g><text text-anchor="middle" x="395.6159" y="262.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">40</text></g><g><text text-anchor="middle" x="539.6739" y="262.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">60</text></g><g><text text-anchor="end" x="94" y="247.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="end" x="94" y="201.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">20</text></g><g><text text-anchor="end" x="94" y="155.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">40</text></g><g><text text-anchor="end" x="94" y="109.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">60</text></g><g><text text-anchor="end" x="94" y="63.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">80</text></g></g></g><g><g><text text-anchor="middle" x="356" y="286.55" font-family="Arial" font-size="13" font-style="italic" stroke="none" stroke-width="0" fill="#222222">Time</text><rect x="107" y="275.5" width="498" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><text text-anchor="middle" x="44.55" y="150.5" font-family="Arial" font-size="13" font-style="italic" transform="rotate(-90 44.55 150.5)" stroke="none" stroke-width="0" fill="#222222">Popularity</text><path d="M33.49999999999999,243L33.50000000000001,58L46.50000000000001,58L46.49999999999999,243Z" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></path></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>X</th><th>Dogs</th><th>Cats</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>10</td><td>5</td></tr><tr><td>2</td><td>23</td><td>15</td></tr><tr><td>3</td><td>17</td><td>9</td></tr><tr><td>4</td><td>18</td><td>10</td></tr><tr><td>5</td><td>9</td><td>5</td></tr><tr><td>6</td><td>11</td><td>3</td></tr><tr><td>7</td><td>27</td><td>19</td></tr><tr><td>8</td><td>33</td><td>25</td></tr><tr><td>9</td><td>40</td><td>32</td></tr><tr><td>10</td><td>32</td><td>24</td></tr><tr><td>11</td><td>35</td><td>27</td></tr><tr><td>12</td><td>30</td><td>22</td></tr><tr><td>13</td><td>40</td><td>32</td></tr><tr><td>14</td><td>42</td><td>34</td></tr><tr><td>15</td><td>47</td><td>39</td></tr><tr><td>16</td><td>44</td><td>36</td></tr><tr><td>17</td><td>48</td><td>40</td></tr><tr><td>18</td><td>52</td><td>44</td></tr><tr><td>19</td><td>54</td><td>46</td></tr><tr><td>20</td><td>42</td><td>34</td></tr><tr><td>21</td><td>55</td><td>47</td></tr><tr><td>22</td><td>56</td><td>48</td></tr><tr><td>23</td><td>57</td><td>49</td></tr><tr><td>24</td><td>60</td><td>52</td></tr><tr><td>25</td><td>50</td><td>42</td></tr><tr><td>26</td><td>52</td><td>44</td></tr><tr><td>27</td><td>51</td><td>43</td></tr><tr><td>28</td><td>49</td><td>41</td></tr><tr><td>29</td><td>53</td><td>45</td></tr><tr><td>30</td><td>55</td><td>47</td></tr><tr><td>31</td><td>60</td><td>52</td></tr><tr><td>32</td><td>61</td><td>53</td></tr><tr><td>33</td><td>59</td><td>51</td></tr><tr><td>34</td><td>62</td><td>54</td></tr><tr><td>35</td><td>65</td><td>57</td></tr><tr><td>36</td><td>62</td><td>54</td></tr><tr><td>37</td><td>58</td><td>50</td></tr><tr><td>38</td><td>55</td><td>47</td></tr><tr><td>39</td><td>61</td><td>53</td></tr><tr><td>40</td><td>64</td><td>56</td></tr><tr><td>41</td><td>65</td><td>57</td></tr><tr><td>42</td><td>63</td><td>55</td></tr><tr><td>43</td><td>66</td><td>58</td></tr><tr><td>44</td><td>67</td><td>59</td></tr><tr><td>45</td><td>69</td><td>61</td></tr><tr><td>46</td><td>69</td><td>61</td></tr><tr><td>47</td><td>70</td><td>62</td></tr><tr><td>48</td><td>72</td><td>64</td></tr><tr><td>49</td><td>68</td><td>60</td></tr><tr><td>50</td><td>66</td><td>58</td></tr><tr><td>51</td><td>65</td><td>57</td></tr><tr><td>52</td><td>67</td><td>59</td></tr><tr><td>53</td><td>70</td><td>62</td></tr><tr><td>54</td><td>71</td><td>63</td></tr><tr><td>55</td><td>72</td><td>64</td></tr><tr><td>56</td><td>73</td><td>65</td></tr><tr><td>57</td><td>75</td><td>67</td></tr><tr><td>58</td><td>70</td><td>62</td></tr><tr><td>59</td><td>68</td><td>60</td></tr><tr><td>60</td><td>64</td><td>56</td></tr><tr><td>61</td><td>60</td><td>52</td></tr><tr><td>62</td><td>65</td><td>57</td></tr><tr><td>63</td><td>67</td><td>59</td></tr><tr><td>64</td><td>68</td><td>60</td></tr><tr><td>65</td><td>69</td><td>61</td></tr><tr><td>66</td><td>70</td><td>62</td></tr><tr><td>67</td><td>72</td><td>64</td></tr><tr><td>68</td><td>75</td><td>67</td></tr><tr><td>69</td><td>80</td><td>72</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 310px; left: 722px; white-space: nowrap; font-family: Arial; font-size: 13px;">Cats</div><div></div></div></div>
+    </div>
+    <form method="post" action="https://jsfiddle.net/api/post/library/pure/" target="_blank">
+      <input type="submit" value="Code it yourself on JSFiddle" class="button button-blue">
+      <input type="hidden" name="title" value="An Example of a Google Bar Chart">
+      <textarea name="html" style="display:none;">  &lt;script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"&gt;&lt;/script&gt;
+  &lt;div id="chart_div"&gt;&lt;/div&gt;
+      </textarea>
+      <textarea name="js" style="display:none;"></textarea>
+      <input type="hidden" name="css" value="">
+      <input type="hidden" name="description" value="">
+      <input type="hidden" name="dtd" value="html 5">
+      <input type="hidden" name="wrap" value="b">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(init);
+
+    var next,
+        previous,
+        current,
+        timer,
+        description = document.querySelector('#chart_description');
+
+    var chartDiv = document.querySelector('#chart_div');
+    chartDiv.addEventListener('mouseenter', stopTimer);
+    chartDiv.addEventListener('mouseleave', startTimer);
+
+    var prevButton = document.querySelector('#previous');
+    prevButton.addEventListener('click', function (e) {
+          stopTimer();
+          getPrevious();
+          startTimer();
+    });
+
+    var nextButton = document.querySelector('#next');
+    nextButton.addEventListener('click', function (e) {
+          stopTimer();
+          getNext();
+          startTimer();
+    });
+
+    var chartFuncs = [
+      drawBasic, drawBackgroundColor, drawCurveTypes, drawLineColors, drawAxisTickColors,
+      drawCrosshairs, drawLogScales, drawTrendlines, drawLineStyles
+    ];
+
+    var descriptions = [
+      {name: 'drawBasic', text: 'Basic line chart with default styling'},
+      {name: 'drawBackgroundColor', text: 'Customizable background colors'},
+      {name: 'drawCurveTypes', text: 'Multiple line types'},
+      {name: 'drawLineColors', text: 'Customizable line colors'},
+      {name: 'drawAxisTickColors', text: 'Customizable axis and tick labels'},
+      {name: 'drawCrosshairs', text: 'Crosshairs'},
+      {name: 'drawLogScales', text: 'Log and log-log scales'},
+      {name: 'drawTrendlines', text: 'Trendlines'},
+      {name: 'drawLineStyles', text: 'Customizable line styles'}
+    ];
+
+    function init() {
+      previous = chartFuncs[chartFuncs.length - 1];
+      current = chartFuncs[0];
+      next = chartFuncs[1];
+      current();
+      setFiddle(current);
+      setDescription(current);
+      startTimer();
+    }
+
+    function setNextAsCurrent() {
+      var idx = chartFuncs.indexOf(next);
+
+      current = chartFuncs[idx];
+
+      // If next index would be out of array, restart at 0.
+      if ((idx + 1) === chartFuncs.length) {
+        next = chartFuncs[0];
+      } else {
+        next = chartFuncs[idx + 1];
+      }
+
+      // If previous index would be out of array, restart from end.
+      if (idx === 0) {
+        previous = chartFuncs[chartFuncs.length - 1];
+      } else {
+        previous = chartFuncs[idx - 1];
+      }
+    }
+
+    function setPreviousAsCurrent() {
+      var idx = chartFuncs.indexOf(previous);
+
+      current = chartFuncs[idx];
+
+      // If next index would be out of array, restart at 0.
+      if ((idx + 1) === chartFuncs.length) {
+        next = chartFuncs[0];
+      } else {
+        next = chartFuncs[idx + 1];
+      }
+
+      // if previous index would be out of array, restart from end.
+      if (idx === 0) {
+        previous = chartFuncs[chartFuncs.length - 1];
+      } else {
+        previous = chartFuncs[idx - 1];
+      }
+    }
+
+    function startTimer() {
+      timer = setInterval(getNext, 5000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    function getNext() {
+      setNextAsCurrent();
+      current();
+      setFiddle(current);
+      setDescription(current);
+    }
+
+    function getPrevious() {
+      setPreviousAsCurrent();
+      current();
+      setFiddle(current);
+      setDescription(current);
+    }
+
+
+    function setFiddle(func) {
+      var txtarea = document.getElementsByTagName('textarea');
+      var js;
+
+      for (var i = 0; i < txtarea.length; i++) {
+        if (txtarea[i].name === 'js') {
+          js = txtarea[i];
+        }
+      }
+
+      js.value = "google.charts.load('current', {packages: ['corechart', 'line']});" + '\n' +
+        "google.charts.setOnLoadCallback(" + func.name + ");" + '\n\n' +  func;
+
+    }
+
+    function setDescription(func) {
+      for (var i = 0; i < descriptions.length; i++) {
+        if (descriptions[i].name === func.name) {
+          return description.innerText = descriptions[i].text;
+        }
+      }
+    }
+
+    function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+
+      data.addRows([
+        [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+        [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+        [66, 70], [67, 72], [68, 75], [69, 80]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+    function drawBackgroundColor() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+
+      data.addRows([
+        [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+        [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+        [66, 70], [67, 72], [68, 75], [69, 80]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        backgroundColor: '#f1f8e9'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawCurveTypes() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        series: {
+          1: {curveType: 'function'}
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawLineColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        colors: ['#a52714', '#097138']
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawAxisTickColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time',
+          textStyle: {
+            color: '#01579b',
+            fontSize: 20,
+            fontName: 'Arial',
+            bold: true,
+            italic: true
+          },
+          titleTextStyle: {
+            color: '#01579b',
+            fontSize: 16,
+            fontName: 'Arial',
+            bold: false,
+            italic: true
+          }
+        },
+        vAxis: {
+          title: 'Popularity',
+          textStyle: {
+            color: '#1a237e',
+            fontSize: 24,
+            bold: true
+          },
+          titleTextStyle: {
+            color: '#1a237e',
+            fontSize: 24,
+            bold: true
+          }
+        },
+        colors: ['#a52714', '#097138']
+      };
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawCrosshairs() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        colors: ['#a52714', '#097138'],
+        crosshair: {
+          color: '#000',
+          trigger: 'selection'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+      chart.setSelection([{row: 38, column: 1}]);
+
+    }
+
+    function drawLogScales() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time',
+          logScale: true
+        },
+        vAxis: {
+          title: 'Popularity',
+          logScale: false
+        },
+        colors: ['#a52714', '#097138']
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawTrendlines() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        colors: ['#AB0D06', '#007329'],
+        trendlines: {
+          0: {type: 'exponential', color: '#333', opacity: 1},
+          1: {type: 'linear', color: '#111', opacity: .3}
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawLineStyles() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        colors: ['#a52714', '#097138'],
+        series: {
+          0: {
+            lineWidth: 10,
+            lineDashStyle: [5, 1, 5]
+          },
+          1: {
+            lineWidth: 5,
+            lineDashStyle: [7, 2, 4, 3]
+          }
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+
+
+
+
+
+  
+</body></html>

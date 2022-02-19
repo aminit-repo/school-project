@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- saved from url=(0162)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/areachart_1507eac71aca40ab804ae8c086e269d3b6f36e050af7c1ce9663b77b43ec0068.frame -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script><script src="./devsite_app.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+
+
+  
+    <script type="text/javascript" src="./loader.js(1).download"></script>
+    <script type="text/javascript">
+      // [START script_body]
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+      // [END script_body]
+    </script>
+  
+  
+    <!-- [START html_body] -->
+    <div id="chart_div" style="width: 100%; height: 500px;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 856px; height: 500px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="856" height="500" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clippath id="_ABSTRACT_RENDERER_ID_1"><rect x="158" y="96" width="541" height="309"></rect></clippath></defs><rect x="0" y="0" width="856" height="500" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="158" y="70.9" font-family="Arial" font-size="14" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">Company Performance</text><rect x="158" y="59" width="541" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><rect x="713" y="96" width="129" height="37" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><rect x="713" y="96" width="129" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="746" y="107.9" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#222222">Sales</text></g><rect x="713" y="103" width="28" height="7" stroke="none" stroke-width="0" fill-opacity="0.3" fill="#3366cc"></rect><path d="M713,103L741,103" stroke="#3366cc" stroke-width="2" fill-opacity="1" fill="none"></path></g><g><rect x="713" y="119" width="129" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="746" y="130.9" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#222222">Expenses</text></g><rect x="713" y="126" width="28" height="7" stroke="none" stroke-width="0" fill-opacity="0.3" fill="#dc3912"></rect><path d="M713,126L741,126" stroke="#dc3912" stroke-width="2" fill-opacity="1" fill="none"></path></g></g><g><rect x="158" y="96" width="541" height="309" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/areachart_1507eac71aca40ab804ae8c086e269d3b6f36e050af7c1ce9663b77b43ec0068.frame#_ABSTRACT_RENDERER_ID_1)"><g><rect x="158" y="404" width="541" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="158" y="353" width="541" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="158" y="301" width="541" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="158" y="250" width="541" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="158" y="199" width="541" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="158" y="147" width="541" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="158" y="96" width="541" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="158" y="378" width="541" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="158" y="327" width="541" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="158" y="276" width="541" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="158" y="224" width="541" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="158" y="173" width="541" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="158" y="122" width="541" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><g><path d="M158.5,404.5L158.5,404.5L158.5,147.83333333333337L338.5,104.19999999999999L518.5,235.1L698.5,140.13333333333333L698.5,404.5L698.5,404.5Z" stroke="none" stroke-width="0" fill-opacity="0.3" fill="#3366cc"></path></g><g><path d="M158.5,404.5L158.5,404.5L158.5,301.83333333333337L338.5,286.43333333333334L518.5,117.03333333333336L698.5,265.9L698.5,404.5L698.5,404.5Z" stroke="none" stroke-width="0" fill-opacity="0.3" fill="#dc3912"></path></g></g><g><rect x="158" y="404" width="541" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g><g><path d="M158.5,147.83333333333337L338.5,104.19999999999999L518.5,235.1L698.5,140.13333333333333" stroke="#3366cc" stroke-width="2" fill-opacity="1" fill="none"></path><path d="M158.5,301.83333333333337L338.5,286.43333333333334L518.5,117.03333333333336L698.5,265.9" stroke="#dc3912" stroke-width="2" fill-opacity="1" fill="none"></path></g></g><g></g><g><g><text text-anchor="middle" x="158.5" y="425.9" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#222222">2013</text></g><g><text text-anchor="middle" x="338.5" y="425.9" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#222222">2014</text></g><g><text text-anchor="middle" x="518.5" y="425.9" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#222222">2015</text></g><g><text text-anchor="middle" x="698.5" y="425.9" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#222222">2016</text></g><g><text text-anchor="end" x="144" y="409.4" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="end" x="144" y="358.06669999999997" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#444444">200</text></g><g><text text-anchor="end" x="144" y="306.7333" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#444444">400</text></g><g><text text-anchor="end" x="144" y="255.4" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#444444">600</text></g><g><text text-anchor="end" x="144" y="204.0667" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#444444">800</text></g><g><text text-anchor="end" x="144" y="152.7333" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#444444">1,000</text></g><g><text text-anchor="end" x="144" y="101.4" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#444444">1,200</text></g></g></g><g><g><text text-anchor="middle" x="428.5" y="468.9" font-family="Arial" font-size="14" font-style="italic" stroke="none" stroke-width="0" fill="#333333">Year</text><rect x="158" y="457" width="541" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Year</th><th>Sales</th><th>Expenses</th></tr></thead><tbody><tr><td>2013</td><td>1,000</td><td>400</td></tr><tr><td>2014</td><td>1,170</td><td>460</td></tr><tr><td>2015</td><td>660</td><td>1,120</td></tr><tr><td>2016</td><td>1,030</td><td>540</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 510px; left: 866px; white-space: nowrap; font-family: Arial; font-size: 14px;">Expenses</div><div></div></div></div>
+    <!-- [END html_body] -->
+  
+
+
+
+  
+</body></html>

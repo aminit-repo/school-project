@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- saved from url=(0161)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/piechart_7d45c1bd52223d7b5bdc92cc023d7a4ee4c3a894154fffc9615ae5e1b030102c.frame -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script><script src="./devsite_app.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+
+<script type="text/javascript" src="./loader.js(1).download"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages:['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Language', 'Speakers (in millions)'],
+    ['German',  5.85],
+    ['French',  1.66],
+    ['Italian', 0.316],
+    ['Romansh', 0.0791]
+  ]);
+
+  var options = {
+    legend: 'none',
+    pieSliceText: 'label',
+    title: 'Swiss Language Use\n(no rotation)',
+    height: 500
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('unrotated_pie_chart'));
+
+  chart.draw(data, options);
+}
+</script>
+
+<script type="text/javascript">
+
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Language', 'Speakers (in millions)'],
+    ['German',  5.85],
+    ['French',  1.66],
+    ['Italian', 0.316],
+    ['Romansh', 0.0791]
+  ]);
+
+  var options = {
+    legend: 'none',
+    pieSliceText: 'label',
+    title: 'Swiss Language Use\n(100 degree rotation)',
+    pieStartAngle: 100,
+    height: 500
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('rotated_pie_chart'));
+
+  chart.draw(data, options);
+}
+</script>
+
+<span id="unrotated_pie_chart" style="display: inline-block; height: 500px;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 400px; height: 500px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="400" height="500" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"></defs><rect x="0" y="0" width="400" height="500" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="77" y="59.2" font-family="Arial" font-size="12" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">Swiss Language Use</text><text text-anchor="start" x="77" y="75.2" font-family="Arial" font-size="12" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">(no rotation)</text><rect x="77" y="49" width="247" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><path d="M201,251L193.27198513545375,128.24301328945324A123,123,0,0,1,201,128L201,251A0,0,0,0,0,201,251" stroke="#ffffff" stroke-width="1" fill="#109618"></path></g><g><path d="M201,251L163.0053216943046,134.01536673371703A123,123,0,0,1,193.27198513545375,128.24301328945324L201,251A0,0,0,0,0,201,251" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path></g><g><path d="M201,251L78.24132705273317,258.7011827809745A123,123,0,0,1,163.0053216943046,134.01536673371703L201,251A0,0,0,0,0,201,251" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path><text text-anchor="start" x="106.25597882393501" y="203.36773866266898" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">French</text></g><g><path d="M201,251L201,128A123,123,0,1,1,78.24132705273317,258.7011827809745L201,251A0,0,0,1,0,201,251" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="245.6393093228561" y="317.3201252304541" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">German</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Language</th><th>Speakers (in millions)</th></tr></thead><tbody><tr><td>German</td><td>5.85</td></tr><tr><td>French</td><td>1.66</td></tr><tr><td>Italian</td><td>0.316</td></tr><tr><td>Romansh</td><td>0.079</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 510px; left: 410px; white-space: nowrap; font-family: Arial; font-size: 12px; font-weight: bold;">(no rotation)</div><div></div></div></span>
+<span id="rotated_pie_chart" style="display: inline-block; height: 500px;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 400px; height: 500px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="400" height="500" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_1"></defs><rect x="0" y="0" width="400" height="500" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="77" y="59.2" font-family="Arial" font-size="12" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">Swiss Language Use</text><text text-anchor="start" x="77" y="75.2" font-family="Arial" font-size="12" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">(100 degree rotation)</text><rect x="77" y="49" width="247" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><path d="M201,251L323.23398794717446,264.7059180841713A123,123,0,0,1,322.1313536205016,272.3587258530324L201,251A0,0,0,0,0,201,251" stroke="#ffffff" stroke-width="1" fill="#109618"></path></g><g><path d="M201,251L322.8050804727506,233.8967146130706A123,123,0,0,1,323.23398794717446,264.7059180841713L201,251A0,0,0,0,0,201,251" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path><text text-anchor="start" x="279.75842965730635" y="253.88082929236353" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">Italian</text></g><g><path d="M201,251L214.73263534003584,128.76901077624547A123,123,0,0,1,322.8050804727506,233.89671461307063L201,251A0,0,0,0,0,201,251" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path><text text-anchor="start" x="247.64476316474196" y="188.23046118335253" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">French</text></g><g><path d="M201,251L322.1313536205016,272.3587258530324A123,123,0,1,1,214.73263534003584,128.76901077624547L201,251A0,0,0,1,0,201,251" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="107.51304547428708" y="309.04303913996415" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">German</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Language</th><th>Speakers (in millions)</th></tr></thead><tbody><tr><td>German</td><td>5.85</td></tr><tr><td>French</td><td>1.66</td></tr><tr><td>Italian</td><td>0.316</td></tr><tr><td>Romansh</td><td>0.079</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 510px; left: 410px; white-space: nowrap; font-family: Arial; font-size: 12px; font-weight: bold;">(100 degree rotation)</div><div></div></div></span>
+
+<p></p>
+
+  
+</body></html>

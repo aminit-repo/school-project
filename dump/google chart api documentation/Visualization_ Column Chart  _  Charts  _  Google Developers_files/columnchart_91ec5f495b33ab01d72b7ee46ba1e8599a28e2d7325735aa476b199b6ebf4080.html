@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0164)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/columnchart_91ec5f495b33ab01d72b7ee46ba1e8599a28e2d7325735aa476b199b6ebf4080.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_bar_module.js.download"></script><link rel="stylesheet" href="./css(1)"><script src="./devsite_app.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+  
+  
+    <script type="text/javascript" src="./loader.js(1).download"></script>
+    <script type="text/javascript">
+      // [START script_body]
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Move', 'Percentage'],
+          ["King's pawn (e4)", 44],
+          ["Queen's pawn (d4)", 31],
+          ["Knight to King 3 (Nf3)", 12],
+          ["Queen's bishop pawn (c4)", 10],
+          ['Other', 3]
+        ]);
+
+        var options = {
+          width: 800,
+          legend: { position: 'none' },
+          chart: {
+            title: 'Chess opening moves',
+            subtitle: 'popularity by percentage' },
+          axes: {
+            x: {
+              0: { side: 'top', label: 'White to move'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+// [END script_body]
+    </script>
+  
+  
+    <!-- [START html_body] -->
+    <div id="top_x_div" style="width: 800px; height: 600px;"><div style="position: relative; width: 800px; height: 600px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="800" height="600"><defs><clippath id="rablfilter0"><rect x="20.5" y="130.5" width="779" height="462"></rect></clippath></defs><g><rect x="0" y="0" width="800" height="600" fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="0" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Chess opening moves</text><text x="0" y="37.359375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 14px;" fill="#BDBDBD" dx="0px">popularity by percentage</text><rect x="20.5" y="130.5" width="779" height="462" fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="0" stroke-width="1"></rect></g><g><line x1="20.5" x2="799.5" y1="592.5" y2="592.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="541.1666666666666" y2="541.1666666666666" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="489.8333333333333" y2="489.8333333333333" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="438.5" y2="438.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="387.1666666666667" y2="387.1666666666667" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="335.8333333333333" y2="335.8333333333333" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="284.5" y2="284.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="233.16666666666666" y2="233.16666666666666" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="181.83333333333331" y2="181.83333333333331" stroke="#E0E0E0" stroke-width="1"></line><line x1="20.5" x2="799.5" y1="130.5" y2="130.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 168.6734693877551 141.26666666666665 A 2 2 0 0 1 170.6734693877551 143.26666666666665 L 170.6734693877551 592 A 0 0 0 0 1 170.6734693877551 592 L 33 592 A 0 0 0 0 1 33 592 L 33 143.26666666666665 A 2 2 0 0 1 35 141.26666666666665 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 322.75510204081627 274.73333333333335 A 2 2 0 0 1 324.75510204081627 276.73333333333335 L 324.75510204081627 592 A 0 0 0 0 1 324.75510204081627 592 L 187.0816326530612 592 A 0 0 0 0 1 187.0816326530612 592 L 187.0816326530612 276.73333333333335 A 2 2 0 0 1 189.0816326530612 274.73333333333335 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 476.83673469387753 469.79999999999995 A 2 2 0 0 1 478.83673469387753 471.79999999999995 L 478.83673469387753 592 A 0 0 0 0 1 478.83673469387753 592 L 341.16326530612236 592 A 0 0 0 0 1 341.16326530612236 592 L 341.16326530612236 471.79999999999995 A 2 2 0 0 1 343.16326530612236 469.79999999999995 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 630.9183673469388 490.3333333333333 A 2 2 0 0 1 632.9183673469388 492.3333333333333 L 632.9183673469388 592 A 0 0 0 0 1 632.9183673469388 592 L 495.2448979591836 592 A 0 0 0 0 1 495.2448979591836 592 L 495.2448979591836 492.3333333333333 A 2 2 0 0 1 497.2448979591836 490.3333333333333 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 785 562.2 A 2 2 0 0 1 787 564.2 L 787 592 A 0 0 0 0 1 787 592 L 649.3265306122448 592 A 0 0 0 0 1 649.3265306122448 592 L 649.3265306122448 564.2 A 2 2 0 0 1 651.3265306122448 562.2 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path></g><g></g><g><text x="101.83673469387755" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-43.86355972290039px">King's pawn (e4)</text><text x="255.91836734693877" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-48.965267181396484px">Queen's pawn (d4)</text><text x="410" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-57.433006286621094px">Knight to King 3 (Nf3)</text><text x="564.0816326530612" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-68.1983871459961px">Queen's bishop pawn (c4)</text><text x="718.1632653061224" y="121.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-14.585097312927246px">Other</text><text x="410" y="88.6875" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-38.16474914550781px">White to move</text><text x="14.5" y="596.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">0</text><text x="14.5" y="545.0520833333333" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">5</text><text x="14.5" y="493.72135416666663" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">10</text><text x="14.5" y="442.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">15</text><text x="14.5" y="391.05989583333337" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">20</text><text x="14.5" y="339.72135416666663" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">25</text><text x="14.5" y="288.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">30</text><text x="14.5" y="237.05989583333331" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">35</text><text x="14.5" y="185.72135416666663" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">40</text><text x="14.5" y="134.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">45</text></g><g></g><g></g><g></g></svg></div></div></div>
+    <!-- [END html_body] -->
+  
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>

@@ -1,0 +1,255 @@
+      .f-home-bg-features-card-body{
+          background: rgba();
+      }
+      .f-home-bg-search{
+       /* background: url("../img/search.gif"); */
+      }
+
+      .f-home-custom-hide{
+         display: none;
+      }
+      .customfont{
+        font-size: 12px !important;
+      }
+      .f-home-transparent-bg{
+        background: rgba(255,255,255,0.1);
+      }
+
+      .f-home-error{
+          border: 3px solid rgba(255,0,0,0.3);
+      }
+      .f-home-default-text-color{
+        color: #000080;
+      }
+      .f-home-default-bg-color{
+        background-color: rgba(0,0,128,0.9);
+      }
+
+      .f-home-default-font{
+        font-size: 12px;
+      }
+
+     .img{
+        width: 48%;
+        text-align: center;
+      }
+
+    .img img{
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    .img:hover{
+        background: #e6f9ff;
+      }
+    .f-home-signin-head{
+        font-size: 25px;
+      }
+    .f-home-signin-head span:first-child{
+        font-size: 30px;
+      }
+
+    .f-home-signin-head span:nth-child(3){
+       font-size: 25px;
+      }
+    
+
+    .f-home-option-button{
+       width: 80%;
+        margin: auto;
+      }
+
+    .signineffect{
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+         border-radius: 15px;
+      }
+    .signin-button-control{
+         position: relative;
+      }
+
+   .signin-button-control div:last-child{
+        position: absolute;
+        right: 14px;
+    }
+
+   /* theme color
+      border-color:   rgba(0,0,128,1);
+      */
+
+    .signin-div{
+        position: relative;
+   }
+    #signin-loader-div{
+        position: absolute;
+        bottom:  -16px;
+    }
+
+    #f-home-f-home-loader-box-container{
+        position: relative;
+        overflow: hidden;
+    }
+    #f-home-loader-box{
+        position: absolute;
+        width: 30px;
+        border: 2px solid #000080;
+        animation: inis-sm 1s ease infinite;
+        left: 0px; 
+   }  
+
+    #f-home-profile{
+      width: 50px;
+      display: inline-block;
+      border-radius: 50%;
+      height: 50px;
+    }
+
+    .password-widget img, .activate-widget img{
+      width: 50px; 
+      display: block; 
+      margin: auto;
+    }
+
+    #step-two .container{
+      width: 80%;
+      margin: auto;
+    }
+
+     .activate-widget #step-one .yes{
+         width: 27%;
+         display: inline-block;
+         margin-left: 15%;
+         margin-right: 5%;
+         height: 32px;
+         font-size: 14px;
+      }
+
+       .signin-div .activate-widget #step-one .no{
+         width: 27%;
+         display: inline-block;
+         margin-right: 15%;
+         margin-left: 5%;
+         height: 32px;
+         font-size: 14px;
+       }
+
+       .signin-div .back-btn, .next-btn{
+          width: 40%;
+          margin-left: 4%;
+          height: 28px;
+          font-size: 12px;
+       }
+
+       .signin-div .back-btn{
+          background-color: #FFFFFF;
+          border: 1px solid lightgray;
+       }
+
+       .signin-div .extras{
+        width: 60%;
+        display: inline-block;
+        padding-left: 10%;
+       }
+       .signin-div .control-btns-cover{
+         width: 40%;
+         display: inline-block;
+         visibility: hidden;
+       }
+
+       .signin-div .direction-btns{
+        position: absolute;
+        bottom: 12px;
+        right: 6px;
+        width: 100%;
+
+        }
+
+    .signin-div .styled-input{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        font-size: 13px;
+        border-radius: 0px;
+      }
+     
+
+    body{
+        font-family: 'Spartan';
+        font-weight: lighter;
+    }
+
+    .loadtime{
+      visibility: hidden;
+    }
+
+  @media only screen and (min-width: 768px){
+      #f-home-loader-box{
+      animation: inis-lg 1s ease infinite;
+      left: 0px; 
+    }
+
+   .f-home-option-button{
+     width: 60%;
+  }
+
+  .password-widget img{
+      width: 55px; 
+    }
+
+    .signin-div{
+      width: 60%;
+      margin: auto;
+    }
+
+    #step-two .container{
+      width: 50%;
+      margin: auto;
+    }
+
+    #step-three .container{
+      width: 80%;
+    }
+
+    .f-home-default-font{
+       font-size: 14px;
+    }
+  }
+
+  @media only screen and (min-width: 992px){   
+    .img{
+      width: 200px;
+
+      }
+
+    .signin-div{
+      width: 50%;
+      margin: auto;
+    }
+
+     #f-home-loader-box{
+      width: 40px; 
+     }
+
+     #f-home-loader-box{
+       animation: inis-md 1s ease infinite;
+       border: 4px solid #000080;
+        left: 0px; 
+    }
+    .password-widget img{
+      width: 70px; 
+    }
+        
+}
+
+
+@media only screen and (min-width: 1200px){
+    #f-home-loader-box{
+          animation: inis-lg 1s ease infinite;
+          left: 0px; 
+      }
+    .password-widget img{
+      width: 80px; 
+    }
+
+  
+}

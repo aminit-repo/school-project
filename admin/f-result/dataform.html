@@ -1,0 +1,2782 @@
+<script type="text/javascript">
+  var selectedClass;
+  var page;
+  var classCount;
+  var subjectUpdateForm;
+
+  function showguideline(message){
+    $('.notification_text').html(message);
+  }
+
+  function updateRecord(myObj){
+            myObj.student= $('.Options-names-list').val();
+            submitFormJson({
+                form: {form: null},
+                url: "editable_servScript.php",
+                type: "POST",
+                data: myObj,
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==="1"){
+                    showguideline("successfully updated "+data.formId);
+                    
+                      
+                  }else{
+                    showguideline("error updating record "+data.formId);
+                  }
+                }
+              })
+  }
+</script>
+
+<script>
+    var myVar;    
+    function clearNotification(){
+        $('.notification_text').html('');
+    }
+    function stopFunction(){
+        clearInterval(myVar); // stop the timer
+    }
+
+       
+  
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <meta name="author" content="Ruzi developers">
+   <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="official ruzi international schools administrative system">   
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link href="../assets/css/adminStyle.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="password.png">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-5.12.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="f-result.css">
+    <style type="text/css">
+      .pagelinks a{
+        color: rgba(128,128,128,0.4);
+      }
+
+      .pagelinks a.filled{
+        color: rgb(128,128,128);
+      }
+      .pre_elementary_folder li{
+        cursor: pointer;
+      }
+
+
+
+      .active-file i{
+       color: gray !important;
+      }
+
+      .active-file a{
+        color: gray;
+      }
+      .active-file-on{
+        color:  #0000FF !important;
+      }
+
+      .isDisabled{
+        color: currentColor;
+        cursor: not-allowed;
+        opacity: 0.5;
+        text-decoration: none;
+      }
+
+      #pre_elementary_icon, #elementary_icon{
+        cursor: pointer;
+      }
+      #save_scores_btn, #edit_score_btn, #subject-edit-btn, #add_sub, #subject-save-btn{
+        cursor: pointer;
+      }
+
+      #save_scores_btn:hover, #edit_score_btn:hover, #subject-edit-btn:hover, #add_sub:hover, #subject-save-btn:hover{
+        color: #90EE90;
+      }
+
+                  
+    .no_record_found td{
+        border: none;
+    }
+
+    input.listen-edit:hover{
+      outline: 2px solid #90EE90;
+      cursor: pointer;
+    }
+
+    tr.listen-edit:hover{
+      outline: 2px solid #90EE90;
+      cursor: pointer;
+    }
+
+    .wrong{
+      color: red;
+    }
+
+    .success{
+      color: #556B2F;
+    }
+
+    .notification_text{
+      font-size: 16px;
+    }
+            
+    </style>
+</head>
+
+
+<body id="myPage" data-spy="scroll" data-offset="60" class="">
+<!--navigation-->
+<nav class="navbar navbar-expand-sm navbar-light loadtime f-result-nav f-result-display">
+  <div class="container-fluid">
+  <div class="nav-item">
+      <a class="navbar-brand default-text-color" style="font-size: 30px;" href="#">MC-GENIA</a>
+  </div> 
+    <ul class="nav pagelinks">
+      <li class="nav-item ">
+        <div  class="d-inline-block ml-3" style="width: 30px;">
+          <a href=""  id="f-result-desktop-list-link-4class"> <i class="fas fa-file" style="font-size: 2.2em;"></i> </a>
+        </div>
+      </li>
+      <li class="nav-item" >
+         <div  class="d-inline-block ml-3" style="width: 30px;">
+          <a href="" class="" id="f-result-desktop-list-link-4student"> <i class="fas fa-file" style="font-size: 2.2em;"></i> </a>
+        </div>
+      </li>
+
+      <li> 
+         <div  class="d-inline-block ml-3" style="width: 30px;">
+          <a href="" id="f-result-desktop-list-link-4subject"> <i class="fas fa-file" style="font-size: 2.2em;"></i> </a>
+        </div>
+      </li>
+
+      <li> 
+         <div  class="d-inline-block ml-3" style="width: 30px;">
+          <a href="" id="f-result-desktop-list-link-4scores"> <i class="fas fa-file" style="font-size: 2.2em;"></i> </a>
+        </div>
+      </li>
+
+      <li> 
+         <div  class="d-inline-block ml-3" style="width: 30px;">
+          <a href="" id="f-result-desktop-list-link-4psyco"> <i class="fas fa-file" style="font-size: 2.2em;"></i> </a>
+        </div>
+      </li>
+
+
+      <li> 
+         <div  class="d-inline-block ml-3" style="width: 30px;">
+          <a href="" id="f-result-desktop-list-link-4print"> <i class="fas fa-file" style="font-size: 2.2em;"></i> </a>
+        </div>
+      </li>
+     
+      </ul>
+  </div>
+</nav>
+
+<div class="collapse" id="f-result-subjectlist">
+ <div class="container-fluid">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Agricultural Science</li>
+      <li class="list-group-item">Mathematics</li>
+      <li class="list-group-item">Basic Education</li>
+      <li class="list-group-item">Social Studies</li>
+      <li class="list-group-item">Economics</li>
+    </ul>
+ </div>
+</div>
+
+  <!-- for mobile structure -->
+  <div class="container-fluid d-md-none bg-light p-3 f-result-mobile-info f-result-display">
+        <p>
+           <h4><i class="fab fa-buysellads"></i> Cognitive</h4>
+        </p>
+        <div class="row mb-4" style="font-size: 11px !important;">
+         <div class="col-4 col-sm-3">
+          <div class="f-result-circular-progress"></div>
+         </div>
+         <div class="col-8 col-sm-9 pt-3">
+           <h6>Agricultural Science | SS2A</h6>
+           <div>40 student | 0 recorded</div>
+           <div>Status - UNAPPROVED</div>
+           <div><small>last updated- 20 may,2020</small></div>  
+         </div>         
+        </div>
+        <div style="position: relative;" class="" ><a href="reportScript" style="position: absolute; right: 0px; bottom: 0px;">details</a></div>
+  </div>
+    
+
+<div class="container-fluid">
+  <!-- quick navigation section -->
+  <div class="row d-none">
+    <div class="col-md-3">
+      <div class="f-result-quick-nav">
+        <div class="d-inline-block"><i class="fas fa-home"></i></div>
+        <div class="d-inline-block"><i class="fas fa-file-medical-alt"></i></div>
+        <div class="d-inline-block"><i class="fa fa-envelope"></i></div>
+        <div class="d-inline-block"><i class="fas fa-images"></i></div>
+        <div class="d-inline-block"><i class="fab fa-buysellads"></i></div>
+        <div class="d-inline-block"><i class="fas fa-file-medical-alt"></i></div>
+      </div>
+    </div>
+    <div class="col-md-9" style="">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Agric Sc.</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Social </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Economics </a>
+        </li>
+      </ul>  
+    </div>
+  </div>
+
+  <!-- quick navigation section -->
+  <div class="row d-none d-md-flex">
+    <div class="col-md-3">
+      <div class="quick-nav d-none">
+        <div class="d-inline-block"><i class="fas fa-home"></i></div>
+        <div class="d-inline-block"><i class="fas fa-file-medical-alt"></i></div>
+        <div class="d-inline-block"><i class="fa fa-envelope"></i></div>
+        <div class="d-inline-block"><i class="fas fa-images"></i></div>
+        <div class="d-inline-block"><i class="fab fa-buysellads"></i></div>
+        <div class="d-inline-block"><i class="fas fa-file-medical-alt"></i></div>
+      </div>
+    </div>
+    <div class="col-md-9 w-100" style=" position: relative;">
+      <div style="width: 90%; position: absolute; bottom: 0.25rem; right: 0px; border-bottom: 1px solid rgba(0,0,0,0.16);"></div>
+      <div   style="padding: 1rem; position: absolute; left: 4rem; bottom: -1rem; z-index: 100; background-color: #fff; font-size: 26px; font-weight: bold;">Data Sheet</div>
+    </div>
+  </div>
+  <style type="text/css">
+    li{
+      list-style: none;
+    }
+    .outer-list{
+      padding: 0px;
+      height: 125px;
+      overflow-y: auto;      
+    }
+    .inner-list li{
+       padding: 0.20rem;
+      position: relative;
+    }
+    .inner-list{
+      margin-right: 0.25rem;
+    }
+    .outer-list object{
+       margin-right: 5px;
+    }
+    .active-file i{
+      color: #90EE90;
+    }
+
+    .inner-list li i{
+      margin-right: 0.25rem;
+    }
+    .inner-list li span{
+      position: absolute;
+      right: 0.1rem;
+    }
+  </style>
+
+
+  <div class="row" style="position: relative;">
+    <div class="col-md-3">
+      <div class="container shadow  pt-2 pb-2 sidebar d-none d-md-block" style="position: absolute;">
+        <p>
+           <h4><i class="fab fa-buysellads"></i> Cognitive</h4>
+        </p>
+
+        <p>
+          
+        <!--<div class="f-result-circular-progress m-auto shadow"></div> -->
+           <h6>Desk</h6>
+           <div>
+            <ul class="outer-list text-monospace" style="height: 250px;">
+              <li><span id="pre_elementary_icon" style="font-size: 15px;"><object data="../assets/svg/folder.svg" type="image/svg+xml" style="width: 5%;"></object> Pre Elementary</span><span></span>
+                <ul class="inner-list pre_elementary_folder" style="font-size: 14px; height: 170px; overflow-y: scroll; display: none;">
+                 <!-- <li class="active-file high_link"><i class="fas fa-file"></i> Pre Nursery<span>21 May</span>-->
+                        <!--<ul  style="font-size: 10px; height: 60px; overflow-y: scroll; margin-right: 4px; border-left: 0.2px gray solid;">
+                          <li><a class="low_link">All</a></li>
+                          <li><a>Handwriting</a></li>
+                          <li><a>Enlish Language</a></li>
+                          <li><a>Computer Science</a></li>
+                          <li><a>Biology</a></li>
+                        </ul> -->
+                  </li>
+                  <li><i class="fas fa-file"></i> Nursery 1 <span></span></li>
+                </ul>
+              </li>
+              <li><span id="elementary_icon" style="font-size: 16px;"><object data="../assets/svg/folder.svg" type="image/svg+xml" style="width: 5%;"></object> Elementary</span>
+                <ul class="inner-list elementary_folder" style="font-size: 15px; max-height: 170px; overflow-y: scroll;">
+                  <!--<li class="active-file"><i class="fas fa-file"></i> Primary 1 <span>21 May</span></li>
+                  <li><i class="fas fa-file"></i> Handwriting <span>11 June</span></li>
+                  <li><i class="fas fa-file"></i> English Language <span>21 May</span></li>
+                  <li><i class="fas fa-file"></i> Social Studies <span>21 May</span></li>
+                  <li><i class="fas fa-file"></i> Agricultural Science <span>21 May</span></li>-->
+                </ul>
+              </li>
+            </ul>
+           </div>
+        </p>
+
+       <p>
+          <h6>Infography:</h6>
+          <p> 
+           <div> 
+            <div class="progress" style="height: 4px;">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          </p>
+          <p class="text-right"><a href="">view</a></p>    
+        </p> 
+
+        <p>
+          <h6>Guidlines:</h6>
+          <div class="card">
+            <div class="card-body" style="font-size: 11px; height: 100px;">
+              <p class="card-text"><!--With supporting text below. this must be the best idea where i can have a guideline on how the system works  and i can send a request for a correction --> <span class="notification_text"></span></p>
+              <div class="text-right"><!--<a href="#">reply</a> --></div>
+            </div>
+          </div>
+        </p>
+
+       <!-- <p>
+          <div class="alert alert-primary text-center" role="alert">UNAPPROVED</div>
+        </p> -->
+      </div>
+     
+    </div>
+
+
+
+    <div class="col-md-9">
+    
+      <!-- desktop search container -->
+      <div class="row container d-none">
+        <div class="col pt-3">
+          <h5>Records</h5>
+                <p><div class="result-custom-search-container" style="width: 96%;">
+                      <div class="input-group f-result-custom-input-group input-group-sm">
+                        <div class="input-group-prepend f-result-custom-input-group-prepend">
+                          <div style="width: 14px;"></div>
+                        </div>
+                      <input type="text" class="form-control f-result-custom-input" placeholder=" Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append f-result-custom-input-group-append mr-1">
+                      <object data="../assets/svg/search.svg" type="image/svg+xml" style="height: 14px;"></object>
+                    </div>
+                    </div>
+                  </div>
+                </p>
+        </div>
+        <div class="col">
+          
+        </div>
+      </div>
+
+      <!-- mobile structure -->
+    <div class="sticky-top d-md-none f-result-mobile-tool" style="background-color: white;">
+      <div class="container mt-4 pt-3 f-result-mobile-list-tool">
+        <h5 style="position: relative;"><a a href="#recordCollapse" data-toggle="collapse" aria-expanded="true" aria-controls="recordCollapse">Records</a> <a href="#guidelineCollapse"  data-toggle="collapse" aria-expanded="false" aria-controls="guidelineCollapse" style="position: absolute; right: 0px; font-size: 12px;" >guideline</a></h5>
+      </div>
+
+
+      <!-- mobile table tool widget -->
+      <div class="container-fluid f-result-mobile-table-tool-container p-1 d-none">
+        <div class="f-result-mobile-table-tool p-2" style="position: relative;">
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-info"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-plus"></i></div>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 3.25rem;">Max</button>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">Min</button>
+        </div>
+        
+
+        <div class="p-1">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" name="" placeholder="search record">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="col">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="value">
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+            <table class="w-100" style=" ">
+              <thead>
+                <th style="width: 5%;">sn</th>
+                <th style="width: 65%;">names:</th>
+                <th style="width: 10%;">test 1:</th>
+                <th style="width: 10%;">test 2</th>
+                <th style="width: 10%;">exams</th>
+              </thead>
+            </table>
+        </div>
+      </div>
+    </div>
+
+       <!--student record for mobile view-->
+      <div class="collapse show d-md-none" id="recordCollapse">
+        <div class="w-100 ">
+        <p><div class="result-custom-search-container f-result-mobile-search m-auto" style="width: 90%;">
+              <div class="input-group f-result-custom-input-group input-group-sm">
+                  <div class="input-group-prepend f-result-custom-input-group-prepend">
+                          <div style="width: 14px;"></div>
+                  </div>
+                  <input type="text" class="form-control f-result-custom-input" placeholder=" Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append f-result-custom-input-group-append mr-1">
+                      <object data="../assets/svg/search.svg" type="image/svg+xml" style="height: 14px;"></object>
+                  </div>
+              </div>
+            </div>
+        </p>
+      </div>
+
+     <!--student record -->
+      <div class="f-result-mobile-student-record">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list1"><a href="#list1" data-toggle="collapse" class=""><span><i class="fas fa-caret-down"></i></span> Agala Victoria </a>
+             <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+                      <!-- collapse -->
+            <div class="collapse" id="list1">
+              <div class="container p-4">
+                <div class="borderx">
+                  <span class="editbutton"><a href="">edit</a></span>
+                  <span class="submitbutton"><button class="btn btn-sm">save</button></span>
+
+                  <div class="p-4">
+                    <div class="styled-heading">
+                      <h6 style="">Prelimary</h6>
+                    </div>
+                    <div class="container p-4">
+                      <div class="row mb-2">
+                      <div class="col-8 col-sm-6">
+                        test one
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-1" maxlength="6" size="5">
+                      </div>
+                    </div>
+                     <div class="row">
+                      <div class="col-8 col-sm-6">
+                        test two
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-2" maxlength="6" size="5">
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="styled-heading">
+                      <h6 style="">Exmination</h6>
+                    </div>
+                  <div class="container p-4">
+                    <div class="row">
+                      <div class="col-8 col-sm-6">
+                        Exam
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-1" maxlength="6" size="5">
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <li class="list-group-item list2"><a href="#list2" data-toggle="collapse" class="inactive"><span><i class="fas fa-caret-down"></i></span> Adiele Chika</a>
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+
+                                <!-- collapse -->
+            <div class="collapse" id="list2">
+              <div class="container p-4">
+                <div class="borderx">
+                  <span class="editbutton"><a href="">edit</a></span>
+                  <span class="submitbutton"><button class="btn btn-sm">save</button></span>
+
+                  <div class="p-4">
+                    <div class="styled-heading">
+                      <h6 style="">Prelimary</h6>
+                    </div>
+                    <div class="container p-4">
+                      <div class="row mb-2">
+                      <div class="col-8 col-sm-6">
+                        test one
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-1" maxlength="6" size="5">
+                      </div>
+                    </div>
+                     <div class="row">
+                      <div class="col-8 col-sm-6">
+                        test two
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-2" maxlength="6" size="5">
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="styled-heading">
+                      <h6 style="">Exmination</h6>
+                    </div>
+                  <div class="container p-4">
+                    <div class="row">
+                      <div class="col-8 col-sm-6">
+                        Exam
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-1" maxlength="6" size="5">
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <li class="list-group-item list3"><a href="#list3" data-toggle="collapse"><span><i class="fas fa-caret-down"></i></span> Agbo prince </a>
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+                                          <!-- collapse -->
+            <div class="collapse" id="list3">
+              <div class="container p-4">
+                <div class="borderx">
+                  <span class="editbutton"><a href="">edit</a></span>
+                  <span class="submitbutton"><button class="btn btn-sm">save</button></span>
+
+                  <div class="p-4">
+                    <div class="styled-heading">
+                      <h6 style="">Prelimary</h6>
+                    </div>
+                    <div class="container p-4">
+                      <div class="row mb-2">
+                      <div class="col-8 col-sm-6">
+                        test one
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-1" maxlength="6" size="5">
+                      </div>
+                    </div>
+                     <div class="row">
+                      <div class="col-8 col-sm-6">
+                        test two
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-2" maxlength="6" size="5">
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="styled-heading">
+                      <h6 style="">Exmination</h6>
+                    </div>
+                  <div class="container p-4">
+                    <div class="row">
+                      <div class="col-8 col-sm-6">
+                        Exam
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <input type="text" name="ca-1" maxlength="6" size="5">
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Akpens Collins
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Akpens Collins
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Agala Victoria
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Adiele Chika
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Agbo prince
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Akpens Collins
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Akpens Collins
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Agala Victoria
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Adiele Chika
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Agbo prince
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Akpens Collins
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+          <li class="list-group-item"><span><i class="fas fa-caret-down"></i></span> Akpens Collins
+            <div class="progress" style="height: 4px; width: 20px";>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </li>
+        </ul> 
+      </div>
+
+  
+      <!-- tabulated record -->
+      <div class="f-result-mobile-table-container d-none">
+        <table class="" style=" " >
+              <thead class="" style="visibility: hidden; height: 0px;">
+                <th style="width: 5%;" >S/N</th>
+                <th style="width: 65%;">name</th>
+                <th style="width: 10%;">Test 1:</th>
+                <th style="width: 10%;">Test 2</th>
+                <th style="width: 10%;">Exams</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Adiele chika</td>
+                  <td><input type="text" name="" value="34"></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Agbo Prince</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Akpens Collins</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Amadi Chizi</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>Adiele Chika</td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                  <td><input type="text" name=""></td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+      </div>
+
+
+      
+
+      <!--  guideline structure -->
+      <div class="collapse d-md-none" id="guidelineCollapse">
+         this are the guidelines involved
+      </div>
+ 
+
+      <!-- search result container for desktop-->
+      <div class="container">
+        
+      </div>
+
+     <div class="tab-content d-none d-md-block" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+          <!-- container for table section -->
+        <div class="f-result-desktop-table-record pl-3 pr-3 d-none" style="position: relative;" id="upload-subject-data">
+          <div class="container-fluid f-result-mobile-table-tool-container p-1" style="position: absolute; top: 0.25rem; width: 98.9%; z-index: 2;">
+            <div class="f-result-mobile-table-tool p-2" style="position: relative;">
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy" id="subject-edit-btn"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-save" id="subject-save-btn"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-plus" id="add_sub"></i></div>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 3.25rem;">Max</button>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">Min</button>
+          </div>
+        
+
+        <div class="p-1">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" name="" placeholder="search record">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="col">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="value">
+            </div>
+          </div>
+        </div>
+        <style type="text/css">
+          table *{
+            font-size: 12px;
+          }
+        </style>
+
+        <div class="" style="background-color: #fff;">
+            <table class="w-100" style=" ">
+              <thead>
+                <th style="width: 5%;">sn</th>
+                <th style="width: 64%;">subject list</th>
+                <th style="width: 10%;">max score</th>
+                <th style="width: 10%;">min score</th>
+                <th style="width: 10%;">avg</th>
+              </thead>
+            </table>
+        </div>
+      </div>
+
+       <div  class="" style="height: 400px; overflow-y: scroll; position: absolute; top: 98px; width: 99%; z-index: 1;">
+              <table class="w-100" style="" style="width: 98.9%;">
+              <thead style="visibility: hidden;">
+                <th style="width: 5%;">S/N</th>
+                <th style="width: 64%;">subject list</th>
+                <th style="width: 10%;">max score</th>
+                <th style="width: 10%;">min score</th>
+                <th style="width: 10%;">avg</th>
+              </thead>
+              <tbody class="subject-entry-table">
+                <!--<tr>
+                  <td class="sub-list-no">1</td>
+                  <td style="padding: 0px !important;"><form id="subject_1" style="display: inline;"><input type="text" name="subject" style="text-align: left;"></form></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr> -->
+              </tbody>
+           </table>
+            </div>
+          </div>
+
+          <!--upload-student-exams-data section starts here here-->
+           <!-- container for table section -->
+        <div class="f-result-desktop-table-record pl-3 pr-3 d-none" style="position: relative;" id="upload-student-exams-data">
+          <div class="container-fluid f-result-mobile-table-tool-container p-1" style="position: absolute; top: 0.25rem; width: 98.9%; z-index: 2;">
+            <div class="f-result-mobile-table-tool p-2" style="position: relative;">
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy" id="edit_score_btn"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+            <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-save" id="save_scores_btn"></i></div>
+            <div class="d-inline-block p-1 ml-4 bg-light mr-1"><i class="fas fa-tags"></i><span class="p-1 score-class-tag"></span></div>
+            <div class="d-inline-block p-1 bg-light mr-1" style="max-width: 400px!important;"><i class="fas fa-file"></i><span class="p-1 score-subject-tag" ></span></div>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 3.25rem;">Max</button>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">Min</button>
+          </div>
+        
+
+        <div class="p-1">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" name="" placeholder="search record">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="col">
+            </div>
+            <div class="col-2">
+              <input type="text" name="" placeholder="value">
+            </div>
+          </div>
+        </div>
+
+        <div class="" style="background-color: #fff;">
+            <table class="w-100 score-table-invisible" style=" ">
+              <thead>
+                <th style="width: 5%;">sn</th>
+                <th style="width: 45%;">name</th>
+                <th style="width: 10%;">test 1</th>
+                <th style="width: 10%;">test 2</th>
+                <th style="width: 10%;">exam</th>
+                <th style="width: 10%;">total</th>
+                <th style="width: 10%;">grade</th>
+              </thead>
+
+
+            </table>
+        </div>
+      </div>
+
+       <div  class="" style="height: 400px; overflow-y: scroll; position: absolute; top: 98px; width: 99%; z-index: 1;">
+            <table class="w-100 score-table"  style="width: 98.9%;">
+              <thead style="visibility: hidden;">
+                <th style="width: 5%;">sn</th>
+                <th style="width: 45%;">name</th>
+                <th style="width: 10%;">test 1</th>
+                <th style="width: 10%;">test 2</th>
+                <th style="width: 10%;">exam</th>
+                <th style="width: 10%;">total</th>
+                <th style="width: 10%;">grade</th>
+              </thead>
+              <tbody class="student-scores-entry">
+               <!--<tr>
+                  <form id="studentid">
+                  <td class="">2</td>
+                  <td style="padding: 0px !important;"></td>
+                  <td><input type="text" name="test1"></td>
+                  <td><input type="text" name="test2"></td>
+                  <td><input type="exam" name="exam"></td>
+                  <td><input type="text" name="percentage" disabled="disabled"></td>
+                  <td><input type="text" name="grade" disabled="disabled"></td>
+                  </form>
+                </tr> -->
+              </tbody>
+           </table>
+            </div>
+          </div> <!--upload-student-exams-data section ends here-->
+
+
+   
+   <style type="text/css">
+     .mobile-table-tool i{
+       font-size: 20px;
+     }
+   </style>
+
+
+      <div class="f-result-desktop-list-record ml-3 p-1" style="border: 1px solid rgba(0,0,0,0.12)" id="f-result-desktop-list-record-4student">
+        <div class="mobile-table-tool p-1 container" style="position: relative; border: 1px solid rgba(0,0,0,0.12);">
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-trash" id="student-delete-btn"></i></div>
+          <div class="d-inline-block p-1 ml-4 bg-light mr-1"><i class="fas fa-tags"></i><span class="p-1 sudentList-class-tag"></span></div>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 3.25rem;">Max</button>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">Min</button>
+        </div>
+
+          <div class="container row">
+              <div class="col pt-3">
+                    <h5>Records</h5>
+                 <p style="margin: 0px;"><div class="result-custom-search-container" style="width: 60%;"> 
+                      <div class="input-group f-result-custom-input-group input-group-sm">
+                        <div class="input-group-prepend f-result-custom-input-group-prepend">
+                          <div style="width: 10px;"></div>
+                        </div>
+                      <input type="text" class="form-control f-result-custom-input" placeholder=" Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append f-result-custom-input-group-append mr-1">
+                      <object data="../assets/svg/search.svg" type="image/svg+xml" style="height: 10px;"></object>
+                    </div>
+                    </div>
+                  </div>
+                </p>
+            </div>
+            <div class="col">
+              
+            </div>
+            </div>
+
+          <div class="row"> 
+            <div class="col">
+              <div class="">
+                <p style="margin: 0.25rem;">
+                   <ul class="list-group list-group-flush pl-2 pr-2 student_list"  style=" height: 350px; overflow-y: scroll; ">
+                    <!--<li class="list-group-item"><i class="fas fa-caret-right" style="color: #90EE90;"></i> <span>  Agala Victoria</span> <time datetime="2011-10-15" pubdate="pubdate">now</time></li>
+                    <li class="list-group-item"><i class="fas fa-caret-right"></i> Adiele Chika</li>
+                    <li class="list-group-item"><i class="fas fa-caret-right"></i> Agbo prince</li>
+                    <li class="list-group-item d-none"><i class="fas fa-caret-right"></i> Abikoya Mayowa</li> -->
+
+                  </ul>
+                </p>
+              </div>
+            </div>
+             <div class="col">
+               <div class="container">
+                 <p style="margin: 0.25rem;">
+                   <div class="card">
+                     <div class="card-body">
+                      <h4 class="card-title" style="position: relative;"><i class="fas fa-tags" style="color: #90EE90;"></i> Add Student <a href="" style="opacity: 0.5; color: black; font-size: 12px; position: absolute; right: 0px; bottom: 0px;"><i class="fas fa-pen"></i><span style="font-size: 9px;">edit</span></a></h4>
+                      <div>
+                        <form id="student_details">
+                          <fieldset class="border p-1 mb-2">
+                            <legend  class="w-auto" style="font-size: medium;">Section One</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <tbody>
+                                <tr>
+                                  <td><input type="text" name="surname"  placeholder="surname"></td>
+                                  <td><input type="text" name="first_name" placeholder="name"></td>
+                                </tr>                                                                
+                                <tr>
+                                  <td><input type="text" name="other_name"  placeholder="other name" data-rule="notrequired"></td>
+                                  <td><input type="text" name="reg_no" placeholder="reg no"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </fieldset>
+                          <fieldset class="border p-1">
+                            <legend class="w-auto font-weight-bolder" style="font-size: medium;">Section Two</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <tbody>
+                                <tr>
+                                  <td>attendance</td>
+                                  <td><input type="text" name="attendance"  placeholder="attendance"> <td>
+                                </tr>
+                                <tr>
+                                  <td>gender</td>
+                                  <td><select name="gender">
+                                    <option value="m">male</option>
+                                    <option value="f">female</option>
+                                  </select>
+                                </td>
+
+                                </tr>
+                                
+                              </tbody>
+                              <input type="text" name="class" value="primary one" style="display: none;">
+                              <input type="text" name="class" value="" style="display: none;">
+                            </table>
+                          </fieldset>
+                        </form>
+                        <div class="m-auto pt-2" style="width: 250px;">
+                          <button type="button" class="btn btn-primary btn-sm" style="width: 100px; margin-right: 50px;">reset</button><button type="button" class="btn btn-secondary btn-sm" style="width: 100px;" id="student_submit_btn">submit</button>
+                        </div>
+                      </div>
+                      <div>  
+                      </div>
+                    </div>
+                   </div>
+                 </p>
+               </div>
+             </div>
+             </div>           
+          </div> 
+
+
+
+
+
+
+      <div class="f-result-desktop-list-record ml-3 p-1 d-none" style="border: 1px solid rgba(0,0,0,0.12)" id="f-result-desktop-list-record-4class">
+        <div class="mobile-table-tool p-1 container" style="position: relative; border: 1px solid rgba(0,0,0,0.12);">
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-info"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-tags"></i></div>
+          <input type="text" name="session" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 7.0rem; height: 30px; width: 170px;" class="d-none" placeholder="Enter session (2013/2014)">
+          <select style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 7.0rem; height: 30px; width: 170px;" class="session_select"><option value="old" id="oldoption">2012/2013 SEASSION</option><option value="new">create new entry</option></select>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 3.25rem;">Max</button>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">Min</button>
+        </div>
+
+          <div class="container row">
+              <div class="col pt-3">
+                    <h5>Records</h5>
+                 <p style="margin: 0px;"><div class="result-custom-search-container" style="width: 60%;"> 
+                      <div class="input-group f-result-custom-input-group input-group-sm">
+                        <div class="input-group-prepend f-result-custom-input-group-prepend">
+                          <div style="width: 10px;"></div>
+                        </div>
+                      <input type="text" class="form-control f-result-custom-input" placeholder=" Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append f-result-custom-input-group-append mr-1">
+                      <object data="../assets/svg/search.svg" type="image/svg+xml" style="height: 10px;"></object>
+                    </div>
+                    </div>
+                  </div>
+                </p>
+            </div>
+            <div class="col">
+              
+            </div>
+            </div>
+
+          <div class="row"> 
+            <div class="col">
+              <div class="">
+                <p style="margin: 0.25rem;">
+                   <ul class="list-group list-group-flush pl-2 pr-2 class_list"  style=" height: 350px; overflow-y: scroll;">
+                    <!--<li class="list-group-item"><i class="fas fa-caret-right" style="color: #90EE90;"></i> <span>  Agala Victoria</span> <time datetime="2011-10-15" pubdate="pubdate">now</time></li>
+                    <li class="list-group-item"><i class="fas fa-caret-right"></i> Adiele Chika</li>
+                    <li class="list-group-item"><i class="fas fa-caret-right"></i> Agbo prince</li>
+                    <li class="list-group-item d-none"><i class="fas fa-caret-right"></i> Abikoya Mayowa</li>-->
+
+                  </ul>
+                </p>
+              </div>
+            </div>
+
+
+             <div class="col">
+               <div class="container">
+                 <p style="margin: 0.25rem;">
+                   <div class="card">
+                     <div class="card-body">
+                      <h4 class="card-title" style="position: relative;"><i class="fas fa-tags" style="color: #90EE90;"></i> <span class="classtag">Add Class</span> <a href="" style="opacity: 0.5; color: black; font-size: 12px; position: absolute; right: 0px; bottom: 0px;" class="details"><i class="fas fa-pen"></i><span style="font-size: 9px;">Details</span></a></h4>
+                      <div>
+                        <form id="class_details">
+                          <fieldset class="border p-1 mb-2">
+                            
+                            <legend  class="w-auto" style="font-size: medium;">Section One</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <input type="text" name="class_id" class="d-none">
+                              <tbody>
+                                <tr>
+                                  <td>class: </td>
+                                  <td><input type="text" name="class_name" placeholder="name"></td>
+                                </tr>                                                                
+                                <tr>
+                                  <td>Total Student:</td>
+                                  <td><input type="text" name="total_student" placeholder="Class Population"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </fieldset>
+                          <fieldset class="border p-1">
+                            <legend class="w-auto font-weight-bolder" style="font-size: medium;">Section Two</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <tbody>
+                                <tr>
+                                  <td>Category 1:</td>
+                                  <td><input type="text" name="cat_one"  placeholder="Rose" data-rule="notrequired"></td>
+                                </tr>
+                                <tr>
+                                  <td>Category 2</td>
+                                  <td><input type="text" name="cat_two"  placeholder="Lilly"  data-rule="notrequired"></td>
+                                </tr>
+                                <tr>
+                              </tbody>
+                            </table>
+                          </fieldset>
+                        </form>
+
+
+                      <form id="data_details" class="d-none">
+                          <fieldset class="border p-1 mb-2">
+                            <legend  class="w-auto" style="font-size: medium;">Section One</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <tbody>
+                                <tr>
+                                  <td>Resumption Date</td>
+                                  <td><input type="text" name="resump_date" placeholder="Resumption Date"><select style="font-size: 10px;  border: none; border-bottom: 1px solid gray;  display: inline-block; margin-right: 10px;" id="resump_date"><option value="me">this record</option><option value="all">all record</option></select></td>
+                                </tr>                                                                
+                                <tr>
+                                  <td>No school days</td>
+                                  <td><input type="number" name="school_days" placeholder="School days">
+                                    <select style="font-size: 10px;  border: none; border-bottom: 1px solid gray;  display: inline-block; margin-right: 10px;" id="school_days"><option value="me">this record</option><option value="all">all record</option></select>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </fieldset>
+                          <fieldset class="border p-1">
+                            <legend class="w-auto font-weight-bolder" style="font-size: medium;">Section Two</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <tbody>
+                                <tr>
+                                  <td>Next Term fee</td>
+                                  <td><input type="number" name="fee"  placeholder="Enter Next term fee" data-rule="notrequired">
+                                    <select style="font-size: 10px;  border: none; border-bottom: 1px solid gray;  display: inline-block; margin-right: 10px;" id="fee"><option value="me">this record</option><option value="all">all record</option></select>
+
+                                  </td>
+                                </tr>
+                                <tr style="">
+                                  <td>Term</td>
+                                  <td><input type="number" name="term"  placeholder="Enter Term"  data-rule="notrequired">
+                                    <select style="font-size: 10px;  border: none; border-bottom: 1px solid gray;  display: inline-block; margin-right: 10px;" id="term"><option value="me">this record</option><option value="all">all record</option></select>
+                                  </td>
+                                </tr>
+                                <tr>
+                              </tbody>
+                            </table>
+                          </fieldset>
+                        </form>
+                        <div class="m-auto pt-2" style="width: 250px;">
+                          <button type="button" class="btn btn-primary btn-sm" style="width: 100px; margin-right: 50px;">reset</button><button type="button" class="btn btn-secondary btn-sm" style="width: 100px;" id="class_submit_btn">submit</button>
+                        </div>
+                      </div>
+                      <div>  
+                        
+                      </div>
+                    </div>
+                   </div>
+                 </p>
+               </div>
+             </div>
+             </div>           
+          </div>
+
+
+
+
+      <div class="f-result-desktop-list-record ml-3 p-1 d-none" style="border: 1px solid rgba(0,0,0,0.12)" id="f-result-desktop-list-record-4psyco">
+        <div class="mobile-table-tool p-1 container" style="position: relative; border: 1px solid rgba(0,0,0,0.12);">
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-info"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-tags"></i></div>
+
+          <div class="d-inline-block pl-4" style="width: 44%;"> <select name="selrecord" class="Options-names-list" style="width: 100%; font-size: 14px; height: 30px;"></select></div>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 3.25rem;">Max</button>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">Min</button>
+        </div>
+
+          <div class="row"> 
+            <div class="col">
+                <iframe src="" style="width: 100%; height: 550px;"></iframe>
+            </div>
+             </div>           
+          </div>
+
+
+        <div class="f-result-desktop-list-record ml-3 p-1 d-none" style="border: 1px solid rgba(0,0,0,0.12)" id="f-result-desktop-list-record-4print">
+        <div class="mobile-table-tool p-1 container" style="position: relative; border: 1px solid rgba(0,0,0,0.12);">
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-pen-fancy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-copy"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-paste"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="far fa-file-pdf"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-info"></i></div>
+          <div class="d-inline-block p-2 bg-light mr-1"><i class="fas fa-tags"></i></div>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 3.25rem;">Max</button>
+           <button class="btn btn-sm" style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.16); font-size: 12px; position: absolute; right: 0.25rem;">Min</button>
+        </div>
+
+          <div class="container row">
+              <div class="col pt-3">
+                    <h5>Records</h5>
+                 <p style="margin: 0px;"><div class="result-custom-search-container" style="width: 60%;"> 
+                      <div class="input-group f-result-custom-input-group input-group-sm">
+                        <div class="input-group-prepend f-result-custom-input-group-prepend">
+                          <div style="width: 10px;"></div>
+                        </div>
+                      <input type="text" class="form-control f-result-custom-input" placeholder=" Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append f-result-custom-input-group-append mr-1">
+                      <object data="../assets/svg/search.svg" type="image/svg+xml" style="height: 10px;"></object>
+                    </div>
+                    </div>
+                  </div>
+                </p>
+            </div>
+            <div class="col">
+              
+            </div>
+            </div>
+
+          <div class="row"> 
+            <div class="col">
+              <div class="">
+                <p style="margin: 0.25rem;">
+                   <ul class="list-group list-group-flush pl-2 pr-2 print_class_list"  style=" height: 350px; overflow-y: scroll;">
+                    <!--<li class="list-group-item"><i class="fas fa-caret-right" style="color: #90EE90;"></i> <span>  Agala Victoria</span> <time datetime="2011-10-15" pubdate="pubdate">now</time></li>
+                    <li class="list-group-item"><i class="fas fa-caret-right"></i> Adiele Chika</li>
+                    <li class="list-group-item"><i class="fas fa-caret-right"></i> Agbo prince</li>
+                    <li class="list-group-item d-none"><i class="fas fa-caret-right"></i> Abikoya Mayowa</li>-->
+
+                  </ul>
+                </p>
+              </div>
+            </div>
+             <div class="col">
+               <div class="container">
+                 <p style="margin: 0.25rem;">
+                   <div class="card">
+                     <div class="card-body">
+                      <h4 class="card-title" style="position: relative;"><i class="fas fa-tags" style="color: #90EE90;"></i> Print Results <a href="" style="opacity: 0.5; color: black; font-size: 12px; position: absolute; right: 0px; bottom: 0px; visibility: hidden;"><i class="fas fa-pen"></i><span style="font-size: 9px;">edit</span></a></h4>
+                      <div>
+                        <form id="data_details" style="">
+                          <fieldset class="border p-1 mb-2">
+                            <legend  class="w-auto" style="font-size: medium;">Section One</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <tbody>
+                                <tr>
+                                  <td>Resumption Date</td>
+                                  <td><input type="text" name="resump_date" placeholder="Resumption Date"></td>
+                                </tr>                                                                
+                                <tr>
+                                  <td>No school days</td>
+                                  <td><input type="number" name="school_days" placeholder="School days"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </fieldset>
+                          <fieldset class="border p-1">
+                            <legend class="w-auto font-weight-bolder" style="font-size: medium;">Section Two</legend>
+                            <table class="table table-borderless table-sm" style="font-size: 11.5px;">
+                              <tbody>
+                                <tr>
+                                  <td>Next Term fee</td>
+                                  <td><input type="number" name="fee"  placeholder="Enter Next term fee" data-rule="notrequired"></td>
+                                </tr>
+                                <tr style="">
+                                  <td>Term</td>
+                                  <td><input type="number" name="term"  placeholder="Enter Term"  data-rule="notrequired"></td>
+                                </tr>
+                                <tr>
+                              </tbody>
+                            </table>
+                          </fieldset>
+                        </form>
+                        <div class="m-auto pt-2" style="width: 250px;">
+                          <button type="button" class="btn btn-primary btn-sm" style="width: 100px; margin-right: 50px; visibility: hidden;">reset</button><button type="button" class="btn btn-secondary btn-sm" style="width: 100px; " id="submit_btn_print">submit</button>
+                        </div>
+                      </div>
+                      <div>  
+                        
+                      </div>
+                    </div>
+                   </div>
+                 </p>
+               </div>
+             </div>
+             </div>           
+          </div>
+
+
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      </div>
+
+        <div class="row">
+          <div class="col-7">
+            
+          </div>
+
+          <div class="col-5">
+            
+          </div>
+        </div>
+     
+    </div>
+
+    <div>
+      
+    </div>
+  </div>
+</div>
+
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="../assets/js/vendor/popper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/jquery-1.10.2.min.js"></script>
+    <!--<script type="text/javascript" src="../js/vendor/jquery-slim.min.js"></script>-->
+    <script type="text/javascript" src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="form.js"></script>
+    <script type="text/javascript" src="../assets/js/core.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+    <!--<script type="text/javascript" src="../assets/js/classes.js"></script> -->
+    <!--<script type="text/javascript" src="../assets/js/features.js"></script>
+    <script type="text/javascript" src="../assets/js/deamon.js"></script> -->
+
+    
+
+
+    <script type="text/javascript">
+      var lastOpened=false;
+      var openedCollapsed=false;
+      var sub_list_no= 1;
+      $('div[id^="list"]').on('show.bs.collapse', function () {
+         if(lastOpened!=false){
+            $('#'+lastOpened).collapse('hide');
+            var id=$('.f-result-mobile-student-record li.'+lastOpened).removeClass('active-list');
+            $('.f-result-mobile-student-record li.'+lastOpened+' a').removeClass('active');
+            $('.f-result-mobile-student-record li.'+lastOpened+' i').removeClass('fa-caret-right');
+            $('.f-result-mobile-student-record li.'+lastOpened+' i').addClass('fa-caret-down');
+
+         }
+         lastOpened = $(this).attr('id');
+         $('.f-result-mobile-student-record li.'+lastOpened).addClass('active-list');
+         $('.f-result-mobile-student-record li.'+lastOpened+' a').addClass('active');
+          $('.f-result-mobile-student-record li.'+lastOpened+' i').addClass('fa-caret-right');
+         list= lastOpened.substr(4);
+      })
+
+
+      function setClassFolder(function_name){
+         //request all  registered classes and arrange it properly
+                    $('.elementary_folder').html('');
+                     $('.pre_elementary_folder').html('');
+                    var notfoundClass=true;
+
+                    //request all class list of  students 
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'class folder setting'
+                      },
+                      success: function(data){
+                        //add pre-nursery to nursery section
+                        if(data.totals > 0){
+                          var dom='<li class="active-file"><i class="fas fa-file"></i> <a class="high_link" href="" id="'+data['dsId']+'">'+data['dsname']+'</a><span></span></li>'; 
+                            $('.pre_elementary_folder').append(dom);
+                             if(notfoundClass){
+                              selectedClass=data['dsId']; 
+                              notfoundClass=false; 
+                             $('#'+selectedClass).next().html('active').addClass('active-file-on');
+                            }
+                        } 
+                        //check the total student returned                        
+                        for (var i = 1; i <= data.totaln; i++){
+                           var dom='<li class="active-file"><i class="fas fa-file"></i> <a class="high_link" href="" id="'+data['dnId'+i]+'">'+data['dnname'+i]+'</a><span></span></li>';
+                             $('.pre_elementary_folder').append(dom);
+                             if(notfoundClass){
+                              selectedClass=data['dnId'+i]; 
+                              notfoundClass=false; 
+                             $('#'+selectedClass).next().html('active').addClass('active-file-on');
+                            }
+                        }
+
+                        //create primary student folders
+                        for (var i = 1; i <= data.totalp; i++) {
+                             var dom='<li class="active-file"><i class="fas fa-file"></i> <a href="" class="high_link" id="'+data['dpId'+i]+'">'+data['dpname'+i]+'</a><span></span></li>';
+                            $('.elementary_folder').append(dom);
+                              if(notfoundClass){ 
+                              selectedClass=data['dnId'+i];
+                               notfoundClass=false; 
+                             $('#'+selectedClass).next().html('active').addClass('active-file-on');
+                            }
+                            
+                        }
+                        $('#student_details [name="class"]').val(selectedClass);
+
+                        function_name();
+                      }
+                    })
+      }
+
+
+      function set_class_student_List(){
+                                  //clear up the existing student list 
+                      $('.student_list').html('');
+                   //request all list of students 
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'student list',
+                        classId: selectedClass
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            var dom='<li class="list-group-item"><i class="fas fa-caret-right"></i> '+data['d'+i]+'</li>';
+                            $('.student_list').append(dom);
+                          }
+                        }else{
+                          //no data found
+                            $('.student_list').html('<li class="list-group-item"><i class="fas fa-caret-right"></i> no record found</li>');
+                        }
+
+                      }
+                    })
+
+                  var dom='<select name="classCat" class="ml-2"><option value="x">select a category</option>';
+              //get the categories of the class
+                    submitFormJson({
+                      url: 'getCategory.php',
+                      type: 'POST',
+                      data: {
+                        classId: selectedClass
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(Number(data.code)==1){
+                          for(var i=1; i<= Number(data.count); i++){
+                            dom+='<option value="'+data['cat'+i]+'">'+data['cat'+i]+'</option>';
+                          }
+                        }
+                        dom+='</select>';
+                        //remove all select after gender
+                        $('#student_details select[name="gender"]').next().remove();
+                        $('#student_details select[name="gender"]').after(dom);
+                        $('.sudentList-class-tag').html($('.high_link#'+selectedClass).text());
+                      }
+                    }) 
+      }
+
+      function set_class_scores_record(){
+                    //request all list of students from the default class with all records in all subject
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'student score records',
+                        classId: selectedClass,
+                        sub_id: 'all-subject'
+                      },
+                      success: function(data){
+
+                        //check the total student returned
+                        if(Number(data['total']) > 0){
+                    
+                          var quoter=  68/(Number(data['totalSubject']) +2);
+                          var headingdom='<th style="width: 2%;">sn</th><th style="width: 30%;">name</th>';
+                          //create the heading
+                          for(var i=1; i<=Number(data.totalSubject); i++){
+                            headingdom+='<th style="width: '+quoter.toFixed(2)+'%;">'+data['sub'+i]+'</th>';
+                          }
+
+                          headingdom
+                          headingdom+='<th style="width: '+quoter.toFixed(2)+'%;">avg</th><th style="width: '+quoter.toFixed(2)+'%;">grade</th>';
+                          $('.score-table thead').html(headingdom);
+                          $('.score-table-invisible thead').html(headingdom);
+                          var dom="";
+                          //create the table
+                          for(var i=1; i<= Number(data.total); i++){
+
+                            dom+='<tr><form id="'+data['student'+i+'regno']+'"><td class="">'+i+'</td><td style="padding: 0px !important;">'+data['student'+i+'name']+'</td>';
+
+                            for(var x=1; x<=Number(data.totalSubject); x++){
+                              dom+='<td style="text-align: center;font-size: 12px;">'+data['sub'+x+'total_'+i]+'</td>';
+                            }
+                            dom+='<td style="text-align: center;font-size: 12px;">'+Number(data['student'+i+'avg']).toFixed(2)+'</td>'; 
+                            dom+='<td style="text-align: center;font-size: 12px;">'+data['student'+i+'grade']+'</td></form></tr>';                            
+                          } 
+
+                          $('.student-scores-entry').html(dom);
+                        }else{
+                          //no data found
+                          var dom='<tr class="no_record_found"><form id="studentid"><td class=""></td><td style="padding: 0px !important;">no record found</td><td><input type="text" name="test1"></td><td><input type="text" name="test2"></td><td><input type="exam" name="exam"></td><td><input type="text" name="percentage" disabled="disabled"></td><td><input type="text" name="grade" disabled="disabled" data-rule"notrequired"></td></form></tr>';
+                            $('.student-scores-entry').html(dom);
+                        }
+                                                //set the class name
+                        $('.score-class-tag').html($('.high_link#'+selectedClass).text());
+                                                //specify the subject selected
+                        $('.score-subject-tag').html("Data Sheet");
+                      }
+                    })
+
+      }
+
+
+      function rest(){
+
+      }
+
+      function getGrade(score){
+        score=Number(score);
+        if(score > 79){
+          return 'A';
+        }else if(score > 59){
+          return 'B';
+        }else if(score > 49){
+          return 'C';
+        }else if(score > 39){
+          return 'D';
+        }else{
+          return 'E';
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+
+
+         $('#f-result-desktop-list-link-4subject').click(function(){
+          $('.subject-entry-table').html('');
+          setClassFolder(rest);
+                    page='f-result-desktop-list-link-4subject';
+                     //get all the existing subject and list
+                     submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'subject list'
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            var dom=' <tr><td class="sub-list-no">'+i+'</td><td style="padding: 0px !important;"><form id="subject_'+i+'" style="display: inline;"><input type="text" name="subject" style="text-align: left;" value="'+data['dname'+i]+'" id="'+data['dId'+i]+'" disabled="disabled"> <input type="text" name="oldData" value="'+data['dname'+i]+'" style="display:none;" data-rule"notrequired"></form></td><td></td><td></td><td></td></tr>';
+                              sub_list_no++
+                            $('.subject-entry-table').append(dom);
+                          }
+                        }else{
+                          
+                        }
+
+                        var dom=' <tr><td class="sub-list-no">'+sub_list_no+'</td><td style="padding: 0px !important;"><form id="subject_'+sub_list_no+'" style="display: inline;"><input type="text" name="subject" style="text-align: left;"><input type="text" name="oldData"  style="display:none;" data-rule"notrequired"></form></td><td></td><td></td><td></td></tr>'
+                          $('.subject-entry-table').append(dom);
+                      }
+                    }) 
+
+
+                    //disable all anchor links
+                    $('.elementary_folder a').addClass('isDisabled').removeAttr('href');
+                    $('.pre_elementary_folder a').addClass('isDisabled').removeAttr('href');
+                     $('#'+selectedClass).next().html('').removeClass('active-file-on');
+                   //hide all list both moble and desktop
+                   $('.f-result-desktop-list-record').attr('style','display: none');
+                    $('.f-result-mobile-student-record').attr('style','display: none');
+                    $('.f-result-mobile-info').attr('style','display: none'); 
+                    $('.f-result-mobile-list-tool').attr('style','display: none');
+                    $('.f-result-mobile-search').attr('style','display: none'); 
+                    $('.f-result-mobile-table-container').addClass('d-none'); 
+                    $('#upload-subject-data').removeClass('d-none');
+                    $('#upload-subject-data .f-result-mobile-table-tool-container').removeClass('d-none');
+                     $('#f-result-desktop-list-record-4psyco').addClass('d-none');
+                     $('#f-result-desktop-list-record-4print').addClass('d-none');
+                    $('#upload-student-exams-data').addClass('d-none');
+                    $('#upload-student-exams-data .f-result-mobile-table-tool-container').addClass('d-none');
+                    $('.pagelinks a').removeClass('active-file');
+                    $(this).addClass('active-file');
+               return false;
+          
+         })
+
+          $('#f-result-desktop-list-link-4scores').click(function(){
+                    page= 'f-result-desktop-list-link-4scores';
+                     setClassFolder(set_class_scores_record);
+                    //disable all anchor links
+                    $('.elementary_folder a').addClass('isDisabled').removeAttr('href');
+                    $('pre_elementary_folder a').addClass('isDisabled').removeAttr('href');
+                     $('#'+selectedClass).next().html('').removeClass('active-file-on');
+                   //hide all list both moble and desktop
+                   $('.f-result-desktop-list-record').attr('style','display: none');
+                    $('.f-result-mobile-student-record').attr('style','display: none');
+                    $('.f-result-mobile-info').attr('style','display: none'); 
+                    $('.f-result-mobile-list-tool').attr('style','display: none');
+                    $('.f-result-mobile-search').attr('style','display: none'); 
+                    $('.f-result-mobile-table-container').removeClass('d-none'); 
+                    $('#upload-student-exams-data').removeClass('d-none');
+                    $('#upload-student-exams-data .f-result-mobile-table-tool-container').removeClass('d-none');
+                    $('#f-result-desktop-list-record-4print').addClass('d-none');
+
+                     $('#upload-subject-data').addClass('d-none');
+                    $('#upload-subject-data .f-result-mobile-table-tool-container').addClass('d-none');
+                    $('.pagelinks a').removeClass('active-file');
+                     $('#f-result-desktop-list-record-4psyco').addClass('d-none');
+                    $(this).addClass('active-file');
+               return false;
+          
+         })
+
+
+         $('#f-result-desktop-list-link-4class').click(function(){
+                   $('.class_list').html('');
+                   setClassFolder(rest);
+                    //request all list of students 
+                    //disable all anchor links
+                    page='f-result-desktop-list-link-4class';
+                    $('.elementary_folder a').addClass('isDisabled').removeAttr('href');
+                    $('pre_elementary_folder a').addClass('isDisabled').removeAttr('href');
+                     $('#'+selectedClass).next().html('').removeClass('active-file-on');
+
+
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'class list'
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            var dom='<li class="list-group-item"><a href="'+data['id'+i]+'"><i class="fas fa-caret-right"></i> '+data['d'+i]+'</a></li>';
+                            $('.class_list').append(dom);
+
+                          }
+                        }
+                      }
+                    })
+
+                     //show all list both moble and desktop
+                   $('.f-result-desktop-list-record').attr('style','display: block');
+                    $('.f-result-mobile-student-record').attr('style','display: block');
+                    $('.f-result-mobile-info').attr('style','display: block'); 
+                    $('.f-result-mobile-list-tool').attr('style','display: block');
+                    $('.f-result-mobile-search').attr('style','display: block'); 
+                    $('.f-result-mobile-table-container').addClass('d-none'); 
+                    $('.f-result-desktop-table-record').addClass('d-none'); 
+                    $('.f-result-mobile-table-tool-container').addClass('d-none');
+                    $('#f-result-desktop-list-record-4student').addClass('d-none');
+                    $('#f-result-desktop-list-record-4class').removeClass('d-none');
+                     $('#f-result-desktop-list-record-4psyco').addClass('d-none');
+                     $('#f-result-desktop-list-record-4print').addClass('d-none');
+                    $('.pagelinks a').removeClass('active-file');
+                    $(this).addClass('active-file');
+               return false;
+         })
+
+          $('#f-result-desktop-list-link-4student').click(function(){
+                  page='f-result-desktop-list-link-4student';
+                 //request all  registered classes and arrange it properly
+                   // $('.elementary_folder').html('');
+                    // $('.pre_elementary_folder').html('');
+                    //var notfoundClass=true;
+                    setClassFolder(set_class_student_List);
+
+                    //request all class list of  students 
+                  /*  submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'class folder setting'
+                      },
+                      success: function(data){
+                        //check the total student returned                        
+                        for (var i = 1; i <= data.totaln; i++){
+                           var dom='<li class="active-file"><i class="fas fa-file"></i> <a href="" id="'+data['dnId'+i]+'">'+data['dnname'+i]+'</a><span></span></li>';
+                             $('.pre_elementary_folder').append(dom);
+                             if(notfoundClass){
+                              selectedClass=data['dnId'+i]; 
+                              notfoundClass=false; 
+                             $('#'+selectedClass).next().html('active').addClass('active-file-on');
+                            }
+                        }
+
+                        //create primary student folders
+                        for (var i = 1; i <= data.totalp; i++) {
+                             var dom='<li class="active-file"><i class="fas fa-file"></i> <a href="" id="'+data['dpId'+i]+'">'+data['dpname'+i]+'</a><span></span></li>';
+                            $('.elementary_folder').append(dom);
+                              if(notfoundClass){ 
+                              selectedClass=data['dnId'+i];
+                               notfoundClass=false; 
+                             $('#'+selectedClass).next().html('active').addClass('active-file-on');
+                            }
+                            
+                        }
+
+                        $('#student_details [name="class"]').val(selectedClass);
+                        set_class_student_List();
+                      }
+                    }) */
+
+                     //show all list both moble and desktop
+                   $('.f-result-desktop-list-record').attr('style','display: block');
+                    $('.f-result-mobile-student-record').attr('style','display: block');
+                    $('.f-result-mobile-info').attr('style','display: block'); 
+                    $('.f-result-mobile-list-tool').attr('style','display: block');
+                    $('.f-result-mobile-search').attr('style','display: block'); 
+                    $('.f-result-mobile-table-container').addClass('d-none'); 
+                    $('.f-result-desktop-table-record').addClass('d-none'); 
+                    $('.f-result-mobile-table-tool-container').addClass('d-none');
+                    $('#f-result-desktop-list-record-4student').removeClass('d-none');
+                    $('#f-result-desktop-list-record-4class').addClass('d-none');
+                    $('#f-result-desktop-list-record-4psyco').addClass('d-none');
+                    $('#f-result-desktop-list-record-4print').addClass('d-none');
+                    $('.pagelinks a').removeClass('active-file');
+                    $(this).addClass('active-file');
+               return false;
+         })
+
+
+
+           $('#f-result-desktop-list-link-4psyco').click(function(){
+                   $('.class_list').html('');
+                   setClassFolder(rest);
+                    //request all list of students in the default class. 
+                    //disable all anchor links
+                    page='f-result-desktop-list-link-4psyco';
+                    $('.elementary_folder a').addClass('isDisabled').removeAttr('href');
+                    $('pre_elementary_folder a').addClass('isDisabled').removeAttr('href');
+                     $('#'+selectedClass).next().html('').removeClass('active-file-on');
+
+                      $('.Options-names-list').html('');
+
+
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'student list',
+                        classId: 's1'
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            var dom='<option value="'+data['reg'+i]+'"><i class="fas fa-caret-right"></i> '+data['d'+i]+'</option>';
+                            $('.Options-names-list').append(dom);
+
+                          }
+                        }
+                        $('iframe').attr('src', 'resultGenerator_editable.php?regno='+data['reg1']);
+                        $('.Options-names-list').val(data['reg1']);
+                      }
+
+                    })
+
+                    
+
+                     //show all psyco both moble and desktop
+                   $('.f-result-desktop-list-record').attr('style','display: block');
+                    $('.f-result-mobile-student-record').attr('style','display: block');
+                    $('.f-result-mobile-info').attr('style','display: block'); 
+                    $('.f-result-mobile-list-tool').attr('style','display: block');
+                    $('.f-result-mobile-search').attr('style','display: block'); 
+                    $('.f-result-mobile-table-container').addClass('d-none'); 
+                    $('.f-result-desktop-table-record').addClass('d-none'); 
+                    $('.f-result-mobile-table-tool-container').addClass('d-none');
+                    $('#f-result-desktop-list-record-4student').addClass('d-none');
+                    $('#f-result-desktop-list-record-4class').addClass('d-none');
+                     $('#f-result-desktop-list-record-4psyco').removeClass('d-none');
+                     $('#f-result-desktop-list-record-4print').addClass('d-none');
+                    $('.pagelinks a').removeClass('active-file');
+                    $(this).addClass('active-file');
+               return false;
+         })
+
+
+
+            $('#f-result-desktop-list-link-4print').click(function(){
+                   $('.print_class_list').html('');
+                   setClassFolder(rest);
+                    //request all list of students 
+                    //disable all anchor links
+                    page='f-result-desktop-list-link-4print';
+                    $('.elementary_folder a').addClass('isDisabled').removeAttr('href');
+                    $('pre_elementary_folder a').addClass('isDisabled').removeAttr('href');
+                     $('#'+selectedClass).next().html('').removeClass('active-file-on');
+
+
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'class list'
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            var dom='<li class="list-group-item"><a href="http://localhost/mc-genia/admin/f-result/test.php?class='+data['id'+i]+'" target="_blank"><i class="fas fa-caret-right"></i> '+data['d'+i]+'</a></li>';
+                            $('.print_class_list').append(dom);
+
+                          }
+                        }
+                      }
+                    })
+
+                     //show all list both moble and desktop
+                   $('.f-result-desktop-list-record').attr('style','display: block');
+                    $('.f-result-mobile-student-record').attr('style','display: block');
+                    $('.f-result-mobile-info').attr('style','display: block'); 
+                    $('.f-result-mobile-list-tool').attr('style','display: block');
+                    $('.f-result-mobile-search').attr('style','display: block'); 
+                    $('.f-result-mobile-table-container').addClass('d-none'); 
+                    $('.f-result-desktop-table-record').addClass('d-none'); 
+                    $('.f-result-mobile-table-tool-container').addClass('d-none');
+                    $('#f-result-desktop-list-record-4student').addClass('d-none');
+                    $('#f-result-desktop-list-record-4class').addClass('d-none');
+                     $('#f-result-desktop-list-record-4psyco').addClass('d-none');
+                     $('#f-result-desktop-list-record-4print').removeClass('d-none');
+                    $('.pagelinks a').removeClass('active-file');
+                    $(this).addClass('active-file');
+               return false;
+         })
+
+
+           $('.Options-names-list').change(function(){
+             //change the iframe src
+              $('iframe').attr('src', 'resultGenerator_editable.php?regno='+$(this).val());
+           })
+
+
+         $('#add_sub').click(function(){
+           //validate input field
+           var formId="subject_"+sub_list_no;
+           alert(formId);
+
+           if(validate({
+            form: formId
+           })){
+                //submit data
+              submitFormJson({
+                form: formId,
+                url: "uploadstudent.php",
+                type: "POST",
+                success: function(data){
+                  alert('from server');
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                        var temp=$('.subject-entry-table>tr:last-child').clone();
+                        temp.find('input').val(null);
+                        temp.find('form').attr('id','subject_'+(++sub_list_no));
+                        $('.subject-entry-table').append(temp);
+                        temp.find('.sub-list-no').html(''+ (sub_list_no));
+                        $('.subject-entry-table  tr:not(:last-child) input').attr('disabled','disabled');
+                  }else{
+                       showguideline('<span class="wrong">'+$('#'+data.formId+' input[name="subject"]').val()+ ' already exist </span>');
+                  }
+                }
+              })
+             
+           }
+
+         })
+      })
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        
+          $('#student_submit_btn').click(function(){
+            //notrequired
+            //formatted
+             if(validate({
+                  form: "student_details",
+                  formatted: {
+                    value1: {
+                      name:"reg_no",
+                      applyRule: function(){
+                        var obj=$('#student_details input[name="reg_no"]');
+                        var val= obj.val();
+                         if(val.indexOf("MGIS")!==0){
+                          validated_message(obj,'invalid Reg No format');
+                          return false;
+                          }
+                         if(val[4]!=='/'&& val[6]!=='/'){
+                           validated_message(obj,'invalid Reg No format');
+                           return false;               
+                         }
+                        if(val.length!==11){
+                          validated_message(obj,'invalid Reg No format');
+                           return false;        
+                        }
+                        
+                         var digit= val.slice(7, 11);
+                         //check if is a number
+                       
+                         if(isNaN(digit)!==false){
+                           validated_message(obj,'invalid Reg No format');
+                           return false; 
+                         }
+                         //check if the middle number is an uppercase  P or N
+
+                         if(val[5]!=="P" && val[5]!=="N"){
+                          validated_message(obj,'invalid Reg No format');
+                           return false; 
+                         }
+                         return true;
+                      } 
+                    },
+                    value2: {
+                      name: 'attendance',
+                      applyRule: function(){
+                        var obj=$('#student_details input[name="attendance"]');
+                        var val= obj.val();
+                        if(isNaN(val) !== false){
+                           validated_message(obj,'enter a number');
+                           return false; 
+                        }
+                       return true;
+                      }
+                    }
+                  }
+             })){
+
+            //send data to database;
+             submitFormJson({
+                form: "student_details",
+                url: "uploadstudent.php",
+                type: "POST",
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                    $('.notification_text').html('<b>'+data.fullname+'</b>'+' added successfully');
+                    $('#student_details').trigger('reset');
+                    //create element
+                    var dom='<li class="list-group-item"><i class="fas fa-caret-right"></i> '+data.fullname+'</li>';
+                    $('.student_list').prepend(dom);
+                  }else{
+                    //specify that it was not added successfully that the registration number already exist
+                    $('.notification_text').html('<span style="color: red;"><b>'+data.regNo+'</b>'+' was not added successfully, The regstration number already exist</span>');
+                  }
+                }
+              })
+             }
+ 
+          })
+
+          $('#class_submit_btn').click(function(){
+            if(validate({
+              form: "class_details",
+              formatted: {
+                value1: {
+                  name: 'class_name',
+                  applyRule: function(){
+
+                    //ensure the data is recognize
+                    var obj=$('#class_details [name="class_name"]');
+                    var temp= obj.val().toLowerCase();
+                    //remove all white space characters
+                    temp= temp.trim();
+
+                  //check if the class is pre-nursery
+                  if(temp.slice(0,3)== 'pre'){
+                    //this class is prenursery
+                    return true;
+                  }else{
+                    //check of is primary or nursery
+                    if(temp.length > 6 && temp.length < 10){
+                      //check for the word primary
+                      if(temp.slice(0,7)=="primary"){
+                        //search if the last value is a digit
+                        if(isNaN(temp[temp.length - 1])){
+                          validated_message(obj,'enter a valid class name');
+                          return false;
+                        }else{
+                            return true;
+                        }
+
+                      }else if(temp.slice(0,7)=='nursery'){
+                        //search if the last value is a digit
+                        if(isNaN(temp[temp.length - 1])){
+                          validated_message(obj,'enter a valid class name');
+                          return false;
+                        }else{
+                            return true;
+                        }
+
+                      }else{
+                        //its a different value
+                        validated_message(obj,'enter a valid class name');
+                        return false;
+                      }
+
+                    }else if(temp.length < 6){
+                      //search for key word pri or nur
+
+                       if(temp.slice(0,3)=='pri'){
+                        //search if the last value is a digit
+                        if(isNaN(temp[temp.length - 1])){
+                          validated_message(obj,'enter a valid class name');
+                          return false;
+                        }else{
+                            return true;
+                        }
+
+                      }else if(temp.slice(0,3)=='nur'){
+                        //search if the last value is a digit
+                        if(isNaN(temp[temp.length - 1])){
+                          validated_message(obj,'enter a valid class name');
+                          return false;
+                        }else{
+                            return true;
+                        }
+
+                      }else{
+                        //its a different value
+                        validated_message(obj,'enter a valid class name');
+                        return false;
+                      }
+
+                    } 
+
+                   }
+                  }
+                }
+              }
+            })){
+              submitFormJson({
+                form: 'class_details',
+                url:  'uploadclass.php',
+                type: 'POST',
+                success: function(data){
+                   if(data.code ==='1'){
+                    $('.notification_text').html('<b>'+data.name+'</b>'+' added successfully');
+                    $('#class_details').trigger('reset');
+                    //create element
+                    var dom='<li class="list-group-item"><i class="fas fa-caret-right"></i> '+data.name+'</li>';
+                   $('.class_list').prepend(dom);
+                  }else{
+                    $('.notification_text').html('<b>'+data.name+'</b>'+' was not added, this data already exist in the Record');
+                  }
+
+                }
+              })
+            }
+          })
+
+
+
+
+      $('.outer-list').on('click','.high_link:not(.isDisabled)', function(){
+                  var class_id= $(this).attr('id');
+                  $('#'+selectedClass).next().html('').removeClass('active-file-on');
+                  $('#'+selectedClass+'~span').next().remove();
+                  selectedClass= class_id;
+                  $('#'+selectedClass).next().html('active').addClass('active-file-on');
+                  $('#'+selectedClass+'~span').next().remove();
+
+           if(page==='f-result-desktop-list-link-4scores'){
+                    
+               //get all the subject and enlist it.
+                //get all the existing subject and list
+                     submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'subject list'
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(data.total > 0){
+                          var dom='<ul  style="font-size: 13px; height: 100px; overflow-y: scroll; margin-right: 4px; border-left: 0.2px gray solid;"><li></li>';
+                          for(var i=1; i<=data.total; i++){
+                            dom+='<li><a href="" class="low_link" id="'+data['dId'+i]+'">'+data['dname'+i]+' </a></li>';
+                          }
+                          dom+='</ul>';
+                        }else{
+                          var dom='<ul  style="font-size: 13px; height: 100px; overflow-y: scroll; margin-right: 4px; border-left: 0.2px gray solid;"><li>no subject added</li></ul>'
+                        } 
+                          set_class_scores_record();
+                          $('#'+selectedClass+'~span').after(dom);
+                      }
+                    }) 
+               //add subject.
+              
+           }else if(page==='f-result-desktop-list-link-4psyco'){
+
+               $('.Options-names-list').html('');
+
+
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'student list',
+                        classId: class_id
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            var dom='<option value="'+data['reg'+i]+'"><i class="fas fa-caret-right"></i> '+data['d'+i]+'</option>';
+                            $('.Options-names-list').append(dom);
+
+                          }
+                        }
+                        $('iframe').attr('src', 'resultGenerator_editable.php?regno='+data['reg1']);
+                      }
+
+                    })
+
+              
+           }else{
+              $('#student_details [name="class"]').val(class_id);
+              var dom='<select name="classCat" class="ml-2"><option value="x">select a category</option>';
+              //get the categories of the class
+                    submitFormJson({
+                      url: 'getCategory.php',
+                      type: 'POST',
+                      data: {
+                        classId: class_id
+                      },
+                      success: function(data){
+                        //clear up the existing student list 
+                        $('.student_list').html('');
+                        //check the total student returned
+                        if(Number(data.code)==1){
+                          for(var i=1; i<= Number(data.count); i++){
+                            dom+='<option value="'+data['cat'+i]+'">'+data['cat'+i]+'</option>';
+                          }
+                        }
+                        dom+='</select>';
+                        //remove all select after gender
+                        $('#student_details select[name="gender"]').next().remove();
+                        $('#student_details select[name="gender"]').after(dom);
+                      }
+                    }) 
+
+
+               //get the list of student in that class
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'class_record',
+                        classId: class_id
+                      },
+                      success: function(data){
+                        //clear up the existing student list 
+                        $('.student_list').html('');
+                        //check the total student returned
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            var dom='<li class="list-group-item"><i class="fas fa-caret-right"></i> '+data['dname'+i]+' ['+data['dreg'+i]+']</li>';
+                            $('.student_list').append(dom);
+                          }
+                        }else{
+                          //specify no record as found
+                          var dom='<li class="list-group-item"><i class="fas fa-caret-right"></i> no record found</li>';
+                            $('.student_list').html(dom);
+                        }
+                        $('.sudentList-class-tag').html($('.high_link#'+selectedClass).text()); 
+                      }
+
+                    }) 
+            }
+                 
+              return false;
+           })
+
+
+
+
+       $('.outer-list').on('click','.low_link:not(.isDisabled)', function(){
+          var headingdom='<th style="width: 5%;">sn</th><th style="width: 45%;">name</th><th style="width: 10%;">test 1</th><th style="width: 10%;">test 2</th><th style="width: 10%;">exam</th><th style="width: 10%;">total</th><th style="width: 10%;">grade</th>';
+
+          $('.score-table thead').html(headingdom);
+           $('.score-table-invisible thead').html(headingdom);
+           //request all list of students from the default class with all records in all subject
+           $('.student-scores-entry').html('');
+                    var selectedSubject= $(this).attr('id');
+                    submitFormJson({
+                      url: 'getdata.php',
+                      type: 'POST',
+                      data: {
+                        name: 'student score records',
+                        classId: selectedClass,
+                        sub_id : selectedSubject
+                      },
+                      success: function(data){
+                        //check the total student returned
+                        classCount= data.total;
+                        var dom="";
+                        if(data.total > 0){
+                          for(var i=1; i<=data.total; i++){
+                            if(data['record'+i]==='true'){
+
+                                dom+='<tr id="scoreform_'+i+'"><td class="score_input">'+i+'</td><td style="padding: 0px !important;">'+data['dname'+i]+'</td><td class="editable">';
+
+                                  if(Number(data['test1_'+i])== -1){
+                                    dom+='<input type="text" name="test1" data-rule="notrequired"></td>';
+                                  }else{
+                                    dom+='<input type="text" disabled="disabled" name="test1" value="'+data['test1_'+i]+'" data-rule="notrequired"></td>';
+                                  }
+
+                                   if(Number(data['test2_'+i])== -1){
+                                    dom+='<td class="editable"><input type="text" name="test2" data-rule="notrequired"></td>';
+                                   }else{
+                                    dom+='<td class="editable"><input type="text" name="test2" data-rule="notrequired" disabled="disabled" value="'+data['test2_'+i]+'"></td>'
+                                  }
+
+                                 if(Number(data['exam_'+i])== -1){
+                                  dom+='<td class="editable"><input type="text" name="exam" data-rule="notrequired"></td>'
+                                  }else{ 
+                                    dom+='<td class="editable"><input type="text" name="exam" disabled="disabled" data-rule="notrequired" value="'+data['exam_'+i]+'"></td>';
+                                  }
+
+                                   if(Number(data['total'+i])== -1){
+                                  dom+='<td><input type="text" name="total" data-rule="notrequired" disabled="disabled"></td>'
+                                  }else{ 
+                                    dom+='<td><input type="text" name="total" disabled="disabled" data-rule="notrequired" value="'+data['total'+i]+'"></td>';
+                                  }
+
+                                   if(data['grade'+i]== 'x'){
+                                  dom+='<td><input type="text" name="grade" data-rule="notrequired" disabled="disabled"></td>'
+                                  }else{ 
+                                    dom+='<td><input type="exam" name="grade" disabled="disabled" data-rule="notrequired" value="'+data['grade'+i]+'"></td>';
+                                  }
+                                 dom+='<td class="d-none"><input type="text" name="reg_no" value="'+data['dreg'+i]+'" class="d-none" data-rule="notrequired"></td><td class="d-none"> <input type="text" name="sn" value="'+i+'" class="d-none" data-rule="notrequired"></td><td class="d-none"> <input type="text" name="status" class="d-none"  value="update" data-rule="notrequired"></td><td class="d-none"><input type="text" name="sub_id" value="'+selectedSubject+'" class="d-none" data-rule="notrequired"></td></tr>';
+
+                            }else{
+                                 dom+='<tr id="scoreform_'+i+'"><td class="score_input">'+i+'</td><td style="padding: 0px !important;">'+data['dname'+i]+'</td><td class="editable"><input type="text" name="test1" data-rule="notrequired"></td><td class="editable"><input type="text" name="test2" data-rule="notrequired"></td><td class="editable"><input type="text" name="exam" data-rule="notrequired"></td><td><input type="text" name="total" disabled="disabled" data-rule="notrequired"></td><td><input type="text" name="grade" disabled="disabled" data-rule="notrequired"></td> <td class="d-none"><input type="text" name="reg_no" value="'+data['dreg'+i]+'" class="d-none" data-rule="notrequired"></td><td class="d-none"> <input type="text" name="sn" value="'+i+'" class="d-none" data-rule="notrequired"></td><td class="d-none"> <input type="text" name="status" class="d-none" value="insert" data-rule="notrequired"></td><td class="d-none"><input type="text" name="sub_id" value="'+selectedSubject+'" class="d-none" data-rule="notrequired"></td></tr>';
+                            }
+               
+                          }
+                        }else{
+                          //no data found
+                           dom+='<tr class="no_record_found"><form id="scoreform"><td class=""></td><td style="padding: 0px !important;">no record found</td><td><input type="text" name="test1"></td><td><input type="text" name="test2"></td><td><input type="exam" name="exam"></td><td><input type="text" name="percentage" disabled="disabled"></td><td><input type="text" name="grade" disabled="disabled"></td></form></tr>';
+                         
+                        }
+                           //specify the subject selected
+                           $('.score-subject-tag').html($('.low_link#'+selectedSubject).text());
+                           $('.student-scores-entry').html(dom);
+
+                      }
+                    })
+
+                    return false;
+
+       });
+
+
+       $('#save_scores_btn').click(function(){
+            var form=$('.student-scores-entry').html();
+             //get the details on the form and submit to database
+             var check=true;
+             var i=1;
+              while(check=validate({
+                form: "scoreform_"+i,
+                formatted: {
+                  value1: {
+                    name: "test1",
+                    applyRule: function(){
+                      //check if value entered is a valid number
+                      if(isNaN($('#scoreform_'+i+' [name="test1"]').val())==true){
+                        validated_message($('#scoreform_'+i+' [name="test1"]'),"value is not a number");
+                         return false;
+                      }else if(Number($('#scoreform_'+i+' [name="test1"]').val()) > 100){
+                        validated_message($('#scoreform_'+i+' [name="test1"]'),"value is greater than maximum input");
+                        return false;
+                      }else{
+                        return true;
+                      }
+                    }
+                  },
+                  value2: {
+                    name: "test2",
+                    applyRule: function(){
+                      //check if value entered is a valid number
+                      if(isNaN($('#scoreform_'+i+' [name="test2"]').val())==true){
+                        validated_message($('#scoreform_'+i+' [name="test2"]'),"value is not a number");
+                         return false;
+                      }else if(Number($('#scoreform_'+i+' [name="test2"]').val()) > 100){
+                        validated_message($('#scoreform_'+i+' [name="test2"]'),"value is greater than maximum input");
+                        return false;
+                      }else{
+                        return true;
+                      }
+                    }
+                  },
+                  value3: {
+                    name: "exam",
+                    applyRule: function(){
+                      //check if value entered is a valid number
+                      if(isNaN($('#scoreform_'+i+' [name="exam"]').val())==true){
+                        validated_message($('#scoreform_'+i+' [name="exam"]'),"value is not a number");
+                         return false;
+                      }else if(Number($('#scoreform_'+i+' [name="exam"]').val()) > 100){
+                        validated_message($('#scoreform_'+i+' [name="exam"]'),"value is greater than maximum input");
+                        return false;
+                      }else{
+                        if((Number($('#scoreform_'+i+' [name="test1"]').val()) + Number($('#scoreform_'+i+' [name="test2"]').val()) + Number($('#scoreform_'+i+' [name="exam"]').val())) > 100){
+                          validated_message($('#scoreform_'+i+' .score_input'),"Aggregate score is greater than 100");
+                          return false;
+                        }
+                        return true;
+                      }
+                    }
+                  }
+
+                }
+               })){
+                if(i==classCount){
+                  check=true;
+                  break;
+                }
+                i++;
+              }
+
+            
+              if(check){
+                  //submit only forms that have values
+                  for(var i=1; i<=classCount; i++){
+                    if($('#scoreform_'+i+' [name="test1"]').val()==="" && $('#scoreform_'+i+' [name="test2"]').val() ==="" && $('#scoreform_'+i+' [name="exam"]').val()===""){
+
+                    }else{
+                      //submit the details of this form
+                    submitFormJson({
+                      form: "scoreform_"+i,
+                      url: "uploadscore.php",
+                      type: "POST",
+                      success: function(data){
+                        var total=0;
+                        //do this if submission was successful
+                        if(data.code ==='1'){
+                          $('.notification_text').html('<b> Data saved</b>');
+                              //disable all input values that have values of that form.
+                              if($('#scoreform_'+data.sn+' [name="test1"]').val()==''){
+
+                              }else{
+                                //disable form field
+                                $('#scoreform_'+data.sn+' [name="test1"]').attr('disabled','disabled');
+                                total= total+Number($('#scoreform_'+data.sn+' [name="test1"]').val());
+                              }
+
+                             if($('#scoreform_'+data.sn+' [name="test2"]').val()==''){
+
+                              }else{
+                                //disable form field
+                                $('#scoreform_'+data.sn+' [name="test2"]').attr('disabled','disabled');
+                                total= total+Number($('#scoreform_'+data.sn+' [name="test2"]').val());
+                              }
+
+
+                              if($('#scoreform_'+data.sn+' [name="exam"]').val()==''){
+
+                              }else{
+                                //disable form field
+                                $('#scoreform_'+data.sn+' [name="exam"]').attr('disabled','disabled');
+                                total= total+Number($('#scoreform_'+data.sn+' [name="exam"]').val());
+                              }
+                              $('#scoreform_'+data.sn+' [name="total"]').val(total);
+                              //get the grade of that student 
+                              $('#scoreform_'+data.sn+' [name="grade"]').val(getGrade(total));
+                              //change the status to update
+                              $('#scoreform_'+data.sn+' [name="status"]').val("update");
+                        }else{
+
+                        }
+                      }
+                    })
+                    }
+                  } 
+              }
+                                
+       })
+
+
+    //edit button for score entries
+    $('#edit_score_btn').click(function(){
+      //add all classes to the input element in score entries
+      $('.student-scores-entry tr td:nth-child(3)').addClass('editable');
+      $('.student-scores-entry tr td:nth-child(4)').addClass('editable');
+      $('.student-scores-entry tr td:nth-child(5)').addClass('editable');
+      $('.student-scores-entry td.editable input').addClass('listen-edit');
+      //specify that is an edit process
+     })
+
+    $('tbody.student-scores-entry').on('dblclick','td.editable',function(e){
+      //get the child element of that td with class listen-edit
+      $(this).find('input.listen-edit').removeAttr('disabled');
+      //change the status of that form 
+       $('#'+$(this).parent().attr('id')+' [name="status"]').val('update');
+      //remove listen-edit class from all input element
+      $('.student-scores-entry td.editable input').removeClass('listen-edit');
+      //remove the editable class from all table data.
+      $('.student-scores-entry tr td').removeClass('editable');
+      })
+
+
+     $('#subject-edit-btn').click(function(){
+      $('.subject-entry-table tr').addClass('listen-edit');
+     })
+
+     $('#subject-edit-btn').dblclick(function(){
+       $('.subject-entry-table tr').removeClass('listen-edit');
+     })
+
+      $('.subject-entry-table').on('dblclick','tr.listen-edit',function(){
+        //enable the input element and set the status for an update.
+         subjectUpdateForm= $(this).find('form').attr('id');
+        //get the old data to be deleted
+        $(this).find('input[name="old_data"]').val($(this).find('input[name="subject"]').val());
+        $(this).find('input[name="subject"]').removeAttr('disabled');
+        $('.subject-entry-table tr').removeClass('listen-edit');
+      })
+
+      $('#subject-save-btn').click(function(){
+         var formId=subjectUpdateForm;
+        //update all the records  
+          if(validate({
+            form: formId
+           })){
+                //submit data
+              submitFormJson({
+                form: formId,
+                url: "updatesubject.php",
+                type: "POST",
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                        //diable that form
+                        $('#'+data.formId+' input[name="subject"]').attr('disabled','disabled');
+   
+                  }else{
+                       validated_message($('#'+data.formId+' input[name="subject"]'),'subject was not updated');                  
+                     }
+                }
+              })   
+           }
+      })
+
+
+      $('#submit_btn_print').click()
+
+      $('#data_details input').change(function(){
+                          //submit data
+
+    var myObj={
+        formId: 'none',
+        classId:  $('#class_details [name="class_id"]').val()
+         }
+
+	if(myObj.classId == ''){
+	alert('select a class')
+	}else{
+	
+            myObj[''+$(this).attr('name')]=''+$(this).val();
+              submitFormJson({
+                form: {form: null},
+                url: "submitData.php",
+                type: "POST",
+                data: myObj,
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                    showguideline("<span class='success'>successfully added</span>");
+                  }else{
+                     showguideline("<span class='wrong'>error while adding</span>");                   
+                     }
+                }
+              }) 
+	}
+
+
+
+      })
+
+      $('#pre_elementary_icon').on('click',function(){
+          //close elementary icon
+          $('.elementary_folder').hide()
+          $('.pre_elementary_folder').show();
+      });
+
+       $('#elementary_icon').on('click',function(){
+          //close elementary icon
+          $('.elementary_folder').show();
+          $('.pre_elementary_folder').hide();
+      });
+
+       $('.class_list').on('click','a',function(){
+            //update the card with the apropriate setting
+               
+            var myObj={
+              name: 'class details record',
+              classId: $(this).attr('href')
+            }
+              //submit data
+              submitFormJson({
+                form: {formId: null},
+                url: "dataset.php",
+                type: "POST",
+                data: myObj,
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                        //diable that form
+                        $('#class_details [name="class_name"]').val(data.name);
+                        $('#class_details [name="class_id"]').val(data.class_id);
+                        $('#class_details [name="total_student"]').val(data.total);
+                        $('#class_details [name="cat_one"]').val(data.cat_1);
+                         $('#class_details [name="cat_two"]').val(data.cat_2);
+                        $('#data_details [name="resump_date"]').val(data.resumption_date);
+                        $('#data_details [name="school_days"]').val(data.school_days);
+                        $('#data_details [name="fee"]').val(data.fee);
+                        $('#data_details [name="term"]').val(data.term);
+
+                        //disable all buttons 
+
+                        $('#f-result-desktop-list-record-4class  button').each(function(){
+                          $(this).attr('style','visibility: hidden');  
+                        })
+                        $('#f-result-desktop-list-record-4class .card-title .classtag').html(data.name +' Info');
+                  }else{
+                                         
+                     }
+                }
+
+              })
+             
+
+            return false;
+       })
+
+      $('#f-result-desktop-list-link-4class').click();
+      })
+
+      $('a.details').click(function(){
+         
+         if($('a.details span').text() ==='Details'){
+          //execute this for details
+          $('#class_details').addClass('d-none');
+          $('#data_details').removeClass('d-none');
+          $('a.details span').text('Record');
+         }else{
+          // dexcute this section for records
+          $('#data_details').addClass('d-none');
+          $('#class_details').removeClass('d-none');
+          $('a.details span').text('Details');
+         }
+         //$(this).removeClass('details').addClass('record');
+         $('a.record span').text('record');
+         return false;
+
+      })
+
+
+      $('#data_details  select').change(function(){
+           //get id
+           var myObj={
+               routine: $(this).val(),
+               field: $(this).attr('id'),
+               value: $('#data_details [name="'+ $(this).attr('id')+'"]').val()
+             }
+
+             if(myObj.value.length >= 1){
+              submitFormJson({
+                form: {form: null},
+                url: "routine.php",
+                type: "POST",
+                data: myObj,
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                    showguideline("<span class='success'>successfully executed</span>");
+                  }else{
+                     showguideline("<span class='wrong'>error while executing</span>");                   
+                     }
+                }
+              })
+
+             }
+      })
+
+
+      $('.session_select').change(function(){
+        //createa new session
+         if($(this).val()==='new'){
+          //hide the element and show the input element 
+          $(this).addClass('d-none');
+          $('[name="session"]').removeClass('d-none');
+         }
+      })
+
+
+      function  isValid(obj){
+          if(obj.session.trim().length < 9){
+              return false;
+          }
+
+                 return true;
+             }
+
+      $('[name="session"]').change(function(){
+            
+
+           //check for empty values
+           var myObj={
+             session: $(this).val(),
+             request: 'post'
+           };
+          ;
+           if(isValid(myObj)){
+             submitFormJson({
+                form: {form: null},
+                url: "sessionUpdate.php",
+                type: "POST",
+                data: myObj,
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                    showguideline("<span class='success'>successfully executed</span>");
+                          $(this).addClass('d-none');
+                          $('.session_select').removeClass('d-none');
+                          $('.session_select').html('');
+                          $('.session_select').html('<option value="old">'+$('[name="session"]').val()+'  SESSION</option><option value="new">Create new entry</span>');
+                  }else{
+                     showguideline("<span class='wrong'>error while executing</span>");
+                            $(this).addClass('d-none');
+                            $('.session_select').removeClass('d-none'); 
+                            $('.session_select').val('old');                   
+                     }
+                }
+              })
+           }else{
+            //add error class without changing the in
+            $(this).addClass('error');
+             showguideline('<span class="wrong">invalid new session entry</span>');  
+            $(this).addClass('d-none');
+          $('.session_select').removeClass('d-none'); 
+          $('.session_select').val('old');      
+          }
+      })
+
+    </script>
+    <script type="text/javascript">
+      
+      $(document).ready(function(){
+
+        var myObj={
+          request: 'get'
+        }
+        submitFormJson({
+                form: {form: null},
+                url: "sessionUpdate.php",
+                type: "POST",
+                data: myObj,
+                success: function(data){
+                  //do this if submission was successful
+                  if(data.code ==='1'){
+                          $('.session_select').html('');
+                          $('.session_select').html('<option value="old">'+data.session+'</option><option value="new">Create new entry</span>');
+                  }else{
+                        
+                     }
+                }
+              })
+
+         myVar = setInterval("clearNotification()", 10000);
+
+      })
+
+
+    </script>
+  </body>
+</html>

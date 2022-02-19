@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!-- saved from url=(0164)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/columnchart_856d439a5298e58871c4438817c0a88f3c1561807e01ec1b18fd3f00a3873f6e.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><script src="./webcomponents-lite.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_bar_module.js.download"></script><link rel="stylesheet" href="./css(1)"><link rel="stylesheet" href="./css(1)"><link rel="stylesheet" href="./css(1)"><script src="./devsite_app.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+
+
+
+
+  <link rel="stylesheet" href="./carousel_style.css">
+  <script type="text/javascript" src="./loader.js(1).download"></script>
+
+
+  <div id="container">
+    <h4 id="chart_description">Dual Y-axes</h4>
+    <div id="chart_area">
+      <div id="previous">&lt;</div>
+      <div id="next">&gt;</div>
+      <div id="chart_div"><div style="position: relative; width: 712px; height: 300px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="712" height="300"><defs><clippath id="rablfilter2"><rect x="52.5" y="84.5" width="430" height="162"></rect></clippath></defs><g><rect x="0" y="0" width="712" height="300" fill="white" stroke="black" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Motivation and Energy Level Throughout the Day</text><text x="0" y="37.359375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 14px;" fill="#BDBDBD" dx="0px">Based on a scale of 1 to 10</text><rect x="575.4375" y="84.5" width="12" height="12" rx="2" ry="2" fill="#4285f4"></rect><text x="595.4375" y="100.0625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Motivation Level</text><rect x="575.4375" y="120.515625" width="12" height="12" rx="2" ry="2" fill="#db4437"></rect><text x="595.4375" y="136.078125" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">Energy Level</text><rect x="52.5" y="84.5" width="430" height="162" fill="none"></rect></g><g><line x1="52.5" x2="482.5" y1="246.5" y2="246.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="52.5" x2="482.5" y1="165.5" y2="165.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="52.5" x2="482.5" y1="84.5" y2="84.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="52.5" x2="482.5" y1="246.5" y2="246.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="52.5" x2="482.5" y1="165.5" y2="165.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="52.5" x2="482.5" y1="84.5" y2="84.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 75.67357512953367 230.8 A 2 2 0 0 1 77.67357512953367 232.8 L 77.67357512953367 246 A 0 0 0 0 1 77.67357512953367 246 L 65 246 A 0 0 0 0 1 65 246 L 65 232.8 A 2 2 0 0 1 67 230.8 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 89.34715025906736 242.95 A 2 2 0 0 1 91.34715025906736 244.95 L 91.34715025906736 246 A 0 0 0 0 1 91.34715025906736 246 L 78.67357512953367 246 A 0 0 0 0 1 78.67357512953367 246 L 78.67357512953367 244.95 A 2 2 0 0 1 80.67357512953367 242.95 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 117.74611398963731 214.6 A 2 2 0 0 1 119.74611398963731 216.6 L 119.74611398963731 246 A 0 0 0 0 1 119.74611398963731 246 L 107.07253886010363 246 A 0 0 0 0 1 107.07253886010363 246 L 107.07253886010363 216.6 A 2 2 0 0 1 109.07253886010363 214.6 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 131.41968911917098 238.9 A 2 2 0 0 1 133.41968911917098 240.9 L 133.41968911917098 246 A 0 0 0 0 1 133.41968911917098 246 L 120.74611398963731 246 A 0 0 0 0 1 120.74611398963731 246 L 120.74611398963731 240.9 A 2 2 0 0 1 122.74611398963731 238.9 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 159.81865284974094 198.39999999999998 A 2 2 0 0 1 161.81865284974094 200.39999999999998 L 161.81865284974094 246 A 0 0 0 0 1 161.81865284974094 246 L 149.14507772020727 246 A 0 0 0 0 1 149.14507772020727 246 L 149.14507772020727 200.39999999999998 A 2 2 0 0 1 151.14507772020727 198.39999999999998 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 173.49222797927462 230.8 A 2 2 0 0 1 175.49222797927462 232.8 L 175.49222797927462 246 A 0 0 0 0 1 175.49222797927462 246 L 162.81865284974094 246 A 0 0 0 0 1 162.81865284974094 246 L 162.81865284974094 232.8 A 2 2 0 0 1 164.81865284974094 230.8 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 201.89119170984455 182.2 A 2 2 0 0 1 203.89119170984455 184.2 L 203.89119170984455 246 A 0 0 0 0 1 203.89119170984455 246 L 191.21761658031087 246 A 0 0 0 0 1 191.21761658031087 246 L 191.21761658031087 184.2 A 2 2 0 0 1 193.21761658031087 182.2 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 215.56476683937825 210.55 A 2 2 0 0 1 217.56476683937825 212.55 L 217.56476683937825 246 A 0 0 0 0 1 217.56476683937825 246 L 204.89119170984455 246 A 0 0 0 0 1 204.89119170984455 246 L 204.89119170984455 212.55 A 2 2 0 0 1 206.89119170984455 210.55 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 243.96373056994818 166 A 2 2 0 0 1 245.96373056994818 168 L 245.96373056994818 246 A 0 0 0 0 1 245.96373056994818 246 L 233.2901554404145 246 A 0 0 0 0 1 233.2901554404145 246 L 233.2901554404145 168 A 2 2 0 0 1 235.2901554404145 166 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 257.6373056994819 210.55 A 2 2 0 0 1 259.6373056994819 212.55 L 259.6373056994819 246 A 0 0 0 0 1 259.6373056994819 246 L 246.96373056994818 246 A 0 0 0 0 1 246.96373056994818 246 L 246.96373056994818 212.55 A 2 2 0 0 1 248.96373056994818 210.55 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 286.0362694300518 149.8 A 2 2 0 0 1 288.0362694300518 151.8 L 288.0362694300518 246 A 0 0 0 0 1 288.0362694300518 246 L 275.3626943005181 246 A 0 0 0 0 1 275.3626943005181 246 L 275.3626943005181 151.8 A 2 2 0 0 1 277.3626943005181 149.8 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 299.70984455958546 198.39999999999998 A 2 2 0 0 1 301.70984455958546 200.39999999999998 L 301.70984455958546 246 A 0 0 0 0 1 301.70984455958546 246 L 289.0362694300518 246 A 0 0 0 0 1 289.0362694300518 246 L 289.0362694300518 200.39999999999998 A 2 2 0 0 1 291.0362694300518 198.39999999999998 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 328.1088082901554 133.6 A 2 2 0 0 1 330.1088082901554 135.6 L 330.1088082901554 246 A 0 0 0 0 1 330.1088082901554 246 L 317.43523316062175 246 A 0 0 0 0 1 317.43523316062175 246 L 317.43523316062175 135.6 A 2 2 0 0 1 319.43523316062175 133.6 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 341.7823834196891 182.2 A 2 2 0 0 1 343.7823834196891 184.2 L 343.7823834196891 246 A 0 0 0 0 1 343.7823834196891 246 L 331.1088082901554 246 A 0 0 0 0 1 331.1088082901554 246 L 331.1088082901554 184.2 A 2 2 0 0 1 333.1088082901554 182.2 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 370.18134715025906 117.4 A 2 2 0 0 1 372.18134715025906 119.4 L 372.18134715025906 246 A 0 0 0 0 1 372.18134715025906 246 L 359.5077720207254 246 A 0 0 0 0 1 359.5077720207254 246 L 359.5077720207254 119.4 A 2 2 0 0 1 361.5077720207254 117.4 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 383.8549222797928 161.95 A 2 2 0 0 1 385.8549222797928 163.95 L 385.8549222797928 246 A 0 0 0 0 1 385.8549222797928 246 L 373.18134715025906 246 A 0 0 0 0 1 373.18134715025906 246 L 373.18134715025906 163.95 A 2 2 0 0 1 375.18134715025906 161.95 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 412.2538860103627 101.19999999999999 A 2 2 0 0 1 414.2538860103627 103.19999999999999 L 414.2538860103627 246 A 0 0 0 0 1 414.2538860103627 246 L 401.580310880829 246 A 0 0 0 0 1 401.580310880829 246 L 401.580310880829 103.19999999999999 A 2 2 0 0 1 403.580310880829 101.19999999999999 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 425.92746113989637 125.5 A 2 2 0 0 1 427.92746113989637 127.5 L 427.92746113989637 246 A 0 0 0 0 1 427.92746113989637 246 L 415.2538860103627 246 A 0 0 0 0 1 415.2538860103627 246 L 415.2538860103627 127.5 A 2 2 0 0 1 417.2538860103627 125.5 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path><path d="M 454.3264248704663 85 A 2 2 0 0 1 456.3264248704663 87 L 456.3264248704663 246 A 0 0 0 0 1 456.3264248704663 246 L 443.65284974093265 246 A 0 0 0 0 1 443.65284974093265 246 L 443.65284974093265 87 A 2 2 0 0 1 445.65284974093265 85 Z" fill="#4285f4" clip-path="url(#rablfilter2)"></path><path d="M 468 85 A 2 2 0 0 1 470 87 L 470 246 A 0 0 0 0 1 470 246 L 457.3264248704663 246 A 0 0 0 0 1 457.3264248704663 246 L 457.3264248704663 87 A 2 2 0 0 1 459.3264248704663 85 Z" fill="#db4437" clip-path="url(#rablfilter2)"></path></g><g></g><g><text x="204.39119170984455" y="263.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-23.09967041015625px">12:00:00</text><text x="456.8264248704663" y="263.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-23.09967041015625px">18:00:00</text><text x="272.21399368523316" y="296.09375" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-31.912757873535156px">Time of Day</text><text x="46.5" y="250.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">0</text><text x="46.5" y="169.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-6.73204231262207px">5</text><text x="46.5" y="88.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-13.46408462524414px">10</text><text x="15.03125" y="162.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-61.03611755371094px" transform="rotate(-90 15.03125 165.5)">Motivation Level (1-10)</text><text x="488.5" y="250.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">0</text><text x="488.5" y="169.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">5</text><text x="488.5" y="88.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="0px">10</text><text x="519.96875" y="162.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-54.140167236328125px" transform="rotate(90 519.96875 165.5)">Energy Level (1-100)</text></g><g></g><g></g><g></g></svg></div></div></div>
+    </div>
+    <form method="post" action="https://jsfiddle.net/api/post/library/pure/" target="_blank">
+      <input type="submit" value="Code it yourself on JSFiddle" class="button button-blue">
+      <input type="hidden" name="title" value="An Example of a Google Bar Chart">
+      <textarea name="html" style="display:none;">  &lt;script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"&gt;&lt;/script&gt;
+  &lt;div id="chart_div"&gt;&lt;/div&gt;
+      </textarea>
+      <textarea name="js" style="display:none;"></textarea>
+      <input type="hidden" name="css" value="">
+      <input type="hidden" name="description" value="">
+      <input type="hidden" name="dtd" value="html 5">
+      <input type="hidden" name="wrap" value="b">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(init);
+
+    var next,
+        previous,
+        current,
+        timer,
+        description = document.querySelector('#chart_description');
+
+    var chartDiv = document.querySelector('#chart_div');
+    chartDiv.addEventListener('mouseenter', stopTimer);
+    chartDiv.addEventListener('mouseleave', startTimer);
+
+    var prevButton = document.querySelector('#previous');
+    prevButton.addEventListener('click', function () {
+          stopTimer();
+          getPrevious();
+          startTimer();
+    });
+
+    var nextButton = document.querySelector('#next');
+    nextButton.addEventListener('click', function () {
+          stopTimer();
+          getNext();
+          startTimer();
+    });
+
+    var chartFuncs = [
+      drawBasic, drawMultSeries, drawColColors, drawAxisTickColors,
+      drawStacked, drawAnnotations, drawTrendlines, drawMaterial, drawTitleSubtitle,
+      drawDualY, drawTopX
+    ];
+
+    var descriptions = [
+      {name: 'drawBasic', text: 'Basic column chart with default styling'},
+      {name: 'drawMultSeries', text: 'Basic column chart with multiple series'},
+      {name: 'drawColColors', text: 'Customizable column colors'},
+      {name: 'drawAxisTickColors', text: 'Customizable axis and tick labels'},
+      {name: 'drawStacked', text: 'Stacked columns'},
+      {name: 'drawAnnotations', text: 'Annotations'},
+      {name: 'drawTrendlines', text: 'Trendlines'},
+      {name: 'drawMaterial', text: 'Basic Material column chart'},
+      {name: 'drawTitleSubtitle', text: 'Title and subtitle'},
+      {name: 'drawDualY', text: 'Dual Y-axes'},
+      {name: 'drawTopX', text: 'Top X-axis'},
+    ];
+
+    function init() {
+      previous = chartFuncs[chartFuncs.length - 1];
+      current = chartFuncs[0];
+      next = chartFuncs[1];
+      current();
+      setFiddle(current);
+      setDescription(current);
+      startTimer();
+    }
+
+    function setNextAsCurrent() {
+      var idx = chartFuncs.indexOf(next);
+
+      current = chartFuncs[idx];
+
+      // If next index would be out of array, restart at 0.
+      if ((idx + 1) === chartFuncs.length) {
+        next = chartFuncs[0];
+      } else {
+        next = chartFuncs[idx + 1];
+      }
+
+      // If previous index would be out of array, restart from end.
+      if (idx === 0) {
+        previous = chartFuncs[chartFuncs.length - 1];
+      } else {
+        previous = chartFuncs[idx - 1];
+      }
+    }
+
+    function setPreviousAsCurrent() {
+      var idx = chartFuncs.indexOf(previous);
+
+      current = chartFuncs[idx];
+
+      // If next index would be out of array, restart at 0.
+      if ((idx + 1) === chartFuncs.length) {
+        next = chartFuncs[0];
+      } else {
+        next = chartFuncs[idx + 1];
+      }
+
+      // If previous index would be out of array, restart from end.
+      if (idx === 0) {
+        previous = chartFuncs[chartFuncs.length - 1];
+      } else {
+        previous = chartFuncs[idx - 1];
+      }
+    }
+
+    function startTimer() {
+      timer = setInterval(getNext, 5000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    function getNext() {
+      setNextAsCurrent();
+      current();
+      setFiddle(current);
+      setDescription(current);
+    }
+
+    function getPrevious() {
+      setPreviousAsCurrent();
+      current();
+      setFiddle(current);
+      setDescription(current);
+    }
+
+
+    function setFiddle(func) {
+      var txtarea = document.getElementsByTagName('textarea');
+      var js;
+
+      for (var i = 0; i < txtarea.length; i++) {
+        if (txtarea[i].name === 'js') {
+          js = txtarea[i];
+        }
+      }
+
+      js.value = "google.charts.load('current', {packages: ['corechart', 'bar']});" + '\n' +
+        "google.charts.setOnLoadCallback(" + func.name + ");" + '\n\n' +  func;
+
+    }
+
+    function setDescription(func) {
+      for (var i = 0; i < descriptions.length; i++) {
+        if (descriptions[i].name === func.name) {
+          return description.innerText = descriptions[i].text;
+        }
+      }
+    }
+
+    function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1],
+        [{v: [9, 0, 0], f: '9 am'}, 2],
+        [{v: [10, 0, 0], f:'10 am'}, 3],
+        [{v: [11, 0, 0], f: '11 am'}, 4],
+        [{v: [12, 0, 0], f: '12 pm'}, 5],
+        [{v: [13, 0, 0], f: '1 pm'}, 6],
+        [{v: [14, 0, 0], f: '2 pm'}, 7],
+        [{v: [15, 0, 0], f: '3 pm'}, 8],
+        [{v: [16, 0, 0], f: '4 pm'}, 9],
+        [{v: [17, 0, 0], f: '5 pm'}, 10],
+      ]);
+
+      var options = {
+        title: 'Motivation Level Throughout the Day',
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+    function drawMultSeries() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+    function drawColColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        colors: ['#9575cd', '#33ac71'],
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawAxisTickColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        focusTarget: 'category',
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          },
+          textStyle: {
+            fontSize: 14,
+            color: '#053061',
+            bold: true,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#053061',
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)',
+          textStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawStacked() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        isStacked: true,
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawAnnotations() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn({type: 'string', role: 'annotation'});
+      data.addColumn('number', 'Energy Level');
+      data.addColumn({type: 'string', role: 'annotation'});
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'},   1, '1',  .25, '.2'],
+        [{v: [9, 0, 0], f: '9 am'},   2, '2',   .5, '.5'],
+        [{v: [10, 0, 0], f:'10 am'},  3, '3',    1,  '1'],
+        [{v: [11, 0, 0], f: '11 am'}, 4, '4', 2.25,  '2'],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, '5', 2.25,  '2'],
+        [{v: [13, 0, 0], f: '1 pm'},  6, '6',    3,  '3'],
+        [{v: [14, 0, 0], f: '2 pm'},  7, '7', 3.25,  '3'],
+        [{v: [15, 0, 0], f: '3 pm'},  8, '8',    5,  '5'],
+        [{v: [16, 0, 0], f: '4 pm'},  9, '9',  6.5,  '6'],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, '10',  10, '10'],
+      ]);
+
+      var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        annotations: {
+          alwaysOutside: true,
+          textStyle: {
+            fontSize: 14,
+            color: '#000',
+            auraColor: 'none'
+          }
+        },
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+
+    function drawTrendlines() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        trendlines: {
+          0: {type: 'linear', lineWidth: 5, opacity: .3},
+          1: {type: 'exponential', lineWidth: 10, opacity: .3}
+        },
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawMaterial() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, options);
+    }
+
+    function drawTitleSubtitle() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Motivation and Energy Level Throughout the Day',
+          subtitle: 'Based on a scale of 1 to 10'
+        },
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, options);
+    }
+
+    function drawDualY() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Motivation and Energy Level Throughout the Day',
+          subtitle: 'Based on a scale of 1 to 10'
+        },
+        series: {
+          0: {axis: 'MotivationLevel'},
+          1: {axis: 'EnergyLevel'}
+        },
+        axes: {
+          y: {
+            MotivationLevel: {label: 'Motivation Level (1-10)'},
+            EnergyLevel: {label: 'Energy Level (1-100)'}
+          }
+        },
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, options);
+    }
+
+    function drawTopX() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', 'Energy Level');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Motivation and Energy Level Throughout the Day',
+          subtitle: 'Based on a scale of 1 to 10'
+        },
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        },
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, options);
+    }
+  </script><div style="position: absolute; display: none;"><div style="background: infobackground; padding: 1px; border: 1px solid infotext; font-size: 13px; margin: 13px; font-family: Arial;">Motivation Level</div></div><div style="position: absolute; display: none;"><div style="background: infobackground; padding: 1px; border: 1px solid infotext; font-size: 13px; margin: 13px; font-family: Arial;">Motivation Level</div></div><div style="position: absolute; display: none;"><div style="background: infobackground; padding: 1px; border: 1px solid infotext; font-size: 13px; margin: 13px; font-family: Arial;">Motivation Level</div></div><div style="position: absolute; display: none;"><div style="background: infobackground; padding: 1px; border: 1px solid infotext; font-size: 13px; margin: 13px; font-family: Arial;">Motivation Level</div></div><div style="position: absolute; display: none;"><div style="background: infobackground; padding: 1px; border: 1px solid infotext; font-size: 13px; margin: 13px; font-family: Arial;">Motivation Level</div></div><div style="position: absolute; display: none;"><div style="background: infobackground; padding: 1px; border: 1px solid infotext; font-size: 13px; margin: 13px; font-family: Arial;">Motivation Level</div></div><div style="position: absolute; display: none;"><div style="background: infobackground; padding: 1px; border: 1px solid infotext; font-size: 13px; margin: 13px; font-family: Arial;">Motivation Level</div></div>
+
+
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div><div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div><div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>

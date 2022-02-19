@@ -1,0 +1,135 @@
+@font-face{
+  font-family: 'Spartan';
+  src: 
+    local('Spartan Font'),
+    local('spartan'),
+    url('spartan/Spartan-Regular.ttf') 
+    format('truetype');
+    font-weight: normal;
+}
+
+@font-face{
+  font-family: 'Spartan';
+  src: 
+    local('Spartan Font'),
+    local('spartan'), 
+    url('spartan/Spartan-Bold.ttf') 
+    format('truetype');
+    font-weight: bold;
+}
+
+@font-face{
+  font-family: 'Spartan';
+  src: 
+    local('Spartan Font'),
+    local('spartan'),
+    url('spartan/Spartan-Light.ttf') 
+    format('truetype');
+    font-weight: lighter;
+}
+
+.navbar-form input{
+  border-right: 0px !important; 
+  border-top-left-radius: 6px !important; 
+  border-bottom-left-radius: 6px !important; 
+  height: 32px !important;
+}
+.navbar-form .input-group button{
+  border-left: 0px; 
+  border-top-right-radius: 6px; 
+  border-bottom-right-radius: 6px; 
+  height: 32px;
+}
+
+.navbar-brand img{
+  display: none;
+  width: 32px;
+}
+
+    .botton-border-left-off{
+        border-left: 0px;
+    }
+
+   .box-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+
+   .box-shadow:hover{
+     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 30px 0 rgba(0, 0, 0, 0.19);
+   }
+
+   .img-weight{
+
+   }
+   
+   .loader{
+      background: rgba(255,255,255,0);
+      border: 0px;
+   }
+
+   #home{
+    background-image: url("../img/gallery.jpg");
+   }
+
+@media only screen and (min-width: 768px){
+   .navbar-brand img{
+  display: inline-block;
+ }
+}
+
+@media only screen and (min-width: 992px){   
+.navbar-brand img{
+  display: inline-block;
+}
+}
+
+@media only screen and (min-width: 1200px){
+    .navbar-form input{     
+    }
+}
+
+
+
+
+@font-face{
+  font-family: 'Montserrat';
+  src: 
+    local('Montserrat Font'),
+    local('Montserrat'),
+    url('Montserrat/Montserrat-Regular.ttf') 
+    format('truetype');
+    font-weight: normal;
+}
+
+@font-face{
+  font-family: 'Montserrat';
+  src: 
+    local('Montserrat Font'),
+    local('Montserrat'),
+    url('Montserrat/Montserrat-Bold.ttf') 
+    format('truetype');
+    font-weight: bold;
+}
+
+@font-face{
+  font-family: 'Montserrat';
+  src: 
+    local('Montserrat Font'),
+    local('Montserrat'),
+    url('Montserrat/Montserrat-Light.ttf') 
+    format('truetype');
+    font-weight: lighter;
+}
+
+/*preload these images */
+/*.preload1{background-image: url("../img/passtemp.png");}
+.preload2{background-image: url("../img/idtemp.png");}
+.preload3{background-image: url("../img/pass2.png");}
+.preload4{background-image: url("../img/Settings.png");}
+.preload5{background-image: url("../img/id5.jpg");}
+.preload7{background-image: url("../img/emailnew.png");}
+.preload6{background-image: url("../img/password.png");}
+.preload6{background-image: url("../img/gsm1.png");}
+.preload6{background-image: url("../img/id5.jpg");} */
+
+

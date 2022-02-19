@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!-- saved from url=(0161)https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/barchart_9a8ce4c79b8da3fa2e73bee14869e01b6f7fb5150dc7540172d60b5680259b48.frame -->
+<html lang="en" dir="ltr" class="wf-roboto-n4-active wf-roboto-n5-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="framebox">
+              <link rel="stylesheet" href="./css">
+      <link rel="stylesheet" href="./app.css">
+        <script async="" src="./app_loader.js.download"></script><script>
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+                var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+            (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/js/app_loader.js', '[1,"en",null,"/js/devsite_app.js","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988","https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1]')
+            </script>
+      <script src="./webcomponents-lite.js.download"></script><script src="./devsite_app.js.download"></script><script type="text/javascript" charset="UTF-8" src="./loader.js.download"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./util.css"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_format_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_default_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_ui_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_corechart_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_fw_module.js.download"></script><script type="text/javascript" charset="UTF-8" src="./dygraph-tickers-combined.js.download"></script><script type="text/javascript" charset="UTF-8" src="./webfont.js.download"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%7CRoboto:medium"><script type="text/javascript" charset="UTF-8" src="./jsapi_compiled_bar_module.js.download"></script></head>
+    <body style="height: auto; overflow: hidden; padding: 20px;">
+    <meta name="auto_height" content="true"><meta name="auto_width" content="true">
+  
+
+
+  <link rel="stylesheet" href="./carousel_style.css">
+  <script type="text/javascript" src="./loader.js(1).download"></script>
+
+
+  <div id="container">
+    <h4 id="chart_description">Basic Material bar chart</h4>
+    <div id="chart_area">
+      <div id="previous">&lt;</div>
+      <div id="next">&gt;</div>
+      <div id="chart_div"><div style="position: relative; width: 712px; height: 300px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="712" height="300"><defs><clippath id="rablfilter0"><rect x="134.5" y="57.5" width="389" height="222"></rect></clippath></defs><g><rect x="0" y="0" width="712" height="300" fill="white" stroke="black" stroke-width="0"></rect><text x="0" y="15.5625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 16px;" fill="#757575" dx="0px">Population of Largest U.S. Cities</text><rect x="575.46875" y="57.5" width="12" height="12" rx="2" ry="2" fill="#4285f4"></rect><text x="595.46875" y="73.0625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">2010 Population</text><rect x="575.46875" y="93.515625" width="12" height="12" rx="2" ry="2" fill="#db4437"></rect><text x="595.46875" y="109.078125" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto;" fill="#757575" dx="0px">2000 Population</text><rect x="134.5" y="57.5" width="389" height="222" fill="none"></rect></g><g><line x1="134.5" x2="134.5" y1="57.5" y2="279.5" stroke="#9E9E9E" stroke-width="1"></line><line x1="329" x2="329" y1="57.5" y2="279.5" stroke="#E0E0E0" stroke-width="1"></line><line x1="523.5" x2="523.5" y1="57.5" y2="279.5" stroke="#E0E0E0" stroke-width="1"></line></g><g><path d="M 450.0075 58 A 2 2 0 0 1 452.0075 60 L 452.0075 69.6774193548387 A 2 2 0 0 1 450.0075 71.6774193548387 L 135 71.6774193548387 A 0 0 0 0 1 135 71.6774193548387 L 135 58 A 0 0 0 0 1 135 58 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 443.5112 72.6774193548387 A 2 2 0 0 1 445.5112 74.6774193548387 L 445.5112 84.35483870967741 A 2 2 0 0 1 443.5112 86.35483870967741 L 135 86.35483870967741 A 0 0 0 0 1 135 86.35483870967741 L 135 72.6774193548387 A 0 0 0 0 1 135 72.6774193548387 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 279.50879999999995 103.16129032258064 A 2 2 0 0 1 281.50879999999995 105.16129032258064 L 281.50879999999995 114.83870967741935 A 2 2 0 0 1 279.50879999999995 116.83870967741935 L 135 116.83870967741935 A 0 0 0 0 1 135 116.83870967741935 L 135 103.16129032258064 A 0 0 0 0 1 135 103.16129032258064 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 275.6966 117.83870967741935 A 2 2 0 0 1 277.6966 119.83870967741935 L 277.6966 129.51612903225805 A 2 2 0 0 1 275.6966 131.51612903225805 L 135 131.51612903225805 A 0 0 0 0 1 135 131.51612903225805 L 135 117.83870967741935 A 0 0 0 0 1 135 117.83870967741935 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 236.83550000000002 148.32258064516128 A 2 2 0 0 1 238.83550000000002 150.32258064516128 L 238.83550000000002 160 A 2 2 0 0 1 236.83550000000002 162 L 135 162 A 0 0 0 0 1 135 162 L 135 148.32258064516128 A 0 0 0 0 1 135 148.32258064516128 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 244.6544 163 A 2 2 0 0 1 246.6544 165 L 246.6544 174.67741935483872 A 2 2 0 0 1 244.6544 176.67741935483872 L 135 176.67741935483872 A 0 0 0 0 1 135 176.67741935483872 L 135 163 A 0 0 0 0 1 135 163 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 213.65109999999999 193.48387096774192 A 2 2 0 0 1 215.65109999999999 195.48387096774192 L 215.65109999999999 205.16129032258064 A 2 2 0 0 1 213.65109999999999 207.16129032258064 L 135 207.16129032258064 A 0 0 0 0 1 135 207.16129032258064 L 135 193.48387096774192 A 0 0 0 0 1 135 193.48387096774192 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 207.9717 208.16129032258064 A 2 2 0 0 1 209.9717 210.16129032258064 L 209.9717 219.83870967741936 A 2 2 0 0 1 207.9717 221.83870967741936 L 135 221.83870967741936 A 0 0 0 0 1 135 221.83870967741936 L 135 208.16129032258064 A 0 0 0 0 1 135 208.16129032258064 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path><path d="M 191.3614 238.64516129032256 A 2 2 0 0 1 193.3614 240.64516129032256 L 193.3614 250.32258064516128 A 2 2 0 0 1 191.3614 252.32258064516128 L 135 252.32258064516128 A 0 0 0 0 1 135 252.32258064516128 L 135 238.64516129032256 A 0 0 0 0 1 135 238.64516129032256 Z" fill="#4285f4" clip-path="url(#rablfilter0)"></path><path d="M 191.0113 253.32258064516128 A 2 2 0 0 1 193.0113 255.32258064516128 L 193.0113 265 A 2 2 0 0 1 191.0113 267 L 135 267 A 0 0 0 0 1 135 267 L 135 253.32258064516128 A 0 0 0 0 1 135 253.32258064516128 Z" fill="#db4437" clip-path="url(#rablfilter0)"></path></g><g></g><g><text x="134.5" y="296.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-3.366021156311035px">0</text><text x="329" y="296.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-8.599447250366211px">5M</text><text x="523.5" y="296.625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-11.965468406677246px">10M</text><text x="128.5" y="76.06577620967741" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-94.21329498291016px">New York City, NY</text><text x="128.5" y="121.22429435483869" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-86.33977508544922px">Los Angeles, CA</text><text x="128.5" y="166.390625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-58.70915985107422px">Chicago, IL</text><text x="128.5" y="211.54914314516128" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-65.41780090332031px">Houston, TX</text><text x="128.5" y="256.71547379032256" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#757575" dx="-85.18651580810547px">Philadelphia, PA</text><text x="15.703125" y="159.15625" style="cursor: default; user-select: none; -webkit-font-smoothing: antialiased; font-family: Roboto; font-size: 12px;" fill="#424242" dx="-10.150740623474121px" transform="rotate(-90 15.703125 162.5)">City</text></g><g></g><g></g><g></g></svg></div></div></div>
+    </div>
+    <form method="post" action="https://jsfiddle.net/api/post/library/pure/" target="_blank">
+      <input type="submit" value="Code it yourself on JSFiddle" class="button button-blue">
+      <input type="hidden" name="title" value="An Example of a Google Bar Chart">
+      <textarea name="html" style="display:none;">  &lt;script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"&gt;&lt;/script&gt;
+  &lt;div id="chart_div"&gt;&lt;/div&gt;
+      </textarea>
+      <textarea name="js" style="display:none;"></textarea>
+      <input type="hidden" name="css" value="">
+      <input type="hidden" name="description" value="">
+      <input type="hidden" name="dtd" value="html 5">
+      <input type="hidden" name="wrap" value="b">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(init);
+
+    var next,
+        previous,
+        current,
+        timer,
+        description = document.querySelector('#chart_description');
+
+
+    var chartDiv = document.querySelector('#chart_div');
+    chartDiv.addEventListener('mouseenter', stopTimer);
+    chartDiv.addEventListener('mouseleave', startTimer);
+
+    var prevButton = document.querySelector('#previous');
+    prevButton.addEventListener('click', function () {
+          stopTimer();
+          getPrevious();
+          startTimer();
+    });
+
+    var nextButton = document.querySelector('#next');
+    nextButton.addEventListener('click', function () {
+          stopTimer();
+          getNext();
+          startTimer();
+    });
+
+    var chartFuncs = [
+      drawBasic, drawMultSeries, drawBarColors, drawAxisTickColors,
+      drawStacked, drawAnnotations, drawMaterial, drawTitleSubtitle,
+      drawDualX, drawRightY
+    ];
+
+    var descriptions = [
+      {name: 'drawBasic', text: 'Basic bar chart with default styling'},
+      {name: 'drawMultSeries', text: 'Basic bar chart with multiple series'},
+      {name: 'drawBarColors', text: 'Customizable bar colors'},
+      {name: 'drawAxisTickColors', text: 'Customizable axis and tick labels'},
+      {name: 'drawStacked', text: 'Stacked bars'},
+      {name: 'drawAnnotations', text: 'Annotations'},
+      {name: 'drawMaterial', text: 'Basic Material bar chart'},
+      {name: 'drawTitleSubtitle', text: 'Title and subtitle'},
+      {name: 'drawDualX', text: 'Dual X-axes'},
+      {name: 'drawRightY', text: 'Right Y-axis'},
+    ];
+
+    function init() {
+      previous = chartFuncs[chartFuncs.length - 1];
+      current = chartFuncs[0];
+      next = chartFuncs[1];
+      current();
+      setFiddle(current);
+      setDescription(current);
+      startTimer();
+    }
+
+    function setNextAsCurrent() {
+      var idx = chartFuncs.indexOf(next);
+
+      current = chartFuncs[idx];
+
+      // If next index would be out of array, restart at 0.
+      if ((idx + 1) === chartFuncs.length) {
+        next = chartFuncs[0];
+      } else {
+        next = chartFuncs[idx + 1];
+      }
+
+      // If previous index would be out of array, restart from end.
+      if (idx === 0) {
+        previous = chartFuncs[chartFuncs.length - 1];
+      } else {
+        previous = chartFuncs[idx - 1];
+      }
+    }
+
+    function setPreviousAsCurrent() {
+      var idx = chartFuncs.indexOf(previous);
+
+      current = chartFuncs[idx];
+
+      // If next index would be out of array, restart at 0.
+      if ((idx + 1) === chartFuncs.length) {
+        next = chartFuncs[0];
+      } else {
+        next = chartFuncs[idx + 1];
+      }
+
+      // If previous index would be out of array, restart from end.
+      if (idx === 0) {
+        previous = chartFuncs[chartFuncs.length - 1];
+      } else {
+        previous = chartFuncs[idx - 1];
+      }
+    }
+
+    function startTimer() {
+      timer = setInterval(getNext, 5000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    function getNext() {
+      setNextAsCurrent();
+      current();
+      setFiddle(current);
+      setDescription(current);
+    }
+
+    function getPrevious() {
+      setPreviousAsCurrent();
+      current();
+      setFiddle(current);
+      setDescription(current);
+    }
+
+
+    function setFiddle(func) {
+      var txtarea = document.getElementsByTagName('textarea');
+      var js;
+
+      for (var i = 0; i < txtarea.length; i++) {
+        if (txtarea[i].name === 'js') {
+          js = txtarea[i];
+        }
+      }
+
+      js.value = "google.charts.load('current', {packages: ['corechart', 'bar']});" + '\n' +
+        "google.charts.setOnLoadCallback(" + func.name + ");" + '\n\n' +  func;
+
+    }
+
+    function setDescription(func) {
+      for (var i = 0; i < descriptions.length; i++) {
+        if (descriptions[i].name === func.name) {
+          return description.innerText = descriptions[i].text;
+        }
+      }
+    }
+
+    function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population',],
+        ['New York City, NY', 8175000],
+        ['Los Angeles, CA', 3792000],
+        ['Chicago, IL', 2695000],
+        ['Houston, TX', 2099000],
+        ['Philadelphia, PA', 1526000]
+      ]);
+
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+    function drawMultSeries() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawBarColors() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        colors: ['#b0120a', '#ffab91'],
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawAxisTickColors() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+          textStyle: {
+            bold: true,
+            fontSize: 12,
+            color: '#4d4d4d'
+          },
+          titleTextStyle: {
+            bold: true,
+            fontSize: 18,
+            color: '#4d4d4d'
+          }
+        },
+        vAxis: {
+          title: 'City',
+          textStyle: {
+            fontSize: 14,
+            bold: true,
+            color: '#848484'
+          },
+          titleTextStyle: {
+            fontSize: 14,
+            bold: true,
+            color: '#848484'
+          }
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawStacked() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        isStacked: true,
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawAnnotations() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', {type: 'string', role: 'annotation'},
+         '2000 Population', {type: 'string', role: 'annotation'}],
+        ['New York City, NY', 8175000, '8.1M', 8008000, '8M'],
+        ['Los Angeles, CA', 3792000, '3.8M', 3694000, '3.7M'],
+        ['Chicago, IL', 2695000, '2.7M', 2896000, '2.9M'],
+        ['Houston, TX', 2099000, '2.1M', 1953000, '2.0M'],
+        ['Philadelphia, PA', 1526000, '1.5M', 1517000, '1.5M']
+      ]);
+
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        annotations: {
+          alwaysOutside: true,
+          textStyle: {
+            fontSize: 12,
+            auraColor: 'none',
+            color: '#555'
+          },
+          boxStyle: {
+            stroke: '#ccc',
+            strokeWidth: 1,
+            gradient: {
+              color1: '#f3e5f5',
+              color2: '#f3e5f5',
+              x1: '0%', y1: '0%',
+              x2: '100%', y2: '100%'
+            }
+          }
+        },
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawMaterial() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var materialOptions = {
+        chart: {
+          title: 'Population of Largest U.S. Cities'
+        },
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        },
+        bars: 'horizontal'
+      };
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, materialOptions);
+    }
+
+    function drawTitleSubtitle() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var materialOptions = {
+        chart: {
+          title: 'Population of Largest U.S. Cities',
+          subtitle: 'Based on most recent and previous census data'
+        },
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        },
+        bars: 'horizontal'
+      };
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, materialOptions);
+    }
+
+    function drawDualX() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var materialOptions = {
+        chart: {
+          title: 'Population of Largest U.S. Cities',
+          subtitle: 'Based on most recent and previous census data'
+        },
+        hAxis: {
+          title: 'Total Population'
+        },
+        vAxis: {
+          title: 'City'
+        },
+        bars: 'horizontal',
+        series: {
+          0: {axis: '2010'},
+          1: {axis: '2000'}
+        },
+        axes: {
+          x: {
+            2010: {label: '2010 Population (in millions)', side: 'top'},
+            2000: {label: '2000 Population'}
+          }
+        }
+      };
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, materialOptions);
+    }
+
+    function drawRightY() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+
+      var materialOptions = {
+        chart: {
+          title: 'Population of Largest U.S. Cities',
+          subtitle: 'Based on most recent and previous census data'
+        },
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        },
+        bars: 'horizontal',
+        axes: {
+          y: {
+            0: {side: 'right'}
+          }
+        }
+      };
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, materialOptions);
+    }
+  </script>
+
+
+
+
+  
+<div style="position: absolute; top: -1000px; left: -1000px; white-space: nowrap; display: none;"><svg></svg></div></body></html>
