@@ -1,0 +1,16 @@
+CREATE TABLE `psychomotor` (
+  `reg_no` varchar(100) NOT NULL,
+  `a1` int(20) NOT NULL,
+  `a2` int(20) NOT NULL,
+  `a3` int(20) NOT NULL,
+  `a4` int(20) NOT NULL,
+  `a5` int(20) NOT NULL,
+  `a6` int(20) NOT NULL,
+  `a7` int(20) NOT NULL,
+  `a8` int(20) NOT NULL,
+  `a9` int(20) NOT NULL,
+  `a10` int(20) NOT NULL,
+  `fee` int(20) NOT NULL,
+  `remark` varchar(100) NOT NULL,
+  PRIMARY KEY (`reg_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
